@@ -7,7 +7,7 @@ description: Build rigorous, source-backed, thematically organized study guides 
 
 Create rigorous, source-backed, thematically organized study guides that prioritize primary sources, structured digests, thematic synthesis with provenance, clear citations, and navigable learning paths.
 
-**Process version:** 1.4 (2026-08-13)
+**Process version:** 1.5 (2026-08-13)
 
 ## Guiding Principles
 
@@ -22,7 +22,7 @@ Create rigorous, source-backed, thematically organized study guides that priorit
 9. Progressive disclosure — support high-level overviews and deep dives.
 10. Adaptive rigor — match review type and artifacts (search protocol, matrices, bios, walkthroughs, etc.) to the nature of the topic and learning goals.
 
-## Core Value: Citations, Sources & Further Research (Elevated in 1.4)
+## Core Value: Citations, Sources & Further Research
 
 Athena packages exist to help users engage primary material *and* know where the claims come from and how to go further. The following are required practices:
 
@@ -54,7 +54,7 @@ Athena packages exist to help users engage primary material *and* know where the
 
 These elements turn the package from a useful summary into a trustworthy research and learning scaffold.
 
-## Adaptive Applications (Museum / Cultural Sites — from 1.3)
+## Adaptive Applications (Museum / Cultural Sites)
 
 When the topic is a **museum, collection, exhibition, historic site, or cultural itinerary**:
 
@@ -68,7 +68,7 @@ When the topic is a **museum, collection, exhibition, historic site, or cultural
 
 ## Workflow
 
-Execute the phases in order, with explicit iteration checkpoints. Write all artifacts as Markdown files under a dedicated directory in the working artifacts folder (e.g., `artifacts/athena-<topic-slug>/` or `artifacts/study-guide-<topic-slug>/`). Keep the package self-contained and portable.
+Execute the phases in order, with explicit iteration checkpoints. Write all deliverables as Markdown files in a dedicated, self-contained directory (commonly `artifacts/athena-<topic-slug>/` or `study-guide-<topic-slug>/` — adapt the root path to whatever working or output directory is available in the current environment). Keep the package portable with relative links only.
 
 ### Phase 0: Scope Definition
 Before any searching:
@@ -133,13 +133,13 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 ## Output Conventions
 
-- Root: `artifacts/athena-<kebab-topic>/` or `artifacts/study-guide-<kebab-topic>/`
+- Root directory: a dedicated folder such as `athena-<kebab-topic>/` or `study-guide-<kebab-topic>/` (place it under an `artifacts/`, project, or working directory as available in the current environment).
 - Core files: `00-scope.md`, `01-sources.md`, `README.md`, `03-themes.md`, `glossary.md`, `limitations.md`, `further-reading.md`
 - Recommended for multi-creator / museum topics: `artists-bios.md`
 - Optional: `01b-search-protocol.md`, `matrix.md`
 - Subdirs: `digests/`, `themes/`
 - Relative links only.
-- Offer a downloadable zip at the end.
+- At the end, offer a downloadable zip of the finished package when the environment supports it.
 
 ## Constraints & Notes
 
@@ -149,9 +149,16 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 - Match search-protocol and matrix depth to the topic.
 - For physical collections, always note that display locations can change.
 - **Citations and further research are not optional extras; they are part of the definition of a finished Athena package.**
+- This skill is designed to be portable across agents that support the Agent Skills format (or equivalent system-prompt + knowledge loading). Adapt file-system paths and tool calls to the capabilities of the current runtime.
 
 ## Resources
 
 - Digest template: `references/digest-template.md`
 - Example directory layout: `references/directory-layout.md`
 
+## Changelog (selected)
+
+- **1.5 (2026-08-13):** Portability improvements for cross-agent use. Softened hard-coded output paths; added explicit environment-adaptation note. Skill remains fully effective in Grok while being easier to install in Claude Skills, Custom GPTs (via instructions + knowledge), and other Agent Skills–compatible runtimes. Ready for “install this repo” workflows.
+- **1.4 (2026-08-13):** Elevated citations, transparent sourcing, and substantive further-reading to core guiding principles and required package elements.
+- **1.3 (2026-08-13):** Adaptive guidance for museum / cultural-site guides (artworks as primary sources, official itineraries, artist bios, walkthrough themes, iterative expansion).
+- **1.2 (2026-08-12):** Prior baseline.

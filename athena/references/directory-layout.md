@@ -1,7 +1,7 @@
 # Recommended Directory Layout
 
 ```
-artifacts/athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
+athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ├── README.md                 # Master overview, review type, learning path, quick-start
 ├── 00-scope.md               # Topic statement, audience, learning outcomes, review type
 ├── 01-sources.md             # Ranked bibliography, selection criteria, citation practice, availability
@@ -22,6 +22,7 @@ artifacts/athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ```
 
 Notes:
+- Place the package root under an `artifacts/`, project, or working directory as available in the current environment.
 - `further-reading.md` is a core value of Athena (v1.4+): it must offer concrete, named next steps rather than vague suggestions.
 - `01-sources.md` must include selection criteria and a short citation-practice note.
 - `01b-search-protocol.md` is strongly encouraged for empirical / systematic-leaning topics; may be a section inside `01-sources.md` when light.
