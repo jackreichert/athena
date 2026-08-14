@@ -1,5 +1,4 @@
 # Changelog
-
-- **1.12.1:** Period-Specialist Analysis explicitly requires missed symbolism, historical context, visual details, and period color meanings.
-- **1.12:** Period-Specialist Analysis section added for museum digests.
-- **1.11 and earlier:** See full history in SKILL.md
+- **1.13:** Dual-layer requirement for complex artworks (zone map + period-specialist analysis).
+- **1.12.1–1.12:** Period-Specialist Analysis introduced and sharpened.
+- Earlier: Deep mode, anti-bias, completeness gates.
