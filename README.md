@@ -22,6 +22,10 @@ Athena turns a topic into a structured learning package with:
 
 The result is not a summary. It is a portable research and learning scaffold you can use in Obsidian, VS Code, plain text, or any Markdown environment.
 
+**Example:**  
+“Athena teach me cognitive behavioral therapy” → pulls syllabi, ranks primary & secondary sources, digests them, cross-references themes, builds bibliography + citations, and outputs a folder ready for Obsidian.  
+Works the same way for museum collections and visitor guides.
+
 ---
 
 ## Core Values
@@ -44,87 +48,59 @@ Trigger on requests such as:
 - “Create a deep reading list and synthesis for…”
 - “Make a thematic study guide of…”
 - “Produce a self-study package with primary sources and digests”
-- Museum or cultural-site guides (“top things to see at the Prado”, “guide to the Met’s European wing”, etc.)
+- Museum or cultural-site guides (“top things to see at the Prado”, etc.)
 
-It works especially well for:
+---
 
-- Philosophy and history of ideas
-- Literature and primary-text engagement
-- Art history and museum collections
-- Any subject where primary sources + thematic synthesis + transparent sourcing matter
+## Install & Try
+
+### Quick install phrases
+> Install the Athena skill from https://github.com/jackreichert/athena
+
+> Load the Athena study-guide skill from this repo
+
+### Try without permanently installing
+Some platforms support remote / one-shot loading directly from GitHub so you can evaluate the approach before committing it to your system prompt or skill library.
+
+**AdaL / Adalagent example** (thanks to [@panda_liyin](https://x.com/panda_liyin)):
+```
+skills:gh:jackreichert/athena
+```
+(or with a leading `@` depending on the client). This reads the skill straight from the repo — nothing is saved and nothing is permanently added to the system prompt.
+
+Other agents may offer similar `skills:gh:owner/repo` or “load skill from URL” patterns. Prefer those when you want to experiment first.
+
+### Platform notes
+- **Grok / xAI** — Point the agent at the repo or the `athena/` folder.
+- **Claude** — Drop `athena/` into the Skills location (or use skill-creator / Projects). The YAML `name` + `description` enable progressive loading.
+- **ChatGPT Custom GPT** — Paste the body of `SKILL.md` into Instructions; upload `references/` as Knowledge. Adapt file paths to available tools.
+- See **INSTALL.md** for more detail.
 
 ---
 
 ## Package Structure
 
-A typical Athena package looks like this:
-
 ```
 athena-<topic-slug>/
-├── README.md                 # Overview, learning path, quick-start
-├── 00-scope.md               # Topic, audience, outcomes, review type
-├── 01-sources.md             # Ranked bibliography + citation practice
-├── 03-themes.md              # Theme index
-├── further-reading.md        # Concrete research pathways (required & substantive)
+├── README.md
+├── 00-scope.md
+├── 01-sources.md          # ranked bibliography + citation practice
+├── further-reading.md     # concrete research pathways (required)
 ├── glossary.md
-├── limitations.md            # Gaps + methodological notes
-├── artists-bios.md           # (optional) short parallel bios for multi-creator topics
-├── digests/                  # One structured digest per core source
-│   └── ...
-└── themes/                   # Individual theme files
-    └── ...                   # Each ends with Gaps & Open Questions + Theme Bibliography
+├── limitations.md
+├── artists-bios.md        # optional, for multi-creator / museum topics
+├── digests/
+└── themes/                # each ends with Gaps & Open Questions + Theme Bibliography
 ```
 
-See `athena/references/directory-layout.md` for the full recommended layout.
-
 ---
 
-## Key Features (v1.5)
+## Key Features
 
-### Citations, Sources & Further Research
-- Explicit selection criteria and citation-practice notes in `01-sources.md`
-- Full bibliographic-style entries on every digest
-- Theme Bibliographies on every theme file
-- Substantive `further-reading.md` with named entry points and “how to go deeper” guidance
-- Methodological notes in `limitations.md`
-
-### Museum & Cultural-Site Support
-- Artworks treated as primary sources (location-aware digests)
-- Official museum highlights and timed itineraries prioritized
-- Practical walkthrough / itinerary themes
-- Short artist/creator bios
-- Support for iterative expansion when the user focuses on particular artists or rooms
-
-### Adaptive Review Types
-- Narrative / Conceptual
-- Thematic
-- Scoping
-- Systematic-leaning
-- Hybrid (most common, especially for museums)
-
-### Portability
-Designed for the open Agent Skills format. Softened environment-specific paths so the same skill works well in Grok, Claude Skills, and (with light adaptation) Custom GPTs / other agents.
-
----
-
-## Install
-
-### Grok / xAI or Agent Skills–compatible runtimes
-Point the agent at this repository or the `athena/` folder and ask it to install/load the skill, e.g.:
-
-> Install the Athena skill from https://github.com/jackreichert/athena
-
-or place the `athena/` directory where your agent expects skills.
-
-### Claude
-Drop the `athena/` folder into your Claude Skills directory (or use the skill-creator / project skills flow). The `SKILL.md` frontmatter (`name` + `description`) enables progressive loading.
-
-### ChatGPT Custom GPT
-1. Paste the body of `athena/SKILL.md` (or a condensed version) into the GPT Instructions.
-2. Upload `athena/references/` (and optionally example packages) as Knowledge files.
-3. Adapt any remaining file-path language to the tools available in that environment.
-
-See `INSTALL.md` for more detail.
+- **Citations & further research as first-class requirements**
+- Museum / cultural-site adaptations (artworks as primary sources, timed itineraries, artist bios)
+- Adaptive review types (Narrative, Thematic, Scoping, Systematic-leaning, Hybrid)
+- Portable Agent Skills format (works across Grok, Claude, and adaptable to others)
 
 ---
 
@@ -132,7 +108,7 @@ See `INSTALL.md` for more detail.
 
 ```
 athena/
-├── SKILL.md                  # Full process specification (v1.5)
+├── SKILL.md
 ├── changelog.md
 └── references/
     ├── digest-template.md
@@ -145,26 +121,14 @@ INSTALL.md
 
 ## Design Philosophy
 
-Athena is deliberately opinionated about intellectual hygiene:
-
-- Prefer primary sources.
-- Make the evidence base visible.
-- Surface disagreements instead of forcing false consensus.
-- Give readers a clear path to go further.
-- Keep the package navigable and portable.
-
-It is intended for serious self-study, teaching preparation, research orientation, and high-quality visitor guides to collections and sites.
+Prefer primary sources. Make the evidence base visible. Surface disagreements. Give readers a clear path to go further. Keep the package navigable and portable.
 
 ---
 
 ## License
 
-MIT (or add your preferred license).
-
----
+MIT
 
 ## Author
 
-Maintained by [Jack Reichert](https://github.com/jackreichert).
-
-Feedback and improvements welcome via issues or pull requests.
+[Jack Reichert](https://github.com/jackreichert)
