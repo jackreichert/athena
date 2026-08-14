@@ -7,7 +7,7 @@ description: Build rigorous, source-backed, thematically organized study guides 
 
 Create rigorous, source-backed, thematically organized study guides that prioritize primary sources, structured digests, thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths.
 
-**Process version:** 1.11 (2026-08-14)
+**Process version:** 1.12.1 (2026-08-14)
 
 ## Guiding Principles
 
@@ -76,13 +76,14 @@ These elements turn the package from a useful summary into a trustworthy researc
 When the topic is a **museum, collection, exhibition, historic site, or cultural itinerary**:
 
 - Treat individual **artworks, objects, or spaces** as primary sources. Digests emphasize formal description, iconography/symbolism, historical context, provenance, and current location (room/floor when known).
+- **Period-specialist analysis (required for major paintings and key works):** Include a dedicated section that analyzes the work as an art historian specializing in its period would — situating style, technique, iconography, patronage, workshop practice, and meaning within the artistic and cultural conventions of that time (e.g., Spanish Golden Age for Velázquez, early-19th-century Spanish contexts for Goya). Explicitly surface symbolism a general viewer is likely to miss, period-specific historical context, significant visual details or objects, and the meaning of colors as understood in that period. This goes beyond general formal description and later reception; it synthesizes or emulates period-focused scholarly interpretation. In Deep mode, draw more explicitly on named specialists or standard period literature.
 - Prioritize **official museum resources** (collection pages, official highlights/itineraries, floor plans) alongside scholarly consensus lists. Link to official collection pages wherever possible.
 - Produce a practical **walkthrough / timed itinerary** theme or section.
 - When multiple creators are central, add **`artists-bios.md`** (or `creators-bios.md`) with short parallel biographies.
 - Support iterative expansion based on user focus.
 - Hybrid review type is usually optimal.
 - Always caveat that room numbers and hangings can change.
-- Deep mode remains available and adds denser scholarly literature on the works, artists, and collecting history.
+- Deep mode remains available and adds denser scholarly literature on the works, artists, collecting history, and period-specialist debates.
 
 ## Depth Modes
 
@@ -142,7 +143,7 @@ Before any searching:
 ### Phase 2: Structured Source Digests
 For every Core source (and selected Important sources), produce a consistent digest using the template in `references/digest-template.md`.
 
-For artworks/visual objects, adapt: include medium, dimensions, inventory number, room; emphasize formal, iconographic, and spatial description; note that hangings can change.
+For artworks/visual objects, adapt: include medium, dimensions, inventory number, room; emphasize formal, iconographic, and spatial description; note that hangings can change. **For major paintings and key works, include a Period-Specialist Analysis section** (analysis as by an art historian specializing in the work’s period — style, technique, iconography, patronage, meaning in period context, plus symbolism a viewer may miss, historical context, key visual details/objects, and period color meanings).
 
 **Deep mode:** Apply the Deep adaptations in the template (Methodological approach; Position in the literature / Reception; Key subsequent engagements or critiques). Produce denser unit-level coverage where the source warrants it. The goal is that a reader can engage the material at seminar level.
 
@@ -233,6 +234,8 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 ## Changelog (selected)
 
+- **1.12.1 (2026-08-14):** Sharpened Period-Specialist Analysis to explicitly require: symbolism a general viewer is likely to miss; period-specific historical context; significant visual details/objects and their meaning; and colors with their period associations/meanings.
+- **1.12 (2026-08-14):** For museum/artwork digests, added required **Period-Specialist Analysis** section for major paintings and key works: analysis as by an art historian specializing in the work’s period (style, technique, iconography, patronage, meaning in period context). Distinct from formal description and later reception. Updated Adaptive Applications (Museum), Phase 2, and digest template. Prompted by feedback on the Prado package.
 - **1.11 (2026-08-14):** Hardened process against incomplete execution. Added hard completeness gate: do not begin Phase 3 until every Core source has a complete digest; if infeasible, reduce Core and document. Added digest quality minimums (reject abstract-only in Deep mode). Added scope-realism notes in Phase 0/1. Added topic-sensitive artifact prompt for named-phenomena topics (heuristics, fallacies, etc.). Strengthened Phase 5 completeness check. Response to under-execution observed on the bias & critical thinking package.
 - **1.10 (2026-08-14):** After running a full Deep-mode package on “bias and critical thinking,” refined the digest template to encourage explicit status notes (original claim / later challenges / present standing) for contested empirical findings. This makes Contested Claims & Corrections subsections easier to populate accurately and tightens the link between digests and anti-bias theme practices. Minor self-application stress test of the v1.9 anti-bias rules.
 - **1.9 (2026-08-14):** Added explicit anti-bias practices for contested and politicized domains. New Guiding Principle 12. Treat dominant secondary “consensus” as a claim to be examined; prioritize primary/contemporaneous/forensic evidence for disputed facts; require or strongly recommend Contested Claims & Corrections subsections; note Wikipedia and platform bias risk; strengthen selection criteria and limitations language for polarized topics; add claim-genealogy guidance in Deep mode. Updated phases 0, 1, 3, Core Value, constraints, and description.

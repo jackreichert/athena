@@ -64,14 +64,15 @@ These sections turn the digest into a seminar-memo equivalent: a reader should b
 - Prefer the primary language when the source is not originally English; note the translation used.
 - Deep mode digests may be longer; maintain clear structure and scannability.
 
-### Adaptation for Artworks & Visual Objects (v1.3+)
+### Adaptation for Artworks & Visual Objects (v1.3+; period analysis strengthened v1.12)
 
 When the “source” is an artwork, artifact, or physical space:
 
 - **Bibliographic Entry**: Include artist, title, date, medium, dimensions, inventory/accession number, current museum room/floor when known, and official collection URL if available.
 - **High-Level Overview**: Subject matter, composition/structure, intended original context, and significance within the collection or art history.
 - **Unit-by-Unit / Zone-by-Zone Summaries**: Formal elements (composition, light, color, scale), iconography or symbolism, spatial experience for the viewer, and key historical or interpretive points. Use clear visual locators rather than page numbers.
+- **Period-Specialist Analysis (required for major paintings and key works):** Write (or synthesize) an analysis as an art historian specializing in the painting’s period would. Situate the work in the artistic, technical, iconographic, and cultural conventions of its time — style and technique relative to contemporaries, patronage and original function, period-specific meanings and sources, workshop practice where relevant. Explicitly call out: (1) symbolism a general viewer is likely to miss, (2) period-specific historical context that changes how the image reads, (3) significant visual details or objects and their meaning, and (4) colors and their period associations or meanings. This is distinct from generic formal description and from later reception history. In Deep mode, prefer grounding in named period specialists or standard period literature and note major interpretive debates within that specialist literature.
 - **Access Notes**: Emphasize current display location, any viewing tips (best approach angle, lighting, crowd timing), and the caveat that hangings can change.
-- **Deep mode**: Add Methodological / Interpretive Approach, Position in the Literature / Reception (key scholarly interpretations), and Key Subsequent Engagements (major critical or curatorial responses).
+- **Deep mode**: Add Methodological / Interpretive Approach, Position in the Literature / Reception (key scholarly interpretations, including period-specialist views), and Key Subsequent Engagements (major critical or curatorial responses).
 
 Retain the overall Assessment, Cross-Links, and structure so digests remain parallel and navigable.
