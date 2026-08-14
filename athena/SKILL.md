@@ -1,13 +1,13 @@
 ---
 name: athena
-description: Build rigorous, source-backed, thematically organized study guides for any topic. Supports Standard mode (excellent undergraduate overview) and Deep mode (graduate-level course/seminar notes equivalent that enable productive seminar participation) with denser engagement, positioning annotations, Seminar Guiding Questions, and richer bibliography. Strong emphasis on citations and provenance, especially in themes. Includes explicit anti-bias practices for contested and politicized domains (treat consensus as contestable, prioritize primary evidence for disputed facts, surface corrections and competing claims). Trigger on athena, athena research, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, deep reading list and synthesis, thematic study guide, self-study package, museum or cultural-site guides, or similar requests for structured academic-style learning materials with syllabi mining, chapter digests, and theme synthesis.
+description: Build rigorous, source-backed, thematically organized study guides for any topic. Supports Standard mode (excellent undergraduate overview) and Deep mode (graduate-level course/seminar notes equivalent that enable productive seminar participation) with denser engagement, positioning annotations, Seminar Guiding Questions, and richer bibliography. Strong emphasis on citations and provenance, especially in themes. Includes explicit anti-bias practices for contested and politicized domains (treat consensus as contestable, prioritize primary evidence for disputed facts, surface corrections and competing claims). Enforces completeness: every Core source must receive a full digest before themes; incomplete Phase 2 is a process failure. Trigger on athena, athena research, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, deep reading list and synthesis, thematic study guide, self-study package, museum or cultural-site guides, or similar requests for structured academic-style learning materials with syllabi mining, chapter digests, and theme synthesis.
 ---
 
 # Athena (Study Guide Builder)
 
 Create rigorous, source-backed, thematically organized study guides that prioritize primary sources, structured digests, thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths.
 
-**Process version:** 1.10 (2026-08-14)
+**Process version:** 1.11 (2026-08-14)
 
 ## Guiding Principles
 
@@ -119,6 +119,7 @@ Before any searching:
 - Note whether a formal search protocol will be produced.
 - For museum/site topics, note whether practical navigation (itineraries, bios) will be emphasized.
 - **If the topic is recent, active, or highly polarized:** Note the polarization risk and that secondary consensus will be treated as contestable rather than baseline.
+- **Scope realism:** If declaring Deep mode on a broad topic, either commit to producing complete digests for every Core source or consciously narrow the Core list. An ambitious Core paired with thin or missing digests is worse than a tighter, fully digested Core. Document any narrowing in `01-sources.md` and `limitations.md`.
 
 **Deliverable:** `00-scope.md`
 
@@ -129,14 +130,14 @@ Before any searching:
 
 **Selection criteria:** Relevance, influence/frequency, quality, representativeness, accessibility, recency or classic status, practical visibility (for physical collections). Deep mode weights debate centrality and scholarly reception more heavily. **For polarized topics:** explicitly address how selection avoids one-sided secondary capture (balance of positions, primary priority for disputed facts, awareness of institutional or platform bias).
 
-**Ranking:** Core / Important / Supplementary. Deep mode typically expands the Core and Important sets and requires richer rationales + annotations.
+**Ranking:** Core / Important / Supplementary. Deep mode typically expands the Core and Important sets and requires richer rationales + annotations. Prefer a Core list that can be fully digested at the required quality over an ambitious list that will be only partially covered.
 
 **Search protocol (adaptive):** Produce `01b-search-protocol.md` when the topic is empirical or reproducibility is requested; otherwise a brief note inside `01-sources.md` is sufficient. Deep mode more often warrants a formal protocol.
 
 **Deliverable:** `01-sources.md` (must include selection criteria, ranked lists, citation-practice note, and availability notes; Deep mode adds annotations and optional categorization).  
 **Optional:** `01b-search-protocol.md`
 
-**Iteration checkpoint:** Revisit scope and sources if needed.
+**Iteration checkpoint:** Revisit scope and sources if needed. Confirm that the planned Core list is realistic given the commitment to complete digests.
 
 ### Phase 2: Structured Source Digests
 For every Core source (and selected Important sources), produce a consistent digest using the template in `references/digest-template.md`.
@@ -145,7 +146,19 @@ For artworks/visual objects, adapt: include medium, dimensions, inventory number
 
 **Deep mode:** Apply the Deep adaptations in the template (Methodological approach; Position in the literature / Reception; Key subsequent engagements or critiques). Produce denser unit-level coverage where the source warrants it. The goal is that a reader can engage the material at seminar level.
 
-**Deliverable:** One file per source under `digests/`.
+**Digest quality expectations (minimum):**
+- Thesis / central project and overall structure
+- Key units or arguments with evidence/examples
+- Strengths and limitations (or critiques from the literature)
+- For empirical findings that are contested or revised: brief status note (original claim / later challenges / present standing)
+- Preliminary cross-links
+- Deep mode additionally requires the methodological and reception sections
+
+Abstract-only or severely truncated digests are not acceptable in Deep mode.
+
+**Hard completeness gate:** Do **not** begin Phase 3 until every Core source has a complete digest that follows the template (including Deep-mode sections when mode = Deep). If producing full digests for the current Core list is not feasible, reduce the Core list, update `01-sources.md`, and note the change in `limitations.md`. Incomplete Phase 2 is a process failure.
+
+**Deliverable:** One file per Core source under `digests/`.
 
 ### Phase 3: Thematic Synthesis & Cross-Referencing
 Extract themes, build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep mode almost always produces a detailed matrix), write theme narratives with Gaps & Open Questions and Theme Bibliography.
@@ -153,6 +166,8 @@ Extract themes, build at least one synthesis matrix (strongly recommended; requi
 **Citation practice is especially rigorous here:** every major claim in a theme narrative must be back-linked to a specific digest or primary source. Themes are the primary site where provenance and evidence transparency are demonstrated.
 
 For museum/site guides, include a practical Navigating / Walkthrough / Practical Paths theme.
+
+**Topic-sensitive artifacts:** When the topic’s core objects are named lists of phenomena (heuristics, fallacies, biases, cognitive effects, argument schemes, etc.), strongly recommend an overview/reference theme that maps the main items with primary sources and canonical examples. This is often the most practically useful theme for readers.
 
 **Deep mode enhancements:**
 - Include explicit “Debates & Contending Interpretations” (or equivalent) and, where the topic warrants, intellectual genealogy / historiography subsections (including genealogy of charged framings themselves when relevant).
@@ -178,12 +193,14 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 **Deep mode active learning:** Prefer seminar-style discussion questions (usable as openers or short response-paper prompts), comparative critiques, historiographical notes, and optional short research-design or paper-prompt exercises over basic recall questions. Questions should help the user practice the discursive moves expected in a graduate seminar.
 
 ### Phase 5: Quality Assurance
+- **Completeness check:** Confirm every Core source has a digest file and that each digest meets the quality expectations above (not abstract-only). If any are missing or thin, return to Phase 2 or narrow Core.
 - Spot-check digests for fidelity and correct bibliographic data.
 - Verify backlinks.
 - Confirm Gaps & Open Questions are substantive (and research-oriented in Deep mode).
 - Confirm `further-reading.md` offers concrete next steps and `01-sources.md` makes the evidence base transparent (and richly annotated in Deep mode).
 - For museum packages, verify itineraries are coherent and room data is caveated.
 - Confirm mode declaration is consistent across scope, README, and limitations.
+- For topics centered on named phenomena (heuristics, fallacies, etc.), confirm an overview/reference theme exists or is explicitly scoped out.
 - Record version and date.
 
 ## Output Conventions
@@ -201,7 +218,8 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 - Do not invent sources or fabricate quotes, page numbers, inventory numbers, or room locations.
 - Favor open-access and official institutional resources when quality is comparable.
-- Keep digests dense but readable; Deep mode digests may be longer but must remain structured and usable.
+- Keep digests dense but readable; Deep mode digests may be longer but must remain structured and usable. Abstract-only digests are not acceptable in Deep mode.
+- **Completeness over ambition:** Every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Incomplete Phase 2 is a process failure.
 - Match search-protocol and matrix depth to the topic and mode.
 - For physical collections, always note that display locations can change.
 - **Citations and further research are not optional extras; they are part of the definition of a finished Athena package.** Deep mode makes the bibliography and annotations a central strength.
@@ -215,6 +233,7 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 ## Changelog (selected)
 
+- **1.11 (2026-08-14):** Hardened process against incomplete execution. Added hard completeness gate: do not begin Phase 3 until every Core source has a complete digest; if infeasible, reduce Core and document. Added digest quality minimums (reject abstract-only in Deep mode). Added scope-realism notes in Phase 0/1. Added topic-sensitive artifact prompt for named-phenomena topics (heuristics, fallacies, etc.). Strengthened Phase 5 completeness check. Response to under-execution observed on the bias & critical thinking package.
 - **1.10 (2026-08-14):** After running a full Deep-mode package on “bias and critical thinking,” refined the digest template to encourage explicit status notes (original claim / later challenges / present standing) for contested empirical findings. This makes Contested Claims & Corrections subsections easier to populate accurately and tightens the link between digests and anti-bias theme practices. Minor self-application stress test of the v1.9 anti-bias rules.
 - **1.9 (2026-08-14):** Added explicit anti-bias practices for contested and politicized domains. New Guiding Principle 12. Treat dominant secondary “consensus” as a claim to be examined; prioritize primary/contemporaneous/forensic evidence for disputed facts; require or strongly recommend Contested Claims & Corrections subsections; note Wikipedia and platform bias risk; strengthen selection criteria and limitations language for polarized topics; add claim-genealogy guidance in Deep mode. Updated phases 0, 1, 3, Core Value, constraints, and description.
 - **1.8 (2026-08-14):** Expanded triggers to include “athena go deep”, “athena deeper”, “go deep”, “deeper”. Strengthened emphasis on citations and provenance, especially in themes: every major claim must be back-linked; themes are the primary site of dense, explicit citation practice. Updated principles, Core Value, and Phase 3 accordingly.
