@@ -6,7 +6,7 @@ Athena produces self-contained Markdown packages that help you (or an AI agent) 
 
 **Current process version:** 1.5 (2026-08-13)
 
-Link to [SKILL.md](https://github.com/jackreichert/athena/blob/main/athena/SKILL.md)
+Link to [SKILL.md](https://raw.githubusercontent.com/jackreichert/athena/refs/heads/main/athena/SKILL.md)
 
 ---
 
