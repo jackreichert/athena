@@ -1,18 +1,18 @@
 ---
 name: athena
-description: Build rigorous, source-backed, thematically organized study guides for any topic. Supports Standard mode (excellent undergraduate overview) and Deep mode (graduate-level course/seminar notes equivalent that enable productive seminar participation) with denser engagement, positioning annotations, Seminar Guiding Questions, and richer bibliography. Strong emphasis on citations and provenance, especially in themes. Includes explicit anti-bias practices for contested and politicized domains (treat consensus as contestable, prioritize primary evidence for disputed facts, surface corrections and competing claims). Enforces completeness: every Core source must receive a full digest before themes; incomplete Phase 2 is a process failure. Trigger on athena, athena research, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, deep reading list and synthesis, thematic study guide, self-study package, museum or cultural-site guides, or similar requests for structured academic-style learning materials with syllabi mining, chapter digests, and theme synthesis.
+description: Build rigorous, source-backed, thematically organized study guides for any topic. Supports Standard (excellent undergrad overview) and Deep (graduate seminar notes) modes with denser engagement, positioning annotations, Seminar Guiding Questions, and richer bibliography. Strong emphasis on citations and provenance especially in themes. Tracks source discovery provenance (syllabi and signals) and compiles full bibliography during research. Explicit anti-bias for contested domains — treat consensus as contestable, prioritize primary evidence, surface corrections and competing claims. Enforces completeness — every Core source gets a full digest before themes. Trigger on athena, athena research, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, deep reading list and synthesis, thematic study guide, self-study package, museum or cultural-site guides, or similar requests for structured academic-style learning materials with syllabi mining, chapter digests, and theme synthesis.
 ---
 
 # Athena (Study Guide Builder)
 
 Create rigorous, source-backed, thematically organized study guides that prioritize primary sources, structured digests, thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths.
 
-**Process version:** 1.13 (2026-08-14)
+**Process version:** 1.14.1 (2026-08-15)
 
 ## Guiding Principles
 
 1. Objectives first — define clear learning outcomes and scope before collecting sources.
-2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists.
+2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. **Track and document every syllabus or institutional list consulted** (institution, course, URL/year when available) so source provenance remains transparent; sources that recur across independent high-quality syllabi receive higher weight.
 3. Primary > Secondary, but both matter — prioritize original works (texts, artworks, artifacts); use secondary sources for orientation, context, and debate mapping. Deep mode engages a wider secondary literature including key articles, critical reception, and methodological works. For contested factual claims (especially recent or politicized events), prefer primary, contemporaneous, forensic, or official investigative sources over narrative secondary synthesis.
 4. Consistent extraction — every core source receives the same structured treatment.
 5. Thematic synthesis with provenance — organize by themes/concepts/debates, not by source. Every major claim must be back-linkable to a specific digest or primary source. Citations and provenance are especially rigorous when building out themes.
@@ -30,10 +30,12 @@ Athena packages exist to help users engage primary material *and* know where the
 
 ### In `01-sources.md`
 - Explicit selection criteria.
-- Ranked Core / Important / Supplementary lists with short rationales (Deep mode: more detailed rationales and expanded Core/Important counts when warranted).
+- **Syllabi & Discovery Sources Consulted** section: list every syllabus, essential-readings list, institutional highlight/itinerary, or other discovery source used (institution/course title, instructor if known, URL or locator, year). This makes the expert-signal provenance of the bibliography transparent and auditable.
+- Ranked Core / Important / Supplementary lists with short rationales (Deep mode: more detailed rationales and expanded Core/Important counts when warranted). Each ranked entry should include a brief provenance note (e.g., “appears on 3 graduate syllabi [list]; foundational monograph cited across the field”).
 - Clear identification of primary institutional or canonical sources (official collection pages, standard editions, key monographs).
 - A short “Citation practice in this package” note explaining how digests and themes are sourced.
 - Availability notes (open access, library, paywall, physical display).
+- **Full bibliography compilation:** The ranked lists plus any additional discovered sources form the package’s working bibliography. Maintain and refine it throughout Phase 1 so that by delivery the reader has a transparent, provenance-annotated map of what was found and why items were ranked as they were.
 - **Deep mode addition:** Annotated entries (2–4 sentences) for Core and key Important items that include a positioning or evaluative element (how the source intervenes in debates, relative strengths/limitations, relevance to package themes); optional categorization (Primary / Foundational secondary / Recent scholarship / Methodological-theoretical).
 
 ### In digests
@@ -49,10 +51,11 @@ Athena packages exist to help users engage primary material *and* know where the
 
 ### In `further-reading.md` (required and substantive)
 - Concrete, named entry points (specific books, catalogues, official pages, or well-known surveys) rather than vague “read more about X.”
+- **Notable additional sources (primary or secondary)** discovered during research that did not make the Core/Important cut but remain valuable for further reading — flag these explicitly (with short rationale and primary/secondary distinction where helpful). Draw them from the Phase 1 working bibliography and discovery log.
 - Organized pathways (official/institutional → core monographs → thematic extensions → addressing gaps).
 - Explicit guidance on “how to go deeper.”
 - Note major gaps the further reading helps fill.
-- **Deep mode:** Structured research pathways including specialization tracks, key journals or databases, and guidance on following citation trails or identifying open research questions.
+- **Deep mode:** Structured research pathways including specialization tracks, key journals or databases, and guidance on following citation trails or identifying open research questions. Include a richer set of notable further-reading sources with positioning notes.
 
 ### In `limitations.md`
 - Methodological notes on how sources were selected and what was *not* done (e.g., no original archival research).
@@ -125,20 +128,28 @@ Before any searching:
 **Deliverable:** `00-scope.md`
 
 ### Phase 1: Source Discovery & Selection
-**Goal:** Ranked, justified bibliography of core primary + high-value secondary sources.
+**Goal:** Ranked, justified bibliography of core primary + high-value secondary sources, with transparent provenance of how each source was discovered and a compiled full working bibliography.
 
-**Methods:** Syllabus mining (undergraduate +, for Deep mode, graduate seminar / exam lists), official institutional lists (especially for museums), canonical signals, citation patterns, high-quality secondary literature. Deep mode additionally draws on review articles, recent monographs, critical editions, and methodological works. For contested or politicized topics, actively seek primary/contemporaneous/forensic sources and sources that challenge the dominant secondary framing.
+**Methods:** Syllabus mining (undergraduate +, for Deep mode, graduate seminar / exam lists and comprehensive exam bibliographies), official institutional lists (especially for museums), canonical signals, citation patterns, high-quality secondary literature. Deep mode additionally draws on review articles, recent monographs, critical editions, and methodological works. For contested or politicized topics, actively seek primary/contemporaneous/forensic sources and sources that challenge the dominant secondary framing.
 
-**Selection criteria:** Relevance, influence/frequency, quality, representativeness, accessibility, recency or classic status, practical visibility (for physical collections). Deep mode weights debate centrality and scholarly reception more heavily. **For polarized topics:** explicitly address how selection avoids one-sided secondary capture (balance of positions, primary priority for disputed facts, awareness of institutional or platform bias).
+**Provenance tracking (required):** 
+- Maintain a running log of every syllabus, essential-readings list, institutional highlight, catalogue, or other discovery source consulted. Record: institution, course/seminar title (and code if available), instructor if known, URL or stable locator, year or term.
+- For each source that enters the candidate pool or final ranked lists, note its discovery provenance (e.g., “appeared on 4 independent graduate syllabi: [A, B, C, D]; also the most-cited monograph in [review article]”; “official collection highlight + recommended in [museum itinerary]”; “identified via citation trail from Core source X”).
+- Prefer and up-rank sources that recur across multiple independent high-quality syllabi or institutional lists. Document this recurrence explicitly.
+- This log is not optional busywork; it is the evidence that the ranked bibliography rests on expert signals rather than ad-hoc search.
 
-**Ranking:** Core / Important / Supplementary. Deep mode typically expands the Core and Important sets and requires richer rationales + annotations. Prefer a Core list that can be fully digested at the required quality over an ambitious list that will be only partially covered.
+**Bibliography compilation (during the process):** As candidates are found, maintain and grow a full working bibliography (all sources considered worth noting, not only the final ranked set). Explicitly flag **notable additional primary or secondary sources** that are valuable for further reading even if they do not rank as Core or Important — these feed directly into `further-reading.md`. By the end of Phase 1 this becomes the transparent evidence base of the package. The ranked Core / Important / Supplementary lists are a prioritization of that bibliography; the full set (with provenance) remains available for the reader and for further-reading pathways.
 
-**Search protocol (adaptive):** Produce `01b-search-protocol.md` when the topic is empirical or reproducibility is requested; otherwise a brief note inside `01-sources.md` is sufficient. Deep mode more often warrants a formal protocol.
+**Selection criteria:** Relevance, influence/frequency (especially recurrence across syllabi), quality, representativeness, accessibility, recency or classic status, practical visibility (for physical collections). Deep mode weights debate centrality and scholarly reception more heavily. **For polarized topics:** explicitly address how selection avoids one-sided secondary capture (balance of positions, primary priority for disputed facts, awareness of institutional or platform bias).
 
-**Deliverable:** `01-sources.md` (must include selection criteria, ranked lists, citation-practice note, and availability notes; Deep mode adds annotations and optional categorization).  
+**Ranking:** Core / Important / Supplementary. Deep mode typically expands the Core and Important sets and requires richer rationales + annotations. Prefer a Core list that can be fully digested at the required quality over an ambitious list that will be only partially covered. Include short provenance notes on ranked entries.
+
+**Search protocol (adaptive):** Produce `01b-search-protocol.md` when the topic is empirical or reproducibility is requested; otherwise a brief note inside `01-sources.md` is sufficient. Deep mode more often warrants a formal protocol. The protocol (when produced) should also capture the syllabi and discovery sources used.
+
+**Deliverable:** `01-sources.md` (must include: selection criteria; **Syllabi & Discovery Sources Consulted** section; ranked lists with provenance notes and rationales; citation-practice note; availability notes; the compiled full working bibliography or clear pointer to it; and notes on notable further-reading candidates identified during discovery. Deep mode adds annotations and optional categorization).  
 **Optional:** `01b-search-protocol.md`
 
-**Iteration checkpoint:** Revisit scope and sources if needed. Confirm that the planned Core list is realistic given the commitment to complete digests.
+**Iteration checkpoint:** Revisit scope and sources if needed. Confirm that the planned Core list is realistic given the commitment to complete digests. Verify that provenance for the Core set is documented and that the working bibliography is coherent.
 
 ### Phase 2: Structured Source Digests
 For every Core source (and selected Important sources), produce a consistent digest using the template in `references/digest-template.md`.
@@ -199,6 +210,7 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 - Verify backlinks.
 - Confirm Gaps & Open Questions are substantive (and research-oriented in Deep mode).
 - Confirm `further-reading.md` offers concrete next steps and `01-sources.md` makes the evidence base transparent (and richly annotated in Deep mode).
+- **Provenance & bibliography check:** Confirm `01-sources.md` contains a Syllabi & Discovery Sources Consulted section (or equivalent), that ranked entries carry provenance notes, that a coherent full working bibliography has been compiled from the research process, and that notable additional primary/secondary sources useful for further reading have been identified and fed into `further-reading.md`.
 - For museum packages, verify itineraries are coherent and room data is caveated.
 - Confirm mode declaration is consistent across scope, README, and limitations.
 - For topics centered on named phenomena (heuristics, fallacies, etc.), confirm an overview/reference theme exists or is explicitly scoped out.
@@ -207,7 +219,7 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 ## Output Conventions
 
 - Root directory: a dedicated folder such as `athena-<kebab-topic>/` or `study-guide-<kebab-topic>/` (place it under an `artifacts/`, project, or working directory as available in the current environment).
-- Core files: `00-scope.md`, `01-sources.md`, `README.md`, `03-themes.md`, `glossary.md`, `limitations.md`, `further-reading.md`
+- Core files: `00-scope.md`, `01-sources.md` (must include Syllabi & Discovery Sources Consulted + provenance-annotated ranked lists + working bibliography), `README.md`, `03-themes.md`, `glossary.md`, `limitations.md`, `further-reading.md`
 - Recommended for multi-creator / museum topics: `artists-bios.md`
 - Optional: `01b-search-protocol.md`, `matrix.md`
 - Subdirs: `digests/`, `themes/`
@@ -223,7 +235,7 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 - **Completeness over ambition:** Every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Incomplete Phase 2 is a process failure.
 - Match search-protocol and matrix depth to the topic and mode.
 - For physical collections, always note that display locations can change.
-- **Citations and further research are not optional extras; they are part of the definition of a finished Athena package.** Deep mode makes the bibliography and annotations a central strength.
+- **Citations, provenance, and further research are not optional extras; they are part of the definition of a finished Athena package.** Tracking where sources came from (especially which syllabi and institutional lists) and compiling a full working bibliography during research are required practices. Deep mode makes the bibliography and annotations a central strength.
 - **Anti-bias is structural:** On contested or politicized topics, do not let secondary consensus silently become the baseline. Prefer primary evidence for disputed facts, surface corrections and competing claims, and document polarization risk.
 - This skill is designed to be portable across agents that support the Agent Skills format (or equivalent system-prompt + knowledge loading). Adapt file-system paths and tool calls to the capabilities of the current runtime.
 
@@ -234,6 +246,8 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 ## Changelog (selected)
 
+- **1.14.1 (2026-08-15):** Explicitly require capturing and surfacing **notable additional primary or secondary sources** useful for further reading (even if they fall outside Core/Important). Phase 1 bibliography compilation now flags these; `further-reading.md` must include them with short rationales and primary/secondary distinction where helpful; `01-sources.md` notes the candidates identified during discovery. Strengthens the bridge from research process to concrete next steps.
+- **1.14 (2026-08-15):** Strengthened source provenance tracking throughout research. Phase 1 now requires a running log of every syllabus / institutional list consulted and provenance notes on ranked sources; the full working bibliography is compiled during the process rather than as an afterthought. `01-sources.md` must include a Syllabi & Discovery Sources Consulted section and provenance-annotated entries. Updated Guiding Principle 2, Core Value section, Phase 1, Phase 5 QA, Output Conventions, and Constraints. Makes the expert-signal basis of the bibliography transparent and auditable.
 - **1.13 (2026-08-14):** Artwork digests now explicitly require **both** layers for major/complex works: (1) Unit-by-unit / zone-by-zone summaries (including exterior panels for triptychs) and (2) Period-Specialist Analysis (missed symbolism, historical context, visual details/objects, period color meanings). Do not choose one in place of the other. Prompted by the need to keep full structural mapping and specialist depth together (e.g. Bosch triptych).
 - **1.12.1 (2026-08-14):** Sharpened Period-Specialist Analysis to explicitly require: symbolism a general viewer is likely to miss; period-specific historical context; significant visual details/objects and their meaning; and colors with their period associations/meanings.
 - **1.12 (2026-08-14):** For museum/artwork digests, added required **Period-Specialist Analysis** section for major paintings and key works: analysis as by an art historian specializing in the work’s period (style, technique, iconography, patronage, meaning in period context). Distinct from formal description and later reception. Updated Adaptive Applications (Museum), Phase 2, and digest template. Prompted by feedback on the Prado package.

@@ -4,7 +4,7 @@
 athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ├── README.md                 # Master overview, mode (Standard/Deep), review type, learning path, quick-start
 ├── 00-scope.md               # Topic statement, audience, mode, learning outcomes, review type
-├── 01-sources.md             # Ranked bibliography, selection criteria, citation practice, availability
+├── 01-sources.md             # Ranked bibliography with provenance notes, selection criteria, Syllabi & Discovery Sources Consulted section, citation practice, availability, full working bibliography
 │                             # (Deep: richer annotations + optional Primary/Secondary/Methodological categorization)
 ├── 01b-search-protocol.md    # Optional/conditional: questions, search strategy, inclusion/exclusion
 ├── 03-themes.md              # Theme index
@@ -26,8 +26,8 @@ athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 
 Notes:
 - Place the package root under an `artifacts/`, project, or working directory as available in the current environment.
-- `further-reading.md` is a core value of Athena (v1.4+): it must offer concrete, named next steps rather than vague suggestions. Deep mode expands this into research pathways.
-- `01-sources.md` must include selection criteria and a short citation-practice note. Deep mode requires richer annotations for Core and key Important sources.
+- `further-reading.md` is a core value of Athena (v1.4+): it must offer concrete, named next steps rather than vague suggestions, and must include notable additional primary or secondary sources discovered during research that did not make Core/Important but remain valuable (with short rationales). Deep mode expands this into research pathways.
+- `01-sources.md` must include selection criteria, a Syllabi & Discovery Sources Consulted section (listing every syllabus/institutional list used), provenance notes on ranked entries, a short citation-practice note, the compiled full working bibliography, and notes on notable further-reading candidates identified during discovery. Deep mode requires richer annotations for Core and key Important sources.
 - `01b-search-protocol.md` is strongly encouraged for empirical / systematic-leaning topics (and more often in Deep mode); may be a section inside `01-sources.md` when light.
 - `matrix.md` is strongly recommended; required when ≥4 core sources or substantial disagreement. Deep mode almost always produces a detailed matrix.
 - Each theme file must contain a **Gaps & Open Questions** subsection and end with a **Theme Bibliography**. Every major claim in theme narratives must be back-linked to a digest or primary source (strong citation emphasis). Deep mode themes strongly recommend opening with Seminar Guiding Questions, add explicit debate mapping / intellectual genealogy, and use longer annotated bibliographies (typically 8–15 items) with positioning elements.
