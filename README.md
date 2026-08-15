@@ -1,8 +1,8 @@
 # Athena
 
-**A skill for building rigorous, source-backed study guides — from solid undergraduate overviews to graduate-seminar-equivalent notes.**
+**A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides.**
 
-**Current process version:** 1.14.1 (2026-08-15)
+**Current process version:** 1.17 (2026-08-15)
 
 ### Skill file (the actual instructions agents load)
 
@@ -15,75 +15,68 @@ Repo path: `athena/SKILL.md`
 
 ## Who this is for
 
-You want to go deep on a topic — a book, a painter, a historical episode, a contested idea, a museum — and you don’t want a chatty summary that evaporates the moment you close the tab.
+You want the equivalent of a university course on a topic — Plato’s dialogues, Shakespeare, a historical episode, a contested idea — **or** a serious academic-level guide to a place you are visiting or studying: a city, region, historic landscape, or museum. Not a chatty summary, not a tourist brochure, and not a SparkNotes-style reduction that tells you what to think.
 
-You want something closer to **course notes**: clear learning outcomes, a ranked reading list, structured digests of the core sources, themes that show where claims come from, and a path for what to do next. You care that citations are real, that “consensus” is treated as a claim rather than the floor, and that you can see *where the sources themselves came from* (especially which syllabi and institutional lists signaled them).
-
-If that sounds like you, Athena is built for it. If you only need a quick overview or a bullet list of “key facts,” a normal conversation is enough — you don’t need this skill.
+You want materials that help you **not miss important things**: clear learning outcomes, a ranked and provenance-tracked reading list drawn from real syllabi (or the highest-quality scholarly sources when syllabi are thin), digests that give pre-reading orientation, a full post-reading brief, and a compact summary for reference, thematic units that drive discussion, and further-reading pathways. For places: historical layers, why sites matter in the scholarly conversation, what not to miss and *why*, and transparent sources. The notes work for students *and* for professors.
 
 ## What you get
 
-Every Athena run produces a **portable Markdown package**, not a single blob of prose. Typical contents:
+Every Athena run produces a **portable Markdown package**. Typical contents:
 
-- **Scope** — topic, mode (Standard or Deep), learning outcomes, constraints  
-- **Sources** — ranked Core / Important / Supplementary list with selection criteria, **Syllabi & Discovery Sources Consulted**, provenance notes on entries, citation practice, a compiled full working bibliography, and notable further-reading candidates  
-- **Digests** — one structured file per Core source (and selected Important ones)  
-- **Themes** — synthesis organized by concept or debate, with back-links to digests  
-- **Further reading** — concrete next steps, including notable additional primary or secondary sources discovered during research that are useful for going deeper  
-- **Glossary, limitations, learning path** — so the package stays usable weeks later  
+- **Scope** — topic, mode (Standard or Deep), learning outcomes  
+- **Sources** — ranked list with **Syllabi & Discovery Sources Consulted**, provenance notes, full working bibliography, notable further-reading candidates  
+- **Digests** for primary texts: Pre-Reading Context + Summary + Full Brief (Post-Reading)  
+- **Themes** — synthesis by concept or debate  
+- **Further reading**, glossary, limitations, learning path  
 
-For museums and collections, digests treat artworks as primary sources: formal description, zone/panel mapping when relevant, and a **Period-Specialist Analysis** that surfaces symbolism, historical context, visual details, and period color meanings a general visitor is likely to miss.
+**For place / city / region / museum guides** (academic depth, Blue Guide / university-city-history spirit):
+
+- Historical orientation (layered chronology or key periods)  
+- Must-see sites with scholarly rationale (not popularity rankings)  
+- Practical itineraries grounded in historical and spatial logic  
+- Full provenance and bibliography (starts with syllabi when available; otherwise strongest monographs, architectural histories, institutional catalogues)  
+- Museum specializations retained (dual-layer artwork digests, Period-Specialist Analysis, artist bios, official collection links)
 
 ## Standard vs Deep
 
 | | **Standard** | **Deep** |
 |---|---|---|
-| **Feel** | Excellent upper-level undergrad overview | Graduate seminar / comps-style notes |
-| **Sources** | Focused Core list | Richer Core + Important; more secondary literature |
-| **Digests** | Clear, consistent | Denser; methodological and reception sections |
-| **Themes** | Solid synthesis + citations | Debates, intellectual genealogy, Seminar Guiding Questions |
-| **Bibliography** | Useful annotated list with provenance | Substantially richer, positioned annotations + fuller discovery log |
+| **Feel** | Upper-level undergrad course equivalent | Graduate course / seminar notes |
+| **Place guides** | Solid academic orientation + must-sees + itinerary | Denser historiography, debates about the place, specialist literature |
 
-Same process either way. Deep is higher intensity, not a different method. Trigger Deep with phrases like `Athena go deep`, `Athena deeper`, or `graduate study guide on…`.
+Trigger Deep with `Athena go deep`, `Athena deeper`, or `graduate study guide on…`.  
+Trigger place guides with `Athena place guide for [city/region]`, `Athena city guide for…`, `Athena travel guide for…`, or `Athena museum guide for…`.
 
-## Design commitments (why it exists)
+## Design commitments
 
-1. **Primary sources first** — digests orient you to the real material; they don’t replace it.  
-2. **Provenance is non-negotiable** — major claims in themes back-link to digests or primary sources; the ranked bibliography itself records which syllabi and institutional signals produced it.  
-3. **Completeness over ambition** — every Core source gets a full digest before themes are written. Thin digests on an oversized Core list are a process failure.  
-4. **Consensus is contestable** — especially on recent or politicized topics. Primary and contemporaneous evidence preferred for disputed facts; recantations and competing claims are surfaced; Wikipedia is a source to check, not an authority.  
-5. **Active use** — learning paths, questions, itineraries. Deep mode adds seminar-style prompts.  
-6. **Transparent discovery** — sources are not just listed; the package shows the expert signals (syllabi, catalogues, citation patterns) that justified their inclusion and ranking.
-
-## What it is not
-
-- Not a replacement for reading the primary works.  
-- Not a guarantee of perfect scholarship — it is a structured research process that makes evidence, gaps, *and source provenance* visible.  
-- Not a general chatbot mode. It is a skill with phases, templates, and quality gates.
+1. University-course equivalent with dual-use notes (student + professor).  
+2. Help you not miss things — Pre-Reading Context, Full Brief, Summary are distinct.  
+3. Anti-reductive — digests do not dumb down or dictate interpretation.  
+4. Primary sources first; provenance non-negotiable; full bibliography.  
+5. Completeness over ambition.  
+6. Consensus contestable.  
+7. Place guides start from syllabi or highest-quality scholarly sources and stay at academic depth.
 
 ## How to try it
-
-After the skill is installed (see `INSTALL.md`):
 
 ```
 Athena on [topic]
 Athena go deep on [topic]
 Athena museum guide for [museum or collection]
+Athena place guide for [city or region]
+Athena city guide for [city]
+Athena travel guide for [destination]
 ```
-
-Examples that work well: a single major book, a painter and their key works, a historical debate, a museum visit, a contested contemporary claim where primary evidence matters.
 
 ## Install
 
-See **[INSTALL.md](INSTALL.md)**. Short version: point your agent at this repo or at the skill file URL above. Other models often fail to find the skill file unless the link is explicit — that is why it is at the top of this README.
+See **[INSTALL.md](INSTALL.md)**. Short version: point your agent at this repo or at the skill file URL above.
 
 ## Changelog
 
-See the Changelog section inside `athena/SKILL.md` for full version history. Recent highlights:
+See the Changelog section inside `athena/SKILL.md`. Recent highlights:
 
-- **1.14.1 (2026-08-15):** Explicitly capture and surface notable additional primary or secondary sources useful for further reading (even outside Core/Important); these are flagged in Phase 1 and required in `further-reading.md`.
-- **1.14 (2026-08-15):** Source provenance tracking — every syllabus and institutional list consulted is logged; ranked entries carry provenance notes; full working bibliography is compiled during research and required in `01-sources.md`.
-- **1.13–1.12:** Dual-layer artwork digests (unit/zone + Period-Specialist Analysis).
-- **1.11:** Hard completeness gate (no Phase 3 until every Core source has a full digest).
-- **1.9:** Explicit anti-bias practices for contested/politicized domains.
-- **1.6:** Standard vs Deep modes.
+- **1.17 (2026-08-15):** Expanded to full place / location / travel guides at academic depth (cities, regions, historic landscapes). Starts with syllabi when available; otherwise highest-quality scholarly sources. Historical orientation + must-see sites with scholarly rationale + itineraries. Museum specializations retained.
+- **1.16:** Primary-source digests: Pre-Reading Context + Summary + Full Brief (Post-Reading). Anti-SparkNotes stance.
+- **1.15:** University-course framing with notes for both students and professors.
+- **1.14.x:** Provenance tracking, full working bibliography, notable further-reading sources.

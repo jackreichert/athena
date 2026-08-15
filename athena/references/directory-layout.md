@@ -16,7 +16,7 @@ athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ├── artists-bios.md           # Recommended for multi-creator / museum topics: short parallel bios
 ├── digests/
 │   ├── author-year-short-title.md
-│   └── ...                   # Deep digests include Methodological / Reception / Subsequent Engagements sections
+│   └── ...                   # Primary texts: Pre-Reading Context + Summary + Full Brief (Post-Reading). Deep: + Methodological / Reception / Subsequent Engagements
 └── themes/
     ├── 01-theme-name.md      # Includes Gaps & Open Questions + Theme Bibliography
     │                         # (Deep: Seminar Guiding Questions; Debates & Contending Interpretations / genealogy; longer annotated Theme Bib 8–15 items with positioning)
