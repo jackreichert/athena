@@ -22,6 +22,7 @@ Use this section *before* engaging the primary source. Aim for orientation, not 
 - Key terms, figures, or prior works a reader should have lightly in mind
 - Practical notes (recommended edition/translation, approximate length, structural quirks worth knowing in advance)
 - Stakes: why this source has mattered in the tradition (without dictating a reading)
+- **Reading posture / Watch-fors** (1–4 short bullets, genre-aware and non-spoiling): concrete habits or structural features the reader should track (e.g., speaker shifts and elenchus turns in a dialogue; narrative framing and reliability of voice in short fiction; formal or rhetorical devices that interact with the argument). These help the reader engage the source’s own form without front-loading conclusions.
 
 Keep this section relatively lean. Do not summarize the argument or plot in detail here; do not tell the reader what to conclude.
 
@@ -38,6 +39,9 @@ This section must remain useful on its own. Avoid both vague generality and the 
 ## Full Brief (Post-Reading)
 Use this section *after* reading the primary source. The goal is to help the reader notice what they might have missed in the greater conversation — connections, tensions, formal choices, reception history, and open questions — without replacing their own encounter with the text.
 
+### After Reading: What Is Easy to Miss
+A short, high-signal checklist (typically 4–7 bullets) of structural hinges, formal choices, repeated details, tonal shifts, or tensions that careful first-time readers frequently overlook even after a solid pass. This is the literary analogue of the museum “Period-Specialist Analysis” layer: it surfaces what a trained second look notices without dictating interpretation or spoiling the primary encounter. Keep each bullet concrete and text-grounded (a specific moment, device, or relation). Do not rehash the Summary.
+
 ### High-Level Orientation (post-reading)
 - Thesis, central dramatic or philosophical project, or governing tension (now that the reader has seen the whole)
 - Overall structure and how the parts relate
@@ -46,16 +50,17 @@ Use this section *after* reading the primary source. The goal is to help the rea
 ### Unit-by-Unit / Movement-by-Movement
 ### [Unit name or number] — [short title]
 - Main topics, arguments, dramatic movements, or dialectical turns
+- **Function in the arc** (required, 1–2 sentences): what this unit is *doing* in the larger structure — how it advances, complicates, or opens the central project, tension, or conversation. Keep text-grounded and non-interpretive of “the meaning.”
 - Key evidence, examples, images, or methods
-- Notable formal or rhetorical choices
-- High-signal quotes (with page, line, or stephanus locator + brief surrounding context)
+- Notable formal or rhetorical choices (especially those that interact with content)
+- High-signal quotes (with page, line, or stephanus locator + brief surrounding context + one short note on why the formulation or moment is pivotal)
 
-(Repeat for each major unit. For long works it is acceptable to work at act/scene, dialogue section, or major-part level; document the granularity choice. In Deep mode, prefer finer grain when the source is central and the material rewards it.)
+(Repeat for each major unit. For long works it is acceptable to work at act/scene, dialogue section, or major-part level; document the granularity choice. In Deep mode, prefer finer grain when the source is central and the material rewards it. Skeletal topic lists without functional notes or textual density fail the quality bar.)
 
 ### Overall Assessment & Open Questions
-- Strengths and distinctive contributions
+- Strengths and distinctive contributions (with attention to how form and content interact where relevant)
 - Limitations, internal tensions, or critiques from the literature
-- Key questions the work raises or leaves open
+- Key questions the work raises or leaves open — prefer questions tied to specific textual moments or structural choices rather than generic prompts
 - **When the source reports empirical findings that are contested or have been revised:** briefly note current status (original claim / later challenges or corrections / present standing)
 
 ### Preliminary Cross-Links
@@ -88,11 +93,12 @@ These sections turn the Full Brief into a seminar-memo / teaching-note equivalen
 ### Writing Rules (anti-reductive stance)
 - **Do not dumb down or dictate interpretation.** The goal is to help the reader see more of what is there and how it participates in larger conversations — not to replace the encounter with the primary text or to hand them “the meaning.”
 - Summarize in the source author’s (or dramatist’s) own force where possible; avoid bland paraphrase that loses precision or energy.
-- Quotes must be short, high-signal, and always located (page, line, stephanus, etc.).
+- Quotes must be short, high-signal, and always located (page, line, stephanus, etc.). Prefer a brief surrounding context + why the moment is pivotal over bare quotation.
 - After reading the Full Brief a user should be able to discuss the covered units as if they had read carefully (Standard) or at a level suitable for graduate seminar participation (Deep). The Pre-Reading Context and Summary should never substitute for that careful reading.
 - Prefer the primary language when the source is not originally English; note the translation or edition used.
 - Deep mode digests may be longer; maintain clear structure and scannability.
 - For sequences of related works (Plato’s dialogues, Shakespeare’s history cycle, etc.), make cross-links and conversation-positioning especially explicit so the reader does not miss intertextual or developmental connections.
+- **Density expectation:** Digests that remain high-level shorthand or skeletal topic lists (useful mainly as TA reminders) fail the quality bar. The Full Brief, especially the “After Reading: What Is Easy to Miss” checklist and the unit-by-unit sections with functional notes, should give a student enough textual and structural specificity to support independent engagement and discussion.
 
 ### Adaptation for Artworks & Visual Objects (v1.3+; dual-layer strengthened v1.13)
 

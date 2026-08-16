@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.22 (2026-08-16) — modularized + Discovery-first adaptive applications for scientific papers and legal cases.
+**Process version:** 1.25 (2026-08-16) — themes now require “Across the Sources: What Is Easy to Miss” checklist (relational parallel to the digest post-reading checkpoint); 1.24 digest improvements retained.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -57,6 +57,7 @@ Athena packages exist to help users engage primary material *and* know where the
 
 ### In themes
 - **Citation practice is especially rigorous here:** every major claim in a theme narrative must be back-linked to a specific digest (Full packages) or to a primary/secondary source (Survey packages). Themes are the primary site where provenance and evidence transparency are demonstrated.
+- **Across the Sources: What Is Easy to Miss** required: a short, concrete checklist (typically 4–7 bullets) of structural/formal parallels, devices that change function across texts, inter-source tensions, or hinges visible only in comparison. This is the thematic parallel to the digest “After Reading: What Is Easy to Miss” section.
 - Gaps & Open Questions subsection required.
 - Theme Bibliography required.
 - Deep mode: Seminar Guiding Questions, debate mapping / intellectual genealogy, longer annotated bibliographies. See mode-deep.md.

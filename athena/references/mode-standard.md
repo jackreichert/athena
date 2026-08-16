@@ -10,10 +10,11 @@ Includes `02-digests.md` (index + recommended reading order).
 ## Key characteristics
 - Digests are required for every Core source (and selected Important ones).
 - Completeness gate applies: do not begin Phase 3 until every Core source has a complete digest.
-- Digests follow the three-part structure for primary texts (Pre-Reading Context + Summary + Full Brief) and the dual-layer structure for complex artworks.
-- Theme narratives back-link to digests.
+- Digests follow the three-part structure for primary texts (Pre-Reading Context + Summary + Full Brief) and the dual-layer structure for complex artworks. Unit-by-unit sections must include the required “Function in the arc” note and meet density expectations (textual specificity + high-signal quotes with locators); skeletal shorthand fails the quality bar.
+- Theme narratives back-link to digests and should synthesize across sources rather than remain parallel summaries. Each theme includes the required “Across the Sources: What Is Easy to Miss” checklist.
 - Active learning questions are calibrated for undergrad mastery and discussion.
 - Bibliography and annotations are useful but not seminar-dense.
+- Single-author packages should include `author-context.md` when appropriate.
 
 ## Phase adaptations
 ### Phase 0
@@ -23,10 +24,10 @@ Declare package shape = Standard. Digests are in scope. Learning outcomes includ
 Focused Core list (realistic for complete digests). Provenance tracking and full working bibliography required.
 
 ### Phase 2
-Produce complete digests for all Core sources using `references/digest-template.md`. Quality expectations apply (no abstract-only digests). Create `02-digests.md` as the index + recommended reading order.
+Produce complete digests for all Core sources using `references/digest-template.md`. Quality expectations apply (no abstract-only digests; unit-by-unit sections must include functional notes and textual density suitable for student use). Create `02-digests.md` as the index + recommended reading order.
 
 ### Phase 3
-Themes back-link to digests. Include Gaps & Open Questions + Theme Bibliography. Matrix strongly recommended when ≥4 Core sources or substantial disagreement.
+Themes back-link to digests and must synthesize across sources rather than remain parallel summaries. Required sections: synthetic narrative, **Across the Sources: What Is Easy to Miss** (relational checklist of what only becomes visible in comparison), Gaps & Open Questions, Theme Bibliography. Matrix strongly recommended when ≥4 Core sources or substantial disagreement.
 
 ### Phase 4 / 5
 Full package with digests. QA includes completeness of Phase 2 and quality of digests against the template.

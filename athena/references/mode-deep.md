@@ -7,12 +7,13 @@ The equivalent of a graduate-level course or advanced seminar, with notes dense 
 
 ## Key differences / enhancements
 - **Source mining:** Preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. Expanded Core + Important counts when warranted. Richer secondary literature including key articles and reception.
-- **Digests:** Finer grain where productive; mandatory additional critical apparatus (Methodological / Formal approach; Position in the literature / Reception; Key subsequent engagements or critiques). Digests function as seminar-memo / teaching-note equivalents.
-- **Themes:** Explicit mapping of debates, contending interpretations, and (where relevant) intellectual genealogy or historiography. Longer, research-oriented Gaps & Open Questions. Richer annotated Theme Bibliographies (typically 8–15 items) with positioning/evaluative elements. **Strongly recommended:** open each theme file with 2–4 Seminar Guiding Questions that progress from accurate reconstruction of arguments to critique, comparison, and application/research design.
+- **Digests:** Finer grain where productive; mandatory additional critical apparatus (Methodological / Formal approach; Position in the literature / Reception; Key subsequent engagements or critiques). Digests function as seminar-memo / teaching-note equivalents. Unit-by-unit sections must include functional notes (“Function in the arc”) and strong textual density; skeletal lists fail the quality bar even more clearly in Deep mode.
+- **Themes:** Explicit mapping of debates, contending interpretations, and (where relevant) intellectual genealogy or historiography. Required “Across the Sources: What Is Easy to Miss” checklist (relational observations that emerge only in comparison). Longer, research-oriented Gaps & Open Questions. Richer annotated Theme Bibliographies (typically 8–15 items) with positioning/evaluative elements. **Strongly recommended:** open each theme file with 2–4 Seminar Guiding Questions that progress from accurate reconstruction of arguments to critique, comparison, and application/research design.
 - **Further reading:** Multi-track research pathways rather than simple “next books.” Can gesture toward exam-list density for key specializations.
 - **Active learning:** Prefer seminar-style discussion questions, comparative critiques, historiographical notes, and optional short research-design or paper-prompt exercises.
 - **Bibliography overall:** Substantially richer and more in-depth. Annotations are the norm and should help situate sources relative to one another and to the package’s themes.
 - **For contested/politicized topics:** Strongly recommend a **Contested Claims & Corrections** subsection in relevant themes, with claim-genealogy guidance.
+- Single-author packages should include `author-context.md` (lean intellectual biography + relevant reception).
 
 ## Phase adaptations
 ### Phase 0
@@ -22,10 +23,10 @@ Declare package shape = Deep. Digests in scope. Learning outcomes oriented towar
 Expanded mining. Deeper rationales and annotations in `01-sources.md` (2–4 sentences positioning/evaluative for Core and key Important). Optional categorization (Primary / Foundational secondary / Recent scholarship / Methodological-theoretical).
 
 ### Phase 2
-Apply all Deep adaptations in the digest template. Denser unit-level coverage where the source warrants it. Completeness gate still applies strictly.
+Apply all Deep adaptations in the digest template. Denser unit-level coverage where the source warrants it, including required functional notes and textual density. Completeness gate still applies strictly.
 
 ### Phase 3
-Produce the richer thematic apparatus described above. Matrix almost always detailed. Seminar Guiding Questions strongly recommended at the top of each theme file.
+Produce the richer thematic apparatus described above, including the required “Across the Sources: What Is Easy to Miss” checklist. Matrix almost always detailed. Seminar Guiding Questions strongly recommended at the top of each theme file.
 
 ### Phase 4 / 5
 Package should feel recognizably denser in bibliography, critical apparatus, and research orientation while remaining navigable. QA checks for the presence of the Deep-mode apparatus (reception sections, Seminar Guiding Questions, richer annotations, multi-track further reading).

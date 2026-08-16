@@ -2,7 +2,7 @@
 
 **A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides; scientific-paper deep dives; and legal case deep dives / case method.**
 
-**Current process version:** 1.22 (2026-08-16)
+**Current process version:** 1.25 (2026-08-16)
 
 ### Skill file (the actual instructions agents load)
 
@@ -16,7 +16,7 @@ The skill is modular:
 - `athena/references/mode-*.md` — package-shape deltas (Survey / Standard / Deep)
 - `athena/references/place-guides.md` — place / city / museum overlays
 - `athena/references/science-paper-guides.md` — scientific paper deep dives
-- `athena/references/legal-case-guides.md` — legal case deep dives / case method (new in 1.22)
+- `athena/references/legal-case-guides.md` — legal case deep dives / case method
 - `athena/references/digest-template.md` + `directory-layout.md`
 
 ---
@@ -61,16 +61,27 @@ athena/
     ├── mode-deep.md
     ├── place-guides.md
     ├── science-paper-guides.md
-    ├── legal-case-guides.md      ← new in 1.22
+    ├── legal-case-guides.md
     ├── digest-template.md
     └── directory-layout.md
 ```
 
+## Recent changes (1.23–1.25)
+
+- **1.25:** Themes require **Across the Sources: What Is Easy to Miss** — a concrete checklist of relational observations (parallels, devices that change function, inter-source tensions) that only become visible when sources are read together.
+- **1.24:** Digests require **After Reading: What Is Easy to Miss** at the head of the Full Brief — the literary/philosophical parallel to the museum dual-layer (what a careful first pass still often overlooks).
+- **1.23:** Density improvements against TA-shorthand digests: Reading posture / Watch-fors in Pre-Reading, required Function-in-the-arc notes in unit-by-unit sections, stronger quote expectations, formalized `author-context.md` for single-author packages, raised quality bar.
+
+These keep the Pre-Reading / Summary / Full Brief structure while making digests and themes more useful to the student working the primary texts.
+
 ## Changelog (selected)
 
-- **1.22 (2026-08-16):** Second Discovery-first adaptive application — legal case deep dives / case method.
-- **1.21 (2026-08-16):** First Discovery-first adaptive application — scientific paper deep dives.
-- **1.20 (2026-08-16):** Modularized. Modes and place guides extracted; DEVELOPMENT.md requires Discovery-first before new domains.
+- **1.25 (2026-08-16):** Themes — “Across the Sources: What Is Easy to Miss.”
+- **1.24 (2026-08-16):** Digests — “After Reading: What Is Easy to Miss.”
+- **1.23 (2026-08-16):** Digest & theme density; author-context consistency.
+- **1.22 (2026-08-16):** Legal case deep dives / case method.
+- **1.21 (2026-08-16):** Scientific paper deep dives.
+- **1.20 (2026-08-16):** Modularized; DEVELOPMENT.md requires Discovery-first before new domains.
 - Earlier: Images, Survey shape, full place/location guides, Pre-Reading/Summary/Full Brief digests, Deep mode, anti-bias, provenance.
 
 Full history: [athena/CHANGELOG.md](athena/CHANGELOG.md)  
