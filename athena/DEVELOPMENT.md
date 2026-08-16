@@ -42,18 +42,33 @@ If a mode file is not loaded, behavior drifts. The main SKILL.md therefore conta
 
 ## Adding or expanding
 
+### Discovery-first rule (required before any new mode or adaptive application)
+
+Before writing a new mode file or a new adaptive-application reference, **run Athena’s own Deep (or at least Survey) process on the pedagogy of the domain itself**.
+
+Treat “how the best programs and practitioners study / teach this subject” as the topic:
+
+- Mine real syllabi, teaching guides, pedagogical literature, bar-exam or graduate-method resources, lab-notebook standards, case-method materials, scientific-paper reading guides used in top departments, etc.
+- Rank the core sources on *method* (not just content).
+- Extract the themes that define rigorous practice in that field (e.g., for legal cases: issue-spotting, holding vs. dicta, procedural posture, subsequent treatment; for scientific papers: study design, statistical claims, limitations, reproducibility, related-work positioning).
+- Only after that foundation exists should you design the Athena overlays (digest adaptations, required sections, quality gates, further-reading pathways).
+
+This is non-negotiable. Skipping it produces generic or superficial modules that feel bolted on rather than grounded in how the discipline actually works. The place/museum guides succeeded because they were informed by Blue Guide practice, university city-history syllabi, and museum education literature. New domains deserve the same treatment.
+
 ### New package shape / mode
-1. Create `references/mode-<name>.md` following the existing pattern (purpose, key differences, phase adaptations only).
-2. Add a one-paragraph summary + decision language to the Package Shapes section in SKILL.md.
-3. Update the description frontmatter triggers if new language is needed.
-4. Bump process version and add an entry to CHANGELOG.md.
-5. Test that a Survey-style request and a Deep-style request still produce recognizably different packages.
+1. Perform the Discovery-first process above if the new shape has distinctive pedagogical goals.
+2. Create `references/mode-<name>.md` following the existing pattern (purpose, key differences, phase adaptations only).
+3. Add a one-paragraph summary + decision language to the Package Shapes section in SKILL.md.
+4. Update the description frontmatter triggers if new language is needed.
+5. Bump process version and add an entry to CHANGELOG.md.
+6. Test that a Survey-style request and a Deep-style request still produce recognizably different packages.
 
 ### New adaptive application (new domain, e.g. “legal case study guides” or “scientific paper deep dives”)
-1. Create `references/<domain>-guides.md` with the domain-specific requirements, source types, digest adaptations, and deliverable emphases.
-2. Add a short “Adaptive Applications” bullet or subsection in SKILL.md that points to the new reference and states when to load it.
-3. Update directory-layout.md and digest-template.md only if the new domain requires structural changes that are not already covered.
-4. Keep the shared research spine (syllabi/provenance, ranked sources, themes with citations, further reading) intact; the adaptive file should only supply the domain-specific overlays.
+1. **Discovery-first** (see rule above). Produce at least a Survey (ideally Deep) Athena package on the teaching/studying practices of the domain and use it as the design brief.
+2. Create `references/<domain>-guides.md` with the domain-specific requirements, source types, digest adaptations, and deliverable emphases that emerged from the discovery.
+3. Add a short “Adaptive Applications” bullet or subsection in SKILL.md that points to the new reference and states when to load it.
+4. Update directory-layout.md and digest-template.md only if the new domain requires structural changes that are not already covered.
+5. Keep the shared research spine (syllabi/provenance, ranked sources, themes with citations, further reading) intact; the adaptive file should only supply the domain-specific overlays.
 
 ### Changing the shared spine
 Any change that affects all modes (new phase, new required file, change to citation practice, anti-bias rules, etc.) goes in SKILL.md. Then check every mode file and the place-guides file for consistency and update deltas if needed.

@@ -1,8 +1,8 @@
 # Athena
 
-**A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides.**
+**A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides, and scientific-paper deep dives.**
 
-**Current process version:** 1.20 (2026-08-16)
+**Current process version:** 1.21 (2026-08-16)
 
 ### Skill file (the actual instructions agents load)
 
@@ -15,15 +15,16 @@ The skill is modular:
 - `athena/SKILL.md` — shared research spine (lean)
 - `athena/references/mode-*.md` — package-shape deltas (Survey / Standard / Deep)
 - `athena/references/place-guides.md` — place / city / museum overlays
+- `athena/references/science-paper-guides.md` — scientific paper deep dives (new in 1.21)
 - `athena/references/digest-template.md` + `directory-layout.md`
 
 ---
 
 ## Who this is for
 
-You want the equivalent of a university course on a topic — Plato’s dialogues, Shakespeare, a historical episode, a contested idea — **or** a serious academic-level guide to a place you are visiting or studying: a city, region, historic landscape, or museum. Not a chatty summary, not a tourist brochure, and not a SparkNotes-style reduction that tells you what to think.
+You want the equivalent of a university course on a topic — Plato’s dialogues, Shakespeare, a historical episode, a contested idea — **or** a serious academic-level guide to a place you are visiting or studying, **or** a rigorous deep dive into primary scientific papers (reading, critique, and positioning). Not a chatty summary, not a tourist brochure, and not a SparkNotes-style reduction that tells you what to think.
 
-You want materials that help you **not miss important things**: clear learning outcomes, a ranked and provenance-tracked reading list drawn from real syllabi (or the highest-quality scholarly sources when syllabi are thin), digests that give pre-reading orientation, a full post-reading brief, and a compact summary for reference, thematic units that drive discussion, and further-reading pathways. For places: historical layers, why sites matter in the scholarly conversation, what not to miss and *why*, images for key works/sites, and transparent sources. The notes work for students *and* for professors.
+You want materials that help you **not miss important things**: clear learning outcomes, a ranked and provenance-tracked reading list drawn from real syllabi (or the highest-quality scholarly sources when syllabi are thin), digests that give pre-reading orientation, a full post-reading brief, and a compact summary for reference, thematic units that drive discussion, and further-reading pathways. For places: historical layers, why sites matter, images for key works/sites. For scientific papers: independent figure interpretation, results vs interpretation, limitations, alternative explanations, and generative next-experiment thinking. The notes work for students *and* for professors.
 
 ## Package shapes
 
@@ -33,30 +34,21 @@ You want materials that help you **not miss important things**: clear learning o
 | **Standard** | Full undergrad-course equivalent | Required + `02-digests.md` index |
 | **Deep** | Full graduate/seminar equivalent | Required + denser apparatus + `02-digests.md` |
 
-All three share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading). Mode-specific behavior lives in the reference files so the main skill stays lean.
+All three share the same research spine. Mode-specific behavior lives in the reference files so the main skill stays lean.
 
 ## What you get
 
 Every Athena run produces a **portable Markdown package** (Obsidian-optimized by default). Typical contents:
 
 - **Scope** — topic, package shape, learning outcomes, digests in/out of scope  
-- **Sources** — ranked list with **Syllabi & Discovery Sources Consulted**, provenance notes, full working bibliography, notable further-reading candidates  
-- **Digests** (Full packages) for primary texts: Pre-Reading Context + Summary + Full Brief (Post-Reading); for artworks: dual-layer + images  
+- **Sources** — ranked list with **Syllabi & Discovery Sources Consulted**, provenance notes, full working bibliography  
+- **Digests** (Full packages) for primary texts and, when relevant, scientific papers or artworks  
 - **`02-digests.md`** — index + recommended reading order (Full packages)  
 - **Themes** — synthesis by concept or debate  
 - **Further reading**, glossary, limitations, learning path  
 - **Images** (when relevant) under `images/`
 
 **Optional:** EPUB when requested.
-
-**For place / city / region / museum guides** (academic depth, Blue Guide / university-city-history spirit):
-
-- Historical orientation (layered chronology or key periods)  
-- Must-see sites with scholarly rationale (not popularity rankings)  
-- Practical itineraries grounded in historical and spatial logic  
-- Images for key artworks and sites  
-- Full provenance and bibliography (starts with syllabi when available; otherwise strongest monographs, architectural histories, institutional catalogues)  
-- Museum specializations retained (dual-layer artwork digests, Period-Specialist Analysis, artist bios, official collection links)
 
 ## How to try it
 
@@ -66,8 +58,8 @@ Athena survey of [topic]
 Athena go deep on [topic]
 Athena museum guide for [museum or collection]
 Athena place guide for [city or region]
-Athena city guide for [city]
-Athena travel guide for [destination]
+Athena deep dive on [scientific paper or set of papers]
+Athena journal club on [paper]
 ```
 
 ## Install
@@ -78,25 +70,25 @@ Point your agent at this repo or at the skill directory (`athena/`). The skill i
 
 ```
 athena/
-├── SKILL.md                 # shared spine (loaded by the agent)
-├── CHANGELOG.md             # full process history (not loaded at runtime)
-├── DEVELOPMENT.md           # how to expand the skill cleanly
+├── SKILL.md
+├── CHANGELOG.md
+├── DEVELOPMENT.md
 └── references/
     ├── mode-survey.md
     ├── mode-standard.md
     ├── mode-deep.md
     ├── place-guides.md
+    ├── science-paper-guides.md   ← new in 1.21
     ├── digest-template.md
     └── directory-layout.md
 ```
 
 ## Changelog (selected)
 
-- **1.20 (2026-08-16):** Modularized. Modes and place guides extracted to references; changelog and development notes moved out of the runtime skill file. SKILL.md is now the shared spine only.
-- **1.19 (2026-08-16):** Images for visual primary sources; default Markdown (Obsidian) + optional EPUB.
-- **1.18 (2026-08-16):** Survey package shape + `02-digests.md`; softened completeness gate.
-- **1.17 (2026-08-15):** Full place / location / travel guides at academic depth.
-- Earlier: Pre-Reading / Summary / Full Brief digests, Deep mode, anti-bias rules, provenance tracking, museum dual-layer digests.
+- **1.21 (2026-08-16):** First Discovery-first adaptive application — scientific paper deep dives.
+- **1.20 (2026-08-16):** Modularized. Modes and place guides extracted; DEVELOPMENT.md requires Discovery-first before new domains.
+- **1.19–1.17:** Images, Survey shape, full place/location guides.
+- Earlier: Pre-Reading / Summary / Full Brief digests, Deep mode, anti-bias, provenance, museum dual-layer digests.
 
 Full history: [athena/CHANGELOG.md](athena/CHANGELOG.md)  
 How to expand the skill: [athena/DEVELOPMENT.md](athena/DEVELOPMENT.md)
