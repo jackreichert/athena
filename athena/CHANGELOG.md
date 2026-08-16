@@ -2,10 +2,11 @@
 
 Process version history for the Athena skill. The agent does not need this file at runtime; it is for maintainers and package users.
 
-**Current process version:** 1.21 (2026-08-16)
+**Current process version:** 1.22 (2026-08-16)
 
 ## Selected entries
 
+- **1.22 (2026-08-16):** Added second Discovery-first adaptive application: `references/legal-case-guides.md` (Legal Case Deep Dives / Case Method). Grounded in a Deep Athena run on the pedagogy of the Langdellian case method, case briefing (IRAC/FIRAC), Socratic dynamics, and modern contextual/problem-solving reforms. Updated SKILL.md loading rules, Adaptive Applications section, frontmatter triggers, and resource pointers.
 - **1.21 (2026-08-16):** Added first new adaptive application after following the Discovery-first rule: `references/science-paper-guides.md` (Scientific Paper Deep Dives). Grounded in a Deep Athena run on how strong scientific training programs teach reading, critique, and positioning of primary research papers (CREATE strategy, Carey et al. ten rules, Swales CARS, Users’ Guides tradition, etc.). Updated SKILL.md Adaptive Applications section and resource pointers.
 - **1.20 (2026-08-16):** Modularized the skill structure. Extracted package-shape (mode) specifics into `references/mode-survey.md`, `mode-standard.md`, `mode-deep.md` (deltas only). Extracted Adaptive Applications (place/museum/location guides) into `references/place-guides.md`. Moved full changelog out of the runtime SKILL.md into this top-level CHANGELOG.md. Added DEVELOPMENT.md documenting the modular contract, progressive-disclosure rules, and how to expand the skill cleanly. SKILL.md is now the shared spine only (~190 lines). This keeps the agent’s loaded context lean while preserving all behavior. DEVELOPMENT.md now requires a Discovery-first step (run Athena’s own Deep/Survey process on the pedagogy of the target domain) before adding any new mode or adaptive application.
 - **1.19 (2026-08-16):** Added **images** for visual primary sources (artworks, architecture, maps, diagrams) when they enhance understanding — required for major museum works, strongly recommended for place guides. Prefer official/public-domain sources; store under `images/` with relative links, captions, and official collection links. Added **output format** options: default Markdown optimized for Obsidian; optional EPUB when requested. Updated Adaptive Applications (museum + place), Phase 0, Phase 2 digests, Output Conventions, directory layout, and digest template.

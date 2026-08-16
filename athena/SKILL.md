@@ -1,13 +1,13 @@
 ---
 name: athena
-description: Build rigorous source-backed study guides that function as university course equivalents with notes usable by both students and professors. Supports Survey (sources + themes foundation, digests deferred), Standard, and Deep modes. Digests for primary sources include pre-reading context, post-reading full brief, and standalone summary. Tracks source discovery provenance (syllabi and signals) and compiles full bibliography including notable further-reading sources. Explicit anti-bias and completeness rules. Does not dumb down or dictate interpretation. Also supports academic-level place, city, region, and museum guides, and scientific paper deep dives (reading, critique, positioning of primary research papers). Default output Markdown (Obsidian-optimized); optional EPUB. Trigger on athena, athena research, athena survey, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, thematic study guide, self-study package, museum guides, place guides, city guides, travel guides, scientific paper, journal club, primary literature, or similar academic requests with syllabi mining and theme synthesis.
+description: Build rigorous source-backed study guides that function as university course equivalents with notes usable by both students and professors. Supports Survey (sources + themes foundation, digests deferred), Standard, and Deep modes. Digests for primary sources include pre-reading context, post-reading full brief, and standalone summary. Tracks source discovery provenance (syllabi and signals) and compiles full bibliography including notable further-reading sources. Explicit anti-bias and completeness rules. Does not dumb down or dictate interpretation. Also supports academic-level place, city, region, and museum guides; scientific paper deep dives; and legal case deep dives / case method (briefing, IRAC, Socratic analysis). Default output Markdown (Obsidian-optimized); optional EPUB. Trigger on athena, athena research, athena survey, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, thematic study guide, self-study package, museum guides, place guides, city guides, travel guides, scientific paper, journal club, primary literature, legal case, case brief, case method, IRAC, or similar academic requests with syllabi mining and theme synthesis.
 ---
 
 # Athena (Study Guide Builder)
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.21 (2026-08-16) — modularized + first Discovery-first adaptive application (scientific paper deep dives).
+**Process version:** 1.22 (2026-08-16) — modularized + Discovery-first adaptive applications for scientific papers and legal cases.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -19,6 +19,7 @@ Athena supports three package shapes that share the same research spine (syllabi
 
 **When the topic is a place, city, region, museum, collection, or travel guide:** Also load `references/place-guides.md`.  
 **When the topic is a primary research paper, journal-club analysis, or scientific-paper reading/critique guidance:** Also load `references/science-paper-guides.md`.  
+**When the topic is a judicial opinion, case briefing, the case method, Socratic analysis, or legal case study:** Also load `references/legal-case-guides.md`.  
 These adaptive applications are orthogonal to package shape.
 
 ## Guiding Principles
@@ -101,6 +102,9 @@ Full details are in the reference file.
 ### Scientific Paper Deep Dives
 When the topic is a primary research paper (or tightly related set), a journal-club style analysis, or an explicit request for guidance on reading / critiquing / positioning scientific papers, load `references/science-paper-guides.md`. Grounded in how strong scientific training programs actually teach these skills (CREATE, active-reading checklists, critical-appraisal traditions, genre/positioning analysis). Key overlays: independent figure interpretation, results-vs-interpretation distinction, limitations and alternative explanations, generative “next experiment” moves, and CARS-style positioning awareness. Full digest adaptations and theme emphases are in the reference file.
 
+### Legal Case Deep Dives / Case Method
+When the topic is a judicial opinion or set of opinions, case briefing, the case method, Socratic analysis, or legal case study, load `references/legal-case-guides.md`. Grounded in the pedagogy of the Langdellian case method and its evolutions (case briefing / IRAC practice, Socratic classroom dynamics, contextual and problem-solving reforms). Key overlays: precise issue formulation, rule extraction, fact materiality, application/analogical reasoning, holding vs. dicta, scope notes, and generative hypotheticals. Full digest adaptations and theme emphases are in the reference file.
+
 ## Workflow
 
 Execute the phases in order, with explicit iteration checkpoints. Write all deliverables as Markdown files in a dedicated, self-contained directory (commonly `artifacts/athena-<topic-slug>/` — adapt the root path to the current environment). Keep the package portable with relative links only.
@@ -112,7 +116,7 @@ Before any searching:
 - Define learning outcomes.
 - Note review type (e.g., hybrid) and any constraints.
 - Decide output format (default Markdown/Obsidian; EPUB if requested).
-- **Load the mode file** for the chosen shape. If place-based, also load place-guides.md.
+- **Load the mode file** for the chosen shape. Also load any applicable adaptive-application file (place-guides, science-paper-guides, or legal-case-guides).
 Deliverable: `00-scope.md`.
 
 ### Phase 1: Source Discovery & Selection
@@ -193,6 +197,7 @@ Required structure (adapt per mode and directory-layout.md):
 - Adaptive applications:
   - Place / museum / location: `references/place-guides.md`
   - Scientific paper deep dives: `references/science-paper-guides.md`
+  - Legal case deep dives / case method: `references/legal-case-guides.md`
 - Digest template: `references/digest-template.md` (includes Deep adaptations)
 - Example directory layout: `references/directory-layout.md`
 - Skill maintenance notes: `DEVELOPMENT.md`
