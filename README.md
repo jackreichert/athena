@@ -2,14 +2,20 @@
 
 **A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides.**
 
-**Current process version:** 1.19 (2026-08-16)
+**Current process version:** 1.20 (2026-08-16)
 
 ### Skill file (the actual instructions agents load)
 
 **→ [athena/SKILL.md](athena/SKILL.md)**  
 
-Raw URL (after push): `https://raw.githubusercontent.com/jackreichert/athena/main/athena/SKILL.md`  
+Raw URL: `https://raw.githubusercontent.com/jackreichert/athena/main/athena/SKILL.md`  
 Repo path: `athena/SKILL.md`
+
+The skill is modular:
+- `athena/SKILL.md` — shared research spine (lean)
+- `athena/references/mode-*.md` — package-shape deltas (Survey / Standard / Deep)
+- `athena/references/place-guides.md` — place / city / museum overlays
+- `athena/references/digest-template.md` + `directory-layout.md`
 
 ---
 
@@ -27,7 +33,7 @@ You want materials that help you **not miss important things**: clear learning o
 | **Standard** | Full undergrad-course equivalent | Required + `02-digests.md` index |
 | **Deep** | Full graduate/seminar equivalent | Required + denser apparatus + `02-digests.md` |
 
-All three share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading).
+All three share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading). Mode-specific behavior lives in the reference files so the main skill stays lean.
 
 ## What you get
 
@@ -66,13 +72,31 @@ Athena travel guide for [destination]
 
 ## Install
 
-Point your agent at this repo or at the skill file. See any accompanying INSTALL.md if present.
+Point your agent at this repo or at the skill directory (`athena/`). The skill is self-contained under `athena/`.
+
+## Structure
+
+```
+athena/
+├── SKILL.md                 # shared spine (loaded by the agent)
+├── CHANGELOG.md             # full process history (not loaded at runtime)
+├── DEVELOPMENT.md           # how to expand the skill cleanly
+└── references/
+    ├── mode-survey.md
+    ├── mode-standard.md
+    ├── mode-deep.md
+    ├── place-guides.md
+    ├── digest-template.md
+    └── directory-layout.md
+```
 
 ## Changelog (selected)
 
+- **1.20 (2026-08-16):** Modularized. Modes and place guides extracted to references; changelog and development notes moved out of the runtime skill file. SKILL.md is now the shared spine only.
 - **1.19 (2026-08-16):** Images for visual primary sources; default Markdown (Obsidian) + optional EPUB.
 - **1.18 (2026-08-16):** Survey package shape + `02-digests.md`; softened completeness gate.
 - **1.17 (2026-08-15):** Full place / location / travel guides at academic depth.
 - Earlier: Pre-Reading / Summary / Full Brief digests, Deep mode, anti-bias rules, provenance tracking, museum dual-layer digests.
 
-See full changelog inside `athena/SKILL.md`.
+Full history: [athena/CHANGELOG.md](athena/CHANGELOG.md)  
+How to expand the skill: [athena/DEVELOPMENT.md](athena/DEVELOPMENT.md)

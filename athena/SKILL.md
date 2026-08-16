@@ -7,316 +7,185 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.19 (2026-08-16)
+**Process version:** 1.20 (2026-08-16) — modularized (modes + place guides extracted; changelog moved to package top level).
 
-Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now:
+Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
-- **Survey** — Foundation package: scope + ranked sources with full provenance + thematic synthesis. Digests deliberately deferred so the reader can later request deep book-/work-by-work treatment. Ideal for “give me the map of the field first.”
+- **Survey** — Foundation package: scope + ranked sources with full provenance + thematic synthesis. Digests deliberately deferred.
 - **Standard** — Full undergraduate-course-equivalent package with digests.
 - **Deep** — Full graduate/seminar-equivalent package with denser digests and critical apparatus.
 
-Place / museum / travel guides can be produced at any of these depths.
+**On every run:** After deciding the package shape in Phase 0, **load the corresponding mode file** from `references/` (`mode-survey.md`, `mode-standard.md`, or `mode-deep.md`) and follow its adaptations for the remainder of the process. Mode files contain only the deltas; the shared spine lives here.
+
+**When the topic is a place, city, region, museum, collection, or travel guide:** Also load `references/place-guides.md` and apply its requirements (they are orthogonal to mode).
 
 ## Guiding Principles
 
-1. Objectives first — define clear learning outcomes and scope before collecting sources.
+1. Objectives first — define clear learning outcomes, audience, and package shape before collecting sources.
 2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. **Track and document every syllabus or institutional list consulted** (institution, course, URL/year when available) so source provenance remains transparent; sources that recur across independent high-quality syllabi receive higher weight.
-3. Primary > Secondary, but both matter — prioritize original works (texts, artworks, artifacts); use secondary sources for orientation, context, and debate mapping. Deep mode engages a wider secondary literature including key articles, critical reception, and methodological works. For contested factual claims (especially recent or politicized events), prefer primary, contemporaneous, forensic, or official investigative sources over narrative secondary synthesis.
-4. Consistent extraction — when digests are in scope, every Core source receives the same structured treatment.
-5. Thematic synthesis with provenance — organize by themes/concepts/debates, not by source. Every major claim must be back-linkable to a specific digest (Full packages) or to a primary/secondary source (Survey packages). Citations and provenance are especially rigorous when building out themes.
-6. **Citations, sources, and further research are fundamental** — every package must make its evidence base transparent and give readers concrete next steps. This is non-negotiable. Themes in particular must demonstrate dense, explicit citation practice. Deep mode produces a richer, more in-depth, annotated bibliography throughout.
-7. Active and navigable output — recommended reading/visit order, self-test questions, glossary, modular Markdown, practical itineraries when relevant. Deep mode includes higher-order seminar-style prompts and research pathways. When digests exist, `02-digests.md` provides the ordered index and entry point.
-8. Transparency and balance — document selection criteria, note limitations, seek multiple perspectives, surface gaps.
-9. Progressive disclosure — support high-level overviews (Survey) and deep dives (Standard / Deep, or later digests on top of a Survey foundation).
-10. Adaptive rigor — match review type and artifacts (search protocol, matrices, bios, walkthroughs, images, etc.) to the nature of the topic and learning goals.
-11. **Package shapes** — Survey produces a rigorous foundation (sources + themes) with digests deferred. Standard produces an excellent undergraduate-level course equivalent with digests. Deep produces the equivalent of notes from a graduate-level course or seminar: denser source engagement, finer-grained digests, explicit debate and historiographical mapping, and a substantially richer annotated bibliography.
-12. **Anti-bias & contested domains** — Treat dominant secondary “consensus” as a claim to be examined, not an unstated baseline, especially on recent, politicized, or rapidly evolving topics. Prefer primary and contemporaneous evidence for disputed facts; note recantations and corrections; treat Wikipedia and similar secondary platforms as sources that can themselves be biased or lag reality; surface competing interpretations with their evidence bases; and document polarization risk in selection criteria and limitations.
-13. **Visual materials when they help** — For artworks, architecture, maps, diagrams, or other visual primary sources, include high-quality reference images (with credit and official links) when they materially aid understanding. Prefer official museum/collection images or public-domain sources. Store under `images/` with relative Markdown links so the package remains portable. Images are study references, not substitutes for encountering the work.
+3. Primary > Secondary, but both matter — prioritize original works (texts, artworks, artifacts); use secondary sources for orientation, context, and debate mapping. Deep mode engages a wider secondary literature including key articles and reception.
+4. Consistent extraction — every Core source in Full packages receives the same structured treatment (see digest template).
+5. Thematic synthesis with provenance — organize by themes/concepts/debates, not by source. Every major claim must be back-linkable (to a digest in Full packages, or to a primary/secondary source in Survey).
+6. Active and navigable output — recommended reading order, self-test or seminar questions, glossary, modular Markdown.
+7. Transparency and balance — document selection criteria, note limitations, seek multiple perspectives. Explicit anti-bias practices on contested topics.
+8. Progressive disclosure — support high-level overviews (Survey) and deep dives (Standard/Deep) within the same spine.
+9. Completeness over ambition (Full packages) — every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Survey packages deliberately omit digests and are not subject to this gate.
+10. Anti-reductive — digests help the reader see more, not less. Do not dumb down, moralize, or hand the reader “the meaning.” Prefer the source’s own force and precision; surface tensions and open questions.
+11. Visual materials when they help — for artworks, architecture, maps, diagrams, or other visual primary sources, include high-quality reference images (with credit and official links) when they materially aid understanding. Prefer official museum/collection images or public-domain sources. Store under `images/` with relative Markdown links.
+12. Citations, provenance, and further research are core values, not optional extras.
 
 ## Core Value: Citations, Sources & Further Research
 
-Athena packages exist to help users engage primary material *and* know where the claims come from and how to go further. The following are required practices:
+Athena packages exist to help users engage primary material *and* know where the claims come from and how to go further.
 
 ### In `01-sources.md`
 - Explicit selection criteria.
-- **Syllabi & Discovery Sources Consulted** section: list every syllabus, essential-readings list, institutional highlight/itinerary, or other discovery source used (institution/course title, instructor if known, URL or locator, year). This makes the expert-signal provenance of the bibliography transparent and auditable.
-- Ranked Core / Important / Supplementary lists with short rationales (Deep mode: more detailed rationales and expanded Core/Important counts when warranted). Each ranked entry should include a brief provenance note (e.g., “appears on 3 graduate syllabi [list]; foundational monograph cited across the field”).
-- Clear identification of primary institutional or canonical sources (official collection pages, standard editions, key monographs).
-- A short “Citation practice in this package” note explaining how digests and themes are sourced.
-- Availability notes (open access, library, paywall, physical display).
-- **Full bibliography compilation:** The ranked lists plus any additional discovered sources form the package’s working bibliography. Maintain and refine it throughout Phase 1 so that by delivery the reader has a transparent, provenance-annotated map of what was found and why items were ranked as they were.
-- **Deep mode addition:** Annotated entries (2–4 sentences) for Core and key Important items that include a positioning or evaluative element (how the source intervenes in debates, relative strengths/limitations, relevance to package themes); optional categorization (Primary / Foundational secondary / Recent scholarship / Methodological-theoretical).
+- **Syllabi & Discovery Sources Consulted** section: list every syllabus, essential-readings list, institutional highlight/itinerary, or other discovery source used.
+- Ranked Core / Important / Supplementary lists with short rationales and provenance notes.
+- Clear identification of primary institutional or canonical sources.
+- A short “Citation practice in this package” note.
+- Availability notes.
+- **Full bibliography compilation** of the ranked lists plus additional discovered sources. Maintain and refine it throughout Phase 1.
+- Deep mode: richer annotations (positioning/evaluative) and optional categorization. See mode-deep.md.
 
 ### In digests
-- Full bibliographic-style entry at the top (author/artist, title, date, medium or edition, inventory/DOI/URL when relevant, location for artworks).
-- **Three-part structure for primary sources (especially literary, philosophical, or dialogic works):** (1) **Pre-Reading Context** — orientation before engaging the primary (historical/intellectual stakes, conversation it joins, key terms, practical notes) without heavy interpretation or spoilers; (2) **Summary** — compact standalone overview usable when the reader is not planning to read the source itself but needs it for context; (3) **Full Brief (Post-Reading)** — denser engagement after the reader has encountered the primary, designed to help them notice what they might have missed in the greater conversation (structure, unit-level moves, cross-links, open questions, reception). Do not collapse these into a single reductive summary.
-- Claims grounded in the source itself or clearly attributed standard consensus.
-- Access notes that point back to the authoritative catalogue or edition.
-- **Anti-reductive stance:** Digests help the reader see more and not miss important dimensions; they do not replace the primary encounter or dictate “what to think.” Avoid SparkNotes-style dumbing-down or moralizing interpretation.
-- **Deep mode:** Additional critical sections (Methodological / Formal approach; Position in the literature / Reception; Key subsequent engagements or critiques).
+- Every major claim or observation is grounded. High-signal quotes with locators where possible.
+- For empirical findings that are contested or revised: brief status note (original claim / later challenges / present standing).
 
 ### In themes
-- **Strong citation emphasis:** Every major claim must be back-linked to a specific digest (or primary source). Themes are the place where provenance is most visible and non-negotiable; dense, explicit citation practice is required.
-- Theme Bibliography (Standard: 4–8 key items; Deep: 8–15 items) with short annotations at the end of each theme file.
-- **Deep mode:** Explicit “Debates & Contending Interpretations” and/or historiographical / intellectual-genealogy notes within themes. Strongly recommended: open each theme with 2–4 Seminar Guiding Questions that scaffold from reconstruction to critique and application. Annotations in Theme Bibliographies should help position sources relative to debates and to one another.
+- **Citation practice is especially rigorous here:** every major claim in a theme narrative must be back-linked to a specific digest (Full packages) or to a primary/secondary source (Survey packages). Themes are the primary site where provenance and evidence transparency are demonstrated.
+- Gaps & Open Questions subsection required.
+- Theme Bibliography required.
+- Deep mode: Seminar Guiding Questions, debate mapping / intellectual genealogy, longer annotated bibliographies. See mode-deep.md.
 
 ### In `further-reading.md` (required and substantive)
-- Concrete, named entry points (specific books, catalogues, official pages, or well-known surveys) rather than vague “read more about X.”
-- **Notable additional sources (primary or secondary)** discovered during research that did not make the Core/Important cut but remain valuable for further reading — flag these explicitly (with short rationale and primary/secondary distinction where helpful). Draw them from the Phase 1 working bibliography and discovery log.
-- Organized pathways (official/institutional → core monographs → thematic extensions → addressing gaps).
-- Explicit guidance on “how to go deeper.”
-- Note major gaps the further reading helps fill.
-- **Deep mode:** Structured research pathways including specialization tracks, key journals or databases, and guidance on following citation trails or identifying open research questions. Include a richer set of notable further-reading sources with positioning notes.
+- Concrete, named next steps and pathways, not vague suggestions.
+- Include notable additional primary or secondary sources discovered during research that did not make Core/Important but remain valuable.
+- Deep mode expands this into multi-track research pathways.
 
 ### In `limitations.md`
-- Methodological notes on how sources were selected and what was *not* done (e.g., no original archival research).
-- Clear statement that digests are orientations, not substitutes for the primary works or full scholarly apparatus.
-- Note the mode (Standard or Deep) and any resulting scope limits.
-- **For active, recent, or highly polarized topics:** Explicitly note that secondary consensus can lag, resist correction, or reflect coordinated narrative pressure; treat early framings as provisional; and encourage checking primary/updated evidence.
+- Document package shape, digests in/out of scope, access issues, methodological notes, and any narrowing of Core.
+- On contested topics, note polarization risk in selection.
 
 ### Anti-bias practices for contested or politicized domains
-When the topic involves recent events, active conflicts, highly polarized public debates, or claims that have shifted significantly after initial reporting:
-- Treat the dominant secondary framing as a *claim to be examined*, not the default reality.
-- Prioritize primary sources, contemporaneous accounts, official investigations, forensic/OSINT work, and later corrections or recantations over narrative secondary synthesis for disputed factual claims.
-- In themes (and when warranted in 01-sources or limitations), include a **Contested Claims & Corrections** subsection listing major claims that have been significantly revised, recanted, or remain sharply disputed, with evidence links.
-- In Deep mode, include brief genealogy of charged framings themselves (when/how they entered mainstream secondary literature, key promoters, evidence cited at the time vs later).
-- Treat Wikipedia and similar platforms as secondary sources that can be subject to coordinated editing or source-selection bias; cross-check contested claims against primary material and alternative high-quality sources. Note this in selection criteria or limitations when relevant.
-- Selection criteria in `01-sources.md` should address polarization risk (how the package avoids one-sided secondary capture).
+- Prefer primary evidence for disputed facts.
+- Surface competing interpretations with their evidence bases.
+- Document polarization risk in selection criteria and limitations.
+- In Deep mode, add claim-genealogy guidance where relevant.
 
-These elements turn the package from a useful summary into a trustworthy research and learning scaffold.
+## Package Shapes (high-level)
+
+All three shapes share the research spine. Decide the shape in Phase 0 from user language and topic, declare it in `00-scope.md`, then **load the mode file**.
+
+- **Survey**: Digests out of scope by design. Foundation / map-the-field package. See `references/mode-survey.md`.
+- **Standard** (default for full packages): Undergrad-course equivalent with complete digests. See `references/mode-standard.md`.
+- **Deep**: Graduate/seminar equivalent with denser apparatus. See `references/mode-deep.md`.
+
+Default to Standard unless Survey language (“survey”, “overview”, “sources and themes only”, “no digests yet”) or Deep language (“deep”, “graduate”, “seminar”, “go deep”, “deeper”) is present.
 
 ## Adaptive Applications (Place / Location / Travel & Museum Guides)
 
-Athena supports **place-based guides** at academic depth — cities, regions, historic landscapes, and museums — modeled on the best scholarly and high-cultural practice (Blue Guides’ “understand more fully what one sees,” university “History of [City] / Biography of a City” syllabi, Harvard-style layered city histories, cultural-landscape approaches). These are not tourist-brochure or “top 10 Instagram” lists. They aim for the knowledge a serious traveler or student would want: historical layers, why sites matter in the scholarly conversation, what not to miss and *why*, and a transparent evidence base.
+When the request is for a place, city, region, historic landscape, museum, collection, or serious travel guide, load `references/place-guides.md` and follow its requirements. These guides operate at academic depth (Blue Guide / university city-history spirit), not tourist-brochure style. They can be produced in any package shape. Short shared rules:
 
-### Shared requirements for all place / location guides
-- **Start with syllabi and highest-quality sources.** Preferentially mine university syllabi and reading lists for “History of [Place],” “Art & Architecture of [Place],” urban history, or equivalent courses. When syllabi are thin or unavailable, fall back to the strongest scholarly monographs, architectural histories, official institutional catalogues, and classic cultural guides (e.g., Blue Guide tradition). Log every syllabus or discovery source consulted (as in Phase 1 provenance rules). Compile a full working bibliography with provenance notes.
-- Treat major **sites, monuments, neighborhoods, landscapes, and (when relevant) artworks** as primary sources. Digests or site entries emphasize historical context, significance, formal or spatial character, and current condition/location.
-- Produce a practical but scholarly **walkthrough / itinerary / “what not to miss”** theme or section grounded in the historical and critical literature, not popularity rankings.
-- Include a clear **historical orientation** (layered chronology or key periods) so the reader understands the place as a sequence of transformations, not a static set of attractions.
-- **Images when they enhance understanding:** Include maps, site plans, exterior/interior photographs, or key artworks when visual reference materially helps the reader. Prefer official or public-domain sources; store under `images/` with relative links and captions that credit the source. Especially valuable for complex sites, floor plans, and works discussed in digests.
-- Support iterative expansion: a first guide can be high-level; the user can later request deeper treatment of a neighborhood, museum, or theme.
-- Hybrid review type is usually optimal.
-- Always note that physical conditions, openings, and hangings can change.
-- Deep mode adds denser historiography, debates about the place, and specialist literature.
+- Start with syllabi or highest-quality scholarly sources; full provenance required.
+- Treat sites, monuments, neighborhoods, landscapes, and artworks as primary sources.
+- Produce historical orientation + must-see sites with scholarly rationale + practical itineraries grounded in the literature.
+- Include images when they enhance understanding.
+- Museum specializations (dual-layer artwork digests, Period-Specialist Analysis, artists-bios.md) are retained and required when applicable.
 
-### Museum / collection / exhibition specializations (retained and required when applicable)
-- Treat individual **artworks, objects, or spaces** as primary sources. Digests emphasize formal description, iconography/symbolism, historical context, provenance, and current location (room/floor when known).
-- **Dual-layer treatment for artworks (required for major and complex works):** (1) Unit-by-unit / zone-by-zone summaries that map the object (including exterior panels, wings, or distinct spatial zones for triptychs and similar formats); (2) a dedicated Period-Specialist Analysis that situates style, technique, iconography, patronage, workshop practice, and meaning in period context and explicitly surfaces symbolism a general viewer is likely to miss, period-specific historical context, significant visual details or objects, and the meaning of colors as understood in that period. Both layers are required for complex works — do not substitute one for the other. In Deep mode, ground the specialist analysis more explicitly in named specialists or standard period literature.
-- **Images (required when they enhance understanding):** For major artworks and key visual objects, include at least one high-quality reference image in the digest (and additional detail images when useful for panels, zones, or iconographic points). Prefer official museum collection images or public-domain high-resolution sources. Place the primary image near the top of the digest (after the bibliographic entry). Always caption with credit, inventory number when known, and a link to the official collection page. Store images under an `images/` subdirectory with relative Markdown links so the package remains portable. Note that physical hangings and lighting can change; the image is a study reference, not a substitute for seeing the work.
-- Prioritize **official museum resources** (collection pages, official highlights/itineraries, floor plans) alongside scholarly consensus lists. Link to official collection pages wherever possible.
-- When multiple creators are central, add **`artists-bios.md`** (or `creators-bios.md`) with short parallel biographies.
-
-### Location / city / region / travel guide emphases
-- Frame the package as the equivalent of a short university course or serious independent study of the place (history, built environment, cultural layers).
-- Core deliverables typically include: historical orientation (periodized or thematic), ranked must-see sites with scholarly rationale (not just fame), practical itineraries that respect historical and spatial logic, and further-reading pathways into deeper literature.
-- Site digests or entries should give the reader enough context to stand in front of a building, square, or landscape and understand *why it matters* and what conversations it participates in — without reducing it to a caption.
-- Prefer primary evidence and high-quality secondary synthesis for contested local histories; surface competing claims about the place when they exist.
-- The guide remains portable and useful both before travel (orientation + planning) and on site (reference + deeper notice).
-
-## Package Shapes (Survey / Standard / Deep)
-
-All three shapes share the same research spine: objectives first, syllabi as expert signals, provenance tracking, ranked bibliography, thematic synthesis with citations, and concrete further-reading pathways. They differ in whether digests are produced in this package.
-
-### Survey Mode
-A rigorous **foundation package**. Produces scope, a full ranked + provenance-tracked bibliography, thematic synthesis, further reading, glossary, and limitations. Digests are **deliberately out of scope** so the reader can later request individual digests or a Standard/Deep treatment of particular works. Themes still carry dense citations, but they point to primary sources and secondary literature directly rather than to digests. Ideal language triggers: “survey of…”, “overview of…”, “sources and themes only”, “no digests yet”, “foundation for later deep dives”, “map the field first”. Use this shape when the user wants the map before committing to close reading of every Core text.
-
-### Standard Mode (default for full packages)
-The equivalent of a solid upper-level undergraduate course (or a focused, high-quality self-study course at that level). Focused Core list, clear digests that function as student reading notes and instructor lecture-prep notes, thematic synthesis suitable for weekly modules or discussion units, moderate Theme Bibliographies, and a learning path + active questions calibrated for building foundational mastery, classroom discussion, and independent further reading. Suitable both for a student taking or reviewing the course and for a professor preparing or teaching it. Includes `02-digests.md` (index + recommended reading order).
-
-### Deep Mode
-The equivalent of a graduate-level course or advanced seminar, with notes dense enough to support both student participation and instructor design of the seminar. Same overall Athena research process and phase structure, executed at higher intensity. The design goal is materials that enable a reader (student or professor) to participate productively in — or to lead — a graduate seminar: accurately reconstruct arguments, identify methods and assumptions, locate sources in debates and intellectual genealogies, critique evidence, and propose extensions or alternative research designs.
-
-Refinements drawn from graduate seminar pedagogy and syllabus analysis (discussion-based formats, scaffolded questions progressing through levels of engagement, annotated bibliographies that position sources, explicit attention to historiography/genealogy of ideas, and structured reading notes/memos):
-
-- **Scope & outcomes:** Learning outcomes emphasize critical evaluation, debate synthesis, methodological awareness, intellectual genealogy, and identification of research frontiers. Assume greater prior knowledge. Explicit goals remain essential even at seminar level; frame them so they work for both student learning and instructor course design.
-- **Sources:** Preferentially mine graduate seminar syllabi, PhD reading lists, comprehensive exam bibliographies, annual reviews, field-defining / paradigm-shifting works, and highly-cited or recent articles that map or challenge debates. Aim for a richer ranked bibliography (typically larger Core + Important sets). Produce more detailed selection rationales and annotations that include a positioning or evaluative element (how the source intervenes in conversations, relative strengths/limitations, relevance to package themes).
-- **Digests:** Finer grain where productive; mandatory additional critical apparatus (methodology, reception, subsequent engagements). Digests function as seminar-memo / teaching-note equivalents: after reading one, a student or professor should be able to open or lead a discussion of the source’s contribution, methods, and place in ongoing debates.
-- **Themes:** Explicit mapping of debates, contending interpretations, and (where relevant) intellectual genealogy or historiography. Longer, research-oriented Gaps & Open Questions. Richer annotated Theme Bibliographies (8–15 items) with positioning annotations. **Strongly recommended:** open each theme file with 2–4 Seminar Guiding Questions that progress from accurate reconstruction of arguments to critique, comparison, and application/research design — usable by students for preparation and by professors as discussion openers or short-response prompts.
-- **Further reading & pathways:** More extensive, multi-track research pathways rather than simple “next books.” Can gesture toward exam-list density for key specializations. Include notable additional primary/secondary sources useful for extending the course.
-- **Active learning:** Prefer seminar-style discussion questions (usable as openers or short response prompts by either student or instructor), comparative critiques, historiographical notes, and optional short research-design or paper-prompt exercises.
-- **Bibliography overall:** Substantially richer and more in-depth across `01-sources.md`, theme files, and `further-reading.md`. Annotations are the norm and should help the reader (student or professor) situate sources relative to one another and to the package’s themes.
-
-Declare the package shape explicitly in `00-scope.md` and surface it in the README. Default to Standard (full package) unless the user requests Survey / overview / sources-and-themes-only language, or deep / graduate / seminar language. In all shapes, write so the package can serve as course notes for the student *and* teaching notes for the professor where applicable.
+Full details, dual-layer rules, and location emphases are in the reference file.
 
 ## Workflow
 
-Execute the phases in order, with explicit iteration checkpoints. Write all deliverables as Markdown files in a dedicated, self-contained directory (commonly `artifacts/athena-<topic-slug>/` or `study-guide-<topic-slug>/` — adapt the root path to whatever working or output directory is available in the current environment). Keep the package portable with relative links only.
+Execute the phases in order, with explicit iteration checkpoints. Write all deliverables as Markdown files in a dedicated, self-contained directory (commonly `artifacts/athena-<topic-slug>/` — adapt the root path to the current environment). Keep the package portable with relative links only.
 
 ### Phase 0: Scope Definition
 Before any searching:
 - Write a concise topic statement.
-- Specify target audience / level (and note that the package will serve both student study notes and instructor/professor teaching notes).
-- **Declare package shape: Survey, Standard, or Deep** (and briefly justify). 
-  - Survey = foundation (sources + themes; digests deferred).
-  - Standard / Deep = full package with digests.
-  Frame Standard and Deep as producing the equivalent of a university course (or substantial course unit) at the corresponding level.
-- Explicitly state whether digests are **in scope** or **deferred** for this package. If the user said “survey”, “overview first”, “no digests yet”, “sources and themes only”, or “I’ll go deep on the texts later”, choose Survey and record the deferral.
-- List 3–7 concrete learning outcomes (Deep: higher-order — critique, synthesize debates, apply methods, identify open questions). Write outcomes so they work for student learning goals and for instructor course design.
-- Decide depth vs. breadth, time horizon, language constraints, and access preferences.
-- **Declare the primary review / guide type** and briefly justify it (Narrative/Conceptual, Thematic, Scoping, Systematic-leaning, or Hybrid).
-- **Output format:** Default is Markdown optimized for Obsidian (relative links, clean folder structure, portable). Note if the user requests EPUB or another format; produce the Markdown package first and offer EPUB as an additional deliverable when requested.
-- Note whether a formal search protocol will be produced.
-- For museum, site, city, region, or travel topics, note whether practical navigation (itineraries, must-see lists, bios) will be emphasized and that the guide targets academic-level understanding of the place. Also note that images will be included for key artworks/sites when they enhance understanding.
-- **If the topic is recent, active, or highly polarized:** Note the polarization risk and that secondary consensus will be treated as contestable rather than baseline.
-- **Scope realism (Full packages only):** If declaring Deep mode on a broad topic, either commit to producing complete digests for every Core source or consciously narrow the Core list. An ambitious Core paired with thin or missing digests is worse than a tighter, fully digested Core. Document any narrowing in `01-sources.md` and `limitations.md`.
-
-**Deliverable:** `00-scope.md`
+- Specify target audience / level and **package shape** (Survey / Standard / Deep). Explicitly state whether digests are in scope.
+- Define learning outcomes.
+- Note review type (e.g., hybrid) and any constraints.
+- Decide output format (default Markdown/Obsidian; EPUB if requested).
+- **Load the mode file** for the chosen shape. If place-based, also load place-guides.md.
+Deliverable: `00-scope.md`.
 
 ### Phase 1: Source Discovery & Selection
-**Goal:** Ranked, justified bibliography of core primary + high-value secondary sources, with transparent provenance of how each source was discovered and a compiled full working bibliography.
+- Mine syllabi and high-quality discovery sources; log every one consulted.
+- Rank Core / Important / Supplementary with provenance notes and rationales.
+- Compile the full working bibliography.
+- Selection criteria, citation-practice note, availability notes required.
+- Deep mode: denser annotations. See mode file.
+Deliverable: `01-sources.md` (and optional `01b-search-protocol.md`).
 
-**Methods:** Syllabus mining (undergraduate +, for Deep mode, graduate seminar / exam lists and comprehensive exam bibliographies), official institutional lists (especially for museums), canonical signals, citation patterns, high-quality secondary literature. Deep mode additionally draws on review articles, recent monographs, critical editions, and methodological works. For contested or politicized topics, actively seek primary/contemporaneous/forensic sources and sources that challenge the dominant secondary framing.
-
-**Provenance tracking (required):** 
-- Maintain a running log of every syllabus, essential-readings list, institutional highlight, catalogue, or other discovery source consulted. Record: institution, course/seminar title (and code if available), instructor if known, URL or stable locator, year or term.
-- For each source that enters the candidate pool or final ranked lists, note its discovery provenance (e.g., “appeared on 4 independent graduate syllabi: [A, B, C, D]; also the most-cited monograph in [review article]”; “official collection highlight + recommended in [museum itinerary]”; “identified via citation trail from Core source X”).
-- Prefer and up-rank sources that recur across multiple independent high-quality syllabi or institutional lists. Document this recurrence explicitly.
-- This log is not optional busywork; it is the evidence that the ranked bibliography rests on expert signals rather than ad-hoc search.
-
-**Bibliography compilation (during the process):** As candidates are found, maintain and grow a full working bibliography (all sources considered worth noting, not only the final ranked set). Explicitly flag **notable additional primary or secondary sources** that are valuable for further reading even if they do not rank as Core or Important — these feed directly into `further-reading.md`. By the end of Phase 1 this becomes the transparent evidence base of the package. The ranked Core / Important / Supplementary lists are a prioritization of that bibliography; the full set (with provenance) remains available for the reader and for further-reading pathways.
-
-**Selection criteria:** Relevance, influence/frequency (especially recurrence across syllabi), quality, representativeness, accessibility, recency or classic status, practical visibility (for physical collections). Deep mode weights debate centrality and scholarly reception more heavily. **For polarized topics:** explicitly address how selection avoids one-sided secondary capture (balance of positions, primary priority for disputed facts, awareness of institutional or platform bias).
-
-**Ranking:** Core / Important / Supplementary. Deep mode typically expands the Core and Important sets and requires richer rationales + annotations. Prefer a Core list that can be fully digested at the required quality over an ambitious list that will be only partially covered. Include short provenance notes on ranked entries.
-
-**Search protocol (adaptive):** Produce `01b-search-protocol.md` when the topic is empirical or reproducibility is requested; otherwise a brief note inside `01-sources.md` is sufficient. Deep mode more often warrants a formal protocol. The protocol (when produced) should also capture the syllabi and discovery sources used.
-
-**Deliverable:** `01-sources.md` (must include: selection criteria; **Syllabi & Discovery Sources Consulted** section; ranked lists with provenance notes and rationales; citation-practice note; availability notes; the compiled full working bibliography or clear pointer to it; and notes on notable further-reading candidates identified during discovery. Deep mode adds annotations and optional categorization).  
-**Optional:** `01b-search-protocol.md`
-
-**Iteration checkpoint:** Revisit scope and sources if needed. For Full packages, confirm that the planned Core list is realistic given the commitment to complete digests. Verify that provenance for the Core set is documented and that the working bibliography is coherent. For Survey packages, confirm that digests remain out of scope and that themes will be able to cite sources directly.
+**Iteration checkpoint:** Confirm Core list is realistic for the shape. For Full packages, ensure digests are feasible. For Survey, confirm digests remain out of scope.
 
 ### Phase 2: Structured Source Digests (Full packages only)
-**Skip this phase entirely for Survey packages.** Record the deferral in `00-scope.md` and `limitations.md` and proceed to Phase 3.
+**Skip entirely for Survey** (see mode-survey.md). For Standard and Deep, produce a consistent digest for every Core source (and selected Important) using `references/digest-template.md`.
 
-For every Core source (and selected Important sources) in Standard or Deep packages, produce a consistent digest using the template in `references/digest-template.md`.
+Primary-text structure (literary, philosophical, dialogic works): three-part treatment required —
+1. **Pre-Reading Context** — lean, non-spoiling orientation.
+2. **Summary** — compact standalone overview.
+3. **Full Brief (Post-Reading)** — denser engagement after the reader has encountered the primary; helps notice structure, moves, cross-links, open questions.
 
-**Primary-text structure (especially literary, philosophical, dialogic works such as Plato’s dialogues or Shakespeare):** Every such digest must include the three-part treatment:
-1. **Pre-Reading Context** — orientation before the reader engages the primary (historical/intellectual stakes, the conversation it joins or disrupts, key terms or prior works to have lightly in mind, practical notes on edition/length/structure). Lean, non-spoiling, non-dictating.
-2. **Summary** — compact standalone overview usable when the reader is *not* planning to read the source itself but needs it for context while working on other texts.
-3. **Full Brief (Post-Reading)** — denser engagement after the reader has encountered the primary. Helps them notice structure, unit-level moves, formal or dialectical choices, cross-links, open questions, and what they might have missed in the greater conversation. This is *not* a substitute for reading; it is a check against missing important dimensions.
+Anti-reductive rule applies. For artworks/visual objects: dual-layer (Unit/Zone + Period-Specialist Analysis) + images as specified in place-guides.md and the template. Deep mode adds methodological/reception sections.
 
-**Anti-reductive rule:** Digests exist to help the reader see more, not less. Do not dumb down, moralize, or hand the reader “the meaning.” Avoid SparkNotes-style reductive paraphrase. Prefer the source’s own force and precision; locate high-signal quotes; surface tensions and open questions rather than resolving them for the reader.
+**Completeness gate (Full packages):** Do not begin Phase 3 until every Core source has a complete digest. If the planned Core is not feasible, reduce it, update sources, and note in limitations.
 
-For artworks/visual objects, adapt: include medium, dimensions, inventory number, room; emphasize formal, iconographic, and spatial description; note that hangings can change. **For major and complex works, provide both Unit/Zone summaries (mapping panels, wings, or zones) and a Period-Specialist Analysis** (period style, technique, iconography, patronage, meaning, plus symbolism a viewer may miss, historical context, key visual details/objects, and period color meanings). Both layers are required for multi-panel or multi-zone works. Pre-Reading Context and Summary still apply in adapted form. **Include at least one high-quality reference image** (official museum or public-domain preferred) near the top of the digest, plus additional detail images when they clarify panels, zones, or iconographic points. Caption every image with credit and a link to the official collection page; store files under `images/` with relative Markdown links.
-
-**Deep mode:** Apply the Deep adaptations in the template (Methodological / Formal approach; Position in the literature / Reception; Key subsequent engagements or critiques). Produce denser unit-level coverage where the source warrants it. The goal is that a reader (student or professor) can engage the material at seminar level after reading the primary + Full Brief.
-
-**Digest quality expectations (minimum):**
-- Pre-Reading Context present and appropriately lean for primary texts
-- Summary usable as standalone reference
-- Full Brief with thesis / central project, overall structure, key units or movements with evidence/examples, strengths/limitations or open questions, and preliminary cross-links
-- For empirical findings that are contested or revised: brief status note (original claim / later challenges / present standing)
-- Deep mode additionally requires the methodological/formal and reception sections
-
-Abstract-only or severely truncated digests are not acceptable in Deep mode. Collapsing the three-part structure into a single reductive summary is a process failure for primary texts.
-
-**Completeness gate (Full packages only):** Do **not** begin Phase 3 until every Core source has a complete digest that follows the template (including the three-part structure for primary texts and Deep-mode sections when mode = Deep). If producing full digests for the current Core list is not feasible, reduce the Core list, update `01-sources.md`, and note the change in `limitations.md`. Incomplete Phase 2 is a process failure for Full packages. Survey packages are exempt by design.
-
-**Deliverables (Full packages):** 
-- One file per Core source under `digests/`.
-- `02-digests.md` — index of all digests + recommended reading order with relative links into the individual files. This is the navigable entry point for the digests.
+Deliverable: `digests/` + `02-digests.md` (index + recommended reading order).
 
 ### Phase 3: Thematic Synthesis & Cross-Referencing
-Extract themes, build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep mode almost always produces a detailed matrix), write theme narratives with Gaps & Open Questions and Theme Bibliography.
+Extract themes, build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep almost always detailed), write theme narratives with Gaps & Open Questions and Theme Bibliography.
 
-**Citation practice is especially rigorous here:** every major claim in a theme narrative must be back-linked to a specific digest (Full packages) or to a primary/secondary source (Survey packages). Themes are the primary site where provenance and evidence transparency are demonstrated. In Survey packages, note in the theme files or limitations that full digests can be added later for closer engagement.
+Citation practice is rigorous: every major claim back-linked. In Survey, cite sources directly and note that digests can be added later.
+
+Deep mode enhancements (Seminar Guiding Questions, debate mapping, richer Theme Bibliographies, Contested Claims subsections on polarized topics) are in mode-deep.md.
 
 For museum/site guides, include a practical Navigating / Walkthrough / Practical Paths theme.
 
-**Topic-sensitive artifacts:** When the topic’s core objects are named lists of phenomena (heuristics, fallacies, biases, cognitive effects, argument schemes, etc.), strongly recommend an overview/reference theme that maps the main items with primary sources and canonical examples. This is often the most practically useful theme for readers.
-
-**Deep mode enhancements:**
-- Include explicit “Debates & Contending Interpretations” (or equivalent) and, where the topic warrants, intellectual genealogy / historiography subsections (including genealogy of charged framings themselves when relevant).
-- Strongly recommend opening each theme file with 2–4 Seminar Guiding Questions that progress from accurate reconstruction of key arguments to critique, comparison across sources, and application or research-design prompts.
-- Make Gaps & Open Questions research-oriented (unresolved issues, methodological frontiers, opportunities for original work).
-- Theme Bibliographies: 8–15 annotated items with positioning/evaluative elements, distinguishing source types where useful.
-- Longer, more analytically dense theme narratives oriented toward enabling seminar-level discussion, with dense explicit citations.
-- **For contested/politicized topics (Standard or Deep):** Strongly recommend a **Contested Claims & Corrections** subsection listing major claims that have been significantly revised, recanted, or remain sharply disputed, with back-links to evidence.
-
-**Deliverable:** `03-themes.md` + `themes/` + `matrix.md` (or embedded).
+Deliverable: `03-themes.md` + `themes/` + `matrix.md` (or embedded).
 
 ### Phase 4: Study Guide Assembly
-**Required structure:**
-- `README.md` — topic, package shape (Survey / Standard / Deep), review type, outcomes, how to use, learning path, theme index, quick-start. For Full packages, point to `02-digests.md` as the digest entry point.
-- Theme files with synthesis, backlinks, active learning, Gaps & Open Questions, Theme Bibliography.
-- `01-sources.md` with clear citation practice (and Deep-mode annotations).
-- **`further-reading.md`** — substantive, concrete, pathway-oriented (this is a core value, not an afterthought). Deep mode: multi-track research pathways. Survey packages should note that digests of Core works can be requested later.
-- `glossary.md`, `limitations.md` (including methodological/sourcing notes, package shape, and whether digests were deferred).
-- **When multiple creators are central:** `artists-bios.md` or equivalent.
-- **Full packages only:** `02-digests.md` (index + recommended reading order).
-
-**Format:** Linked Markdown, portable.
-
-**Deep mode active learning:** Prefer seminar-style discussion questions (usable as openers or short response-paper prompts), comparative critiques, historiographical notes, and optional short research-design or paper-prompt exercises over basic recall questions. Questions should help the user practice the discursive moves expected in a graduate seminar.
+Required structure (adapt per mode and directory-layout.md):
+- `README.md` — topic, package shape, review type, outcomes, how to use, learning path, theme index, quick-start. Point to `02-digests.md` when present.
+- `00-scope.md`, `01-sources.md`, theme files, `further-reading.md`, `glossary.md`, `limitations.md`.
+- Full packages also include digests and `02-digests.md`.
+- Place guides may include `artists-bios.md` and `images/`.
 
 ### Phase 5: Quality Assurance
-- **Completeness check (Full packages):** Confirm every Core source has a digest file and that each digest meets the quality expectations above (not abstract-only). If any are missing or thin, return to Phase 2 or narrow Core. Confirm `02-digests.md` exists and correctly links to the digests.
-- **Survey check:** Confirm digests were correctly omitted and that limitations + scope clearly state the deferral.
-- Spot-check digests for fidelity and correct bibliographic data (Full packages).
-- Verify backlinks (to digests in Full packages; to sources in Survey packages).
-- Confirm Gaps & Open Questions are substantive (and research-oriented in Deep mode).
-- Confirm `further-reading.md` offers concrete next steps and `01-sources.md` makes the evidence base transparent (and richly annotated in Deep mode).
-- **Provenance & bibliography check:** Confirm `01-sources.md` contains a Syllabi & Discovery Sources Consulted section (or equivalent), that ranked entries carry provenance notes, that a coherent full working bibliography has been compiled from the research process, and that notable additional primary/secondary sources useful for further reading have been identified and fed into `further-reading.md`.
-- **Digest structure check (primary texts, Full packages):** Confirm every primary-source digest includes Pre-Reading Context, standalone Summary, and Full Brief (Post-Reading), and that the writing does not collapse into reductive “what to think” paraphrase.
-- For museum packages, verify itineraries are coherent and room data is caveated.
-- Confirm package-shape declaration is consistent across scope, README, and limitations.
-- For topics centered on named phenomena (heuristics, fallacies, etc.), confirm an overview/reference theme exists or is explicitly scoped out.
-- Record version and date.
+- Completeness check (Full packages): every Core has a digest that meets quality expectations; `02-digests.md` correct.
+- Survey: digests correctly omitted; themes still cite sources.
+- Provenance and Syllabi section present and accurate.
+- Citations dense in themes.
+- Further-reading substantive.
+- Relative links only; images credited.
+- Package shape declared and consistent.
+- Deep packages recognizably denser; Survey packages clean and complete as foundations.
 
 ## Output Conventions
-
-- **Default format:** Markdown package optimized for Obsidian (relative links, clean folder structure, portable). This is the primary deliverable.
-- **Optional format:** EPUB — when the user requests it, produce an EPUB in addition to (or as a conversion of) the Markdown package. EPUB is useful for linear reading on e-readers; Markdown remains the canonical, editable, linkable form.
-- Root directory: a dedicated folder such as `athena-<kebab-topic>/` or `study-guide-<kebab-topic>/` (place it under an `artifacts/`, project, or working directory as available in the current environment).
-- Core files (all shapes): `00-scope.md`, `01-sources.md` (must include Syllabi & Discovery Sources Consulted + provenance-annotated ranked lists + working bibliography), `README.md`, `03-themes.md`, `glossary.md`, `limitations.md`, `further-reading.md`
-- Full packages only: `02-digests.md` + `digests/` subdirectory
-- Recommended for multi-creator / museum topics: `artists-bios.md`
-- Optional: `01b-search-protocol.md`, `matrix.md`
-- Subdirs: `digests/` (Full only), `themes/`, `images/` (when visual materials are included)
-- Relative links only (including image paths).
-- At the end, offer a downloadable zip of the finished package when the environment supports it. If EPUB was requested, include the `.epub` file in the zip or alongside the Markdown package.
-- Deep mode packages should feel recognizably denser in bibliography, critical apparatus, and research orientation while remaining navigable.
-- Survey packages should feel clean and complete as a foundation; they are not “incomplete Standard packages.”
-- Images are study references with credits and official links; they do not replace seeing the work in person.
+- Default: portable Markdown optimized for Obsidian (relative links, clean headings).
+- Optional EPUB when requested.
+- Images under `images/` with relative links and captions (credit + official link).
+- At the end, offer a downloadable zip of the finished package when the environment supports it.
+- Survey packages are not “incomplete Standard packages.”
+- Deep packages remain navigable despite density.
 
 ## Constraints & Notes
-
 - Do not invent sources or fabricate quotes, page numbers, inventory numbers, or room locations.
 - Favor open-access and official institutional resources when quality is comparable.
-- Keep digests dense but readable; Deep mode digests may be longer but must remain structured and usable. Abstract-only digests are not acceptable in Deep mode.
-- **Completeness over ambition (Full packages):** Every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Incomplete Phase 2 is a process failure for Full packages. Survey packages deliberately omit digests and are not subject to this gate.
-- Match search-protocol and matrix depth to the topic and package shape.
-- For physical collections, always note that display locations can change.
-- **Citations, provenance, and further research are not optional extras; they are part of the definition of a finished Athena package.** Tracking where sources came from (especially which syllabi and institutional lists) and compiling a full working bibliography during research are required practices. Deep mode makes the bibliography and annotations a central strength.
-- **Anti-bias is structural:** On contested or politicized topics, do not let secondary consensus silently become the baseline. Prefer primary evidence for disputed facts, surface corrections and competing claims, and document polarization risk.
-- This skill is designed to be portable across agents that support the Agent Skills format (or equivalent system-prompt + knowledge loading). Adapt file-system paths and tool calls to the capabilities of the current runtime.
+- Keep digests dense but readable; abstract-only digests are not acceptable in Deep mode.
+- Completeness over ambition for Full packages.
+- Citations, provenance, and further research are part of the definition of a finished Athena package.
+- Anti-bias is structural on contested topics.
+- This skill is designed to be portable across agents that support the Agent Skills format. Adapt file-system paths and tool calls to the current runtime.
+- See `DEVELOPMENT.md` for how to expand the skill without breaking the modular contract.
 
 ## Resources
-
-- Digest template: `references/digest-template.md` (includes Deep mode adaptations)
+- Mode files (load after Phase 0 decision):
+  - `references/mode-survey.md`
+  - `references/mode-standard.md`
+  - `references/mode-deep.md`
+- Place / museum / location overlays: `references/place-guides.md`
+- Digest template: `references/digest-template.md` (includes Deep adaptations)
 - Example directory layout: `references/directory-layout.md`
-
-## Changelog (selected)
-
-- **1.19 (2026-08-16):** Added **images** for visual primary sources (artworks, architecture, maps, diagrams) when they enhance understanding — required for major museum works, strongly recommended for place guides. Prefer official/public-domain sources; store under `images/` with relative links, captions, and official collection links. Added **output format** options: default Markdown optimized for Obsidian; optional EPUB when requested. Updated Adaptive Applications (museum + place), Phase 0, Phase 2 digests, Output Conventions, directory layout, and digest template.
-- **1.18 (2026-08-16):** Introduced explicit **Survey package shape** (sources + themes foundation; digests deferred) alongside Standard and Deep. Softened the completeness gate so Survey packages are exempt by design. Added `02-digests.md` (index + recommended reading order) for Full packages. Updated Phase 0 to require an explicit decision on whether digests are in scope, Phase 2 to skip cleanly for Survey, citation rules in themes to work with or without digests, directory layout, QA, and Output Conventions. Fixes the force-fit that muddled “undergrad survey first, digests later” requests (e.g. Poe). The rigorous research spine (syllabi, provenance, ranked sources, themes with citations, further reading) remains identical across all three shapes.
-- **1.17 (2026-08-15):** Expanded Adaptive Applications from museum/cultural-site guides to full **place / location / travel guides** at academic depth (cities, regions, historic landscapes). Modeled on Blue Guides, university “History of [City] / Biography of a City” syllabi, layered city histories, and cultural-landscape practice. Location guides start with syllabi when available, otherwise highest-quality scholarly sources; full provenance and bibliography required; historical orientation + must-see sites with scholarly rationale + practical itineraries. Museum specializations retained. Triggers updated to include place/city/travel guides.
-- **1.16 (2026-08-15):** Restructured primary-source digests into three explicit parts: **Pre-Reading Context** (orientation before reading, non-spoiling), **Summary** (standalone reference when not reading the source), and **Full Brief (Post-Reading)** (dense check after reading to catch what might be missed in the greater conversation). Explicit anti-reductive / anti-SparkNotes stance: digests help the reader see more and not miss important dimensions; they do not replace the primary encounter or dictate interpretation. Updated digest template, Phase 2, Core Value, and writing rules. Especially useful for sequences such as Plato’s dialogues or Shakespeare.
-- **1.15 (2026-08-15):** Reframed both Standard and Deep modes so the finished package functions as the **equivalent of a university course** (undergrad or graduate/seminar), with materials written to serve as notes for both students and professors/instructors. Digests, themes, guiding questions, and further-reading pathways are dual-use (study notes + teaching notes). Updated Depth Modes section, opening description, and frontmatter accordingly.
-- **1.14.1 (2026-08-15):** Explicitly require capturing and surfacing **notable additional primary or secondary sources** useful for further reading (even if they fall outside Core/Important). Phase 1 bibliography compilation now flags these; `further-reading.md` must include them with short rationales and primary/secondary distinction where helpful; `01-sources.md` notes the candidates identified during discovery. Strengthens the bridge from research process to concrete next steps.
-- **1.14 (2026-08-15):** Strengthened source provenance tracking throughout research. Phase 1 now requires a running log of every syllabus / institutional list consulted and provenance notes on ranked sources; the full working bibliography is compiled during the process rather than as an afterthought. `01-sources.md` must include a Syllabi & Discovery Sources Consulted section and provenance-annotated entries. Updated Guiding Principle 2, Core Value section, Phase 1, Phase 5 QA, Output Conventions, and Constraints. Makes the expert-signal basis of the bibliography transparent and auditable.
-- **1.13 (2026-08-14):** Artwork digests now explicitly require **both** layers for major/complex works: (1) Unit-by-unit / zone-by-zone summaries (including exterior panels for triptychs) and (2) Period-Specialist Analysis (missed symbolism, historical context, visual details/objects, period color meanings). Do not choose one in place of the other. Prompted by the need to keep full structural mapping and specialist depth together (e.g. Bosch triptych).
-- **1.12.1 (2026-08-14):** Sharpened Period-Specialist Analysis to explicitly require: symbolism a general viewer is likely to miss; period-specific historical context; significant visual details/objects and their meaning; and colors with their period associations/meanings.
-- **1.12 (2026-08-14):** For museum/artwork digests, added required **Period-Specialist Analysis** section for major paintings and key works: analysis as by an art historian specializing in the work’s period (style, technique, iconography, patronage, meaning in period context). Distinct from formal description and later reception. Updated Adaptive Applications (Museum), Phase 2, and digest template. Prompted by feedback on the Prado package.
-- **1.11 (2026-08-14):** Hardened process against incomplete execution. Added hard completeness gate: do not begin Phase 3 until every Core source has a complete digest; if infeasible, reduce Core and document. Added digest quality minimums (reject abstract-only in Deep mode). Added scope-realism notes in Phase 0/1. Added topic-sensitive artifact prompt for named-phenomena topics (heuristics, fallacies, etc.). Strengthened Phase 5 completeness check. Response to under-execution observed on the bias & critical thinking package.
-- **1.10 (2026-08-14):** After running a full Deep-mode package on “bias and critical thinking,” refined the digest template to encourage explicit status notes (original claim / later challenges / present standing) for contested empirical findings. This makes Contested Claims & Corrections subsections easier to populate accurately and tightens the link between digests and anti-bias theme practices. Minor self-application stress test of the v1.9 anti-bias rules.
-- **1.9 (2026-08-14):** Added explicit anti-bias practices for contested and politicized domains. New Guiding Principle 12. Treat dominant secondary “consensus” as a claim to be examined; prioritize primary/contemporaneous/forensic evidence for disputed facts; require or strongly recommend Contested Claims & Corrections subsections; note Wikipedia and platform bias risk; strengthen selection criteria and limitations language for polarized topics; add claim-genealogy guidance in Deep mode. Updated phases 0, 1, 3, Core Value, constraints, and description.
-- **1.8 (2026-08-14):** Expanded triggers to include “athena go deep”, “athena deeper”, “go deep”, “deeper”. Strengthened emphasis on citations and provenance, especially in themes: every major claim must be back-linked; themes are the primary site of dense, explicit citation practice. Updated principles, Core Value, and Phase 3 accordingly.
-- **1.7 (2026-08-14):** Refined Deep mode after research into graduate seminar design and pedagogy (syllabus structures, discussion formats, annotated bibliography practices, scaffolded questions, historiography/genealogy emphasis, and student note-taking expectations). Clarified the design goal as enabling productive seminar participation. Added strong recommendation for Seminar Guiding Questions in themes; required positioning/evaluative elements in Deep annotations; strengthened language around intellectual genealogy, seminar-memo function of digests, and discursive moves in active learning. Process version bumped; principles and phase instructions updated for consistency.
-- **1.6 (2026-08-14):** Introduced explicit Standard vs Deep depth modes. Deep mode delivers graduate-level course/seminar-equivalent notes using the same research process: expanded source mining (grad syllabi, key articles, reception literature), denser digests with critical apparatus, debate/historiographical mapping in themes, richer annotated bibliographies throughout, and research-oriented further-reading pathways. Updated description, principles, all phases, and core-value sections accordingly. Default remains Standard (excellent undergrad overview).
-- **1.5 (2026-08-13):** Portability improvements for cross-agent use. Softened hard-coded output paths; added explicit environment-adaptation note. Skill remains fully effective in Grok while being easier to install in Claude Skills, Custom GPTs (via instructions + knowledge), and other Agent Skills–compatible runtimes. Ready for “install this repo” workflows.
-- **1.4 (2026-08-13):** Elevated citations, transparent sourcing, and substantive further-reading to core guiding principles and required package elements.
-- **1.3 (2026-08-13):** Adaptive guidance for museum / cultural-site guides (artworks as primary sources, official itineraries, artist bios, walkthrough themes, iterative expansion).
-- **1.2 (2026-08-12):** Prior baseline.
+- Skill maintenance notes: `DEVELOPMENT.md`
+- Changelog (package top level, not required at runtime): `CHANGELOG.md`

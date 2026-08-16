@@ -1,0 +1,32 @@
+# Standard Mode (Athena)
+
+Load this file when the package shape is **Standard** (the default for full packages).
+
+## Purpose
+The equivalent of a solid upper-level undergraduate course (or a focused, high-quality self-study course at that level). Focused Core list, clear digests that function as student reading notes and instructor lecture-prep notes, thematic synthesis suitable for weekly modules or discussion units, moderate Theme Bibliographies, and a learning path + active questions calibrated for building foundational mastery, classroom discussion, and independent further reading. Suitable both for a student taking or reviewing the course and for a professor preparing or teaching it.
+
+Includes `02-digests.md` (index + recommended reading order).
+
+## Key characteristics
+- Digests are required for every Core source (and selected Important ones).
+- Completeness gate applies: do not begin Phase 3 until every Core source has a complete digest.
+- Digests follow the three-part structure for primary texts (Pre-Reading Context + Summary + Full Brief) and the dual-layer structure for complex artworks.
+- Theme narratives back-link to digests.
+- Active learning questions are calibrated for undergrad mastery and discussion.
+- Bibliography and annotations are useful but not seminar-dense.
+
+## Phase adaptations
+### Phase 0
+Declare package shape = Standard. Digests are in scope. Learning outcomes include close engagement with Core sources.
+
+### Phase 1
+Focused Core list (realistic for complete digests). Provenance tracking and full working bibliography required.
+
+### Phase 2
+Produce complete digests for all Core sources using `references/digest-template.md`. Quality expectations apply (no abstract-only digests). Create `02-digests.md` as the index + recommended reading order.
+
+### Phase 3
+Themes back-link to digests. Include Gaps & Open Questions + Theme Bibliography. Matrix strongly recommended when ≥4 Core sources or substantial disagreement.
+
+### Phase 4 / 5
+Full package with digests. QA includes completeness of Phase 2 and quality of digests against the template.
