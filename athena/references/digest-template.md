@@ -109,3 +109,15 @@ When the “source” is an artwork, artifact, or physical space:
 - **Deep mode**: Add Methodological / Interpretive Approach, Position in the Literature / Reception, and Key Subsequent Engagements.
 
 Retain Assessment, Cross-Links, and overall parallel structure so digests remain navigable.
+
+### Images for Visual Sources (v1.19+)
+
+When the source is an artwork, object, architectural site, or other visual primary material:
+
+- Include **at least one high-quality reference image** near the top of the digest (immediately after the Bibliographic Entry is ideal).
+- Add additional detail images when they clarify panels, zones, iconographic points, or spatial relationships.
+- Prefer official museum/collection images or public-domain high-resolution sources.
+- Store image files under the package’s `images/` directory.
+- Use relative Markdown image links, e.g. `![Caption](../images/inventory-or-short-title.jpg)`.
+- Every image must have a caption that includes credit (museum / photographer / source), inventory or accession number when known, and a link to the official collection page.
+- Note in the digest (and in limitations if relevant) that physical hangings, lighting, and condition can change; the image is a study reference.

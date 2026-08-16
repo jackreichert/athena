@@ -2,36 +2,45 @@
 
 ```
 athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
-├── README.md                 # Master overview, mode (Standard/Deep), review type, learning path, quick-start
-├── 00-scope.md               # Topic statement, audience, mode, learning outcomes, review type
+├── README.md                 # Master overview, package shape (Survey/Standard/Deep), review type, learning path, quick-start
+├── 00-scope.md               # Topic statement, audience, package shape, learning outcomes, review type, digests in/out of scope, output format
 ├── 01-sources.md             # Ranked bibliography with provenance notes, selection criteria, Syllabi & Discovery Sources Consulted section, citation practice, availability, full working bibliography
 │                             # (Deep: richer annotations + optional Primary/Secondary/Methodological categorization)
 ├── 01b-search-protocol.md    # Optional/conditional: questions, search strategy, inclusion/exclusion
+├── 02-digests.md             # Index + recommended reading order for digests (only when digests are produced)
 ├── 03-themes.md              # Theme index
 ├── matrix.md                 # Optional/recommended: synthesis matrix (themes × sources); more detailed in Deep
 ├── further-reading.md        # REQUIRED & substantive: concrete pathways, named sources, how to go deeper
 │                             # (Deep: multi-track research pathways, specialization tracks, journals/databases)
 ├── glossary.md               # Key terms with source origins
-├── limitations.md            # Gaps, access issues, methodological/sourcing notes, mode, version
+├── limitations.md            # Gaps, access issues, methodological/sourcing notes, package shape, version
 ├── artists-bios.md           # Recommended for multi-creator / museum topics: short parallel bios
-├── digests/
+├── digests/                  # Only present in Full packages (Standard or Deep)
 │   ├── author-year-short-title.md
 │   └── ...                   # Primary texts: Pre-Reading Context + Summary + Full Brief (Post-Reading). Deep: + Methodological / Reception / Subsequent Engagements
-└── themes/
-    ├── 01-theme-name.md      # Includes Gaps & Open Questions + Theme Bibliography
-    │                         # (Deep: Seminar Guiding Questions; Debates & Contending Interpretations / genealogy; longer annotated Theme Bib 8–15 items with positioning)
-    ├── 02-theme-name.md
-    └── ...
+│                             # Artworks: dual-layer (Unit/Zone + Period-Specialist Analysis) + images
+├── themes/
+│   ├── 01-theme-name.md      # Includes Gaps & Open Questions + Theme Bibliography
+│   │                         # (Deep: Seminar Guiding Questions; Debates & Contending Interpretations / genealogy; longer annotated Theme Bib 8–15 items with positioning)
+│   ├── 02-theme-name.md
+│   └── ...
+└── images/                   # Reference images for artworks, sites, maps, diagrams (when included)
+    ├── inventory-or-short-title.jpg
+    └── ...                   # Caption + credit + official link live in the consuming Markdown file
 ```
 
 Notes:
 - Place the package root under an `artifacts/`, project, or working directory as available in the current environment.
+- **Default output is Markdown optimized for Obsidian** (relative links, portable folder structure). EPUB is an optional additional deliverable when requested.
+- **Survey packages** omit `digests/` and `02-digests.md`. They still produce a full ranked + provenance-tracked bibliography and thematic synthesis; digests are deliberately deferred for later deep dives.
+- **Full packages** (Standard or Deep) include both the `digests/` folder and `02-digests.md` (index + recommended reading order with links into the individual digests).
+- **Images:** Include when they materially enhance understanding (especially artworks, architecture, maps, floor plans). Prefer official museum/collection images or public-domain high-resolution sources. Store under `images/` with relative Markdown links and captions that include credit + official collection page link. Images are study references; physical conditions and hangings can change.
 - `further-reading.md` is a core value of Athena (v1.4+): it must offer concrete, named next steps rather than vague suggestions, and must include notable additional primary or secondary sources discovered during research that did not make Core/Important but remain valuable (with short rationales). Deep mode expands this into research pathways.
 - `01-sources.md` must include selection criteria, a Syllabi & Discovery Sources Consulted section (listing every syllabus/institutional list used), provenance notes on ranked entries, a short citation-practice note, the compiled full working bibliography, and notes on notable further-reading candidates identified during discovery. Deep mode requires richer annotations for Core and key Important sources.
 - `01b-search-protocol.md` is strongly encouraged for empirical / systematic-leaning topics (and more often in Deep mode); may be a section inside `01-sources.md` when light.
 - `matrix.md` is strongly recommended; required when ≥4 core sources or substantial disagreement. Deep mode almost always produces a detailed matrix.
-- Each theme file must contain a **Gaps & Open Questions** subsection and end with a **Theme Bibliography**. Every major claim in theme narratives must be back-linked to a digest or primary source (strong citation emphasis). Deep mode themes strongly recommend opening with Seminar Guiding Questions, add explicit debate mapping / intellectual genealogy, and use longer annotated bibliographies (typically 8–15 items) with positioning elements.
+- Each theme file must contain a **Gaps & Open Questions** subsection and end with a **Theme Bibliography**. Every major claim in theme narratives must be back-linked to a digest (Full packages) or to a primary/secondary source (Survey packages). Deep mode themes strongly recommend opening with Seminar Guiding Questions, add explicit debate mapping / intellectual genealogy, and use longer annotated bibliographies (typically 8–15 items) with positioning elements.
 - For contested or politicized topics: strongly recommend a **Contested Claims & Corrections** subsection in relevant themes (and note polarization risk in limitations and selection criteria).
 - `artists-bios.md` (or `creators-bios.md`) is recommended when multiple makers are central, especially for museum or collection guides.
-- All internal links should be relative so the package remains portable.
+- All internal links (including images) should be relative so the package remains portable.
 - Deep mode packages are recognizably denser in critical apparatus and bibliography while preserving the same navigable structure.
