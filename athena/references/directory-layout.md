@@ -25,12 +25,13 @@ athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 │   │                         # (Deep: Seminar Guiding Questions; Debates & Contending Interpretations / genealogy; longer annotated Theme Bib 8–15 items with positioning)
 │   ├── 02-theme-name.md
 │   └── ...
-└── images/                   # Reference images for artworks, sites, maps, diagrams (when included)
+└── images/                   # Reference images for artworks, sites, maps, diagrams (only when images are actually included)
     ├── inventory-or-short-title.jpg
     └── ...                   # Caption + credit + official link live in the consuming Markdown file
 ```
 
 Notes:
+- **Do not leave an empty `images/` directory** in the final package. Create the folder only when at least one image is present; as a last step before packaging, remove any empty directories created during construction.
 - Place the package root under an `artifacts/`, project, or working directory as available in the current environment.
 - **Default output is Markdown optimized for Obsidian** (relative links, portable folder structure). EPUB is an optional additional deliverable when requested.
 - **Survey packages** omit `digests/` and `02-digests.md`. They still produce a full ranked + provenance-tracked bibliography and thematic synthesis; digests are deliberately deferred for later deep dives.

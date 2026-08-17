@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.25 (2026-08-16) — themes now require “Across the Sources: What Is Easy to Miss” checklist (relational parallel to the digest post-reading checkpoint); 1.24 digest improvements retained.
+**Process version:** 1.26 (2026-08-17) — final packaging cleanup: remove empty directories (especially unused `images/`) before zipping; create `images/` only when images are actually included.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -171,11 +171,13 @@ Required structure (adapt per mode and directory-layout.md):
 - Relative links only; images credited.
 - Package shape declared and consistent.
 - Deep packages recognizably denser; Survey packages clean and complete as foundations.
+- Empty directories (especially an unused `images/`) have been removed before packaging.
 
 ## Output Conventions
 - Default: portable Markdown optimized for Obsidian (relative links, clean headings).
 - Optional EPUB when requested.
-- Images under `images/` with relative links and captions (credit + official link).
+- Images under `images/` with relative links and captions (credit + official link). Create the `images/` directory only when at least one image is actually included; do not leave an empty `images/` folder in the final package.
+- **Final packaging cleanup (required):** Before zipping, remove any empty directories that were created during construction (most commonly an unused `images/` folder). The delivered package should contain only directories that hold files.
 - At the end, offer a downloadable zip of the finished package when the environment supports it.
 - Survey packages are not “incomplete Standard packages.”
 - Deep packages remain navigable despite density.
