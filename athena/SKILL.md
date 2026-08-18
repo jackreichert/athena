@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.27 (2026-08-18) — archive clean Markdown copies of consulted syllabi (and relevant short sources when rights-permissive) under `source-materials/` with original links; packaging cleanup for empty dirs retained.
+**Process version:** 1.28 (2026-08-18) — provenance-first: rich links + metadata required for syllabi; full Markdown archival under `source-materials/` is optional and recommended only for high-value or unstable sources. Packaging cleanup retained.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -25,7 +25,7 @@ These adaptive applications are orthogonal to package shape.
 ## Guiding Principles
 
 1. Objectives first — define clear learning outcomes, audience, and package shape before collecting sources.
-2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. **Track and document every syllabus or institutional list consulted** (institution, course, URL/year when available) so source provenance remains transparent; sources that recur across independent high-quality syllabi receive higher weight. When feasible and rights-permissive, archive a clean Markdown reformat of each consulted syllabus (and, when relevant and practical, short accessible sources) into `source-materials/` with a header linking to the original URL; link the local copy from the Syllabi section of `01-sources.md`.
+2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. **Track and document every syllabus or institutional list consulted** with rich provenance (institution, course, year/term, URL or stable identifier, retrieval date, and a short note on what was extracted). Prefer archive.org or other durable mirrors when the original is fragile. Full Markdown archival under `source-materials/` is optional and recommended only for especially valuable or unstable syllabi (and, when relevant and rights-permissive, short accessible sources); when created, link the local copy from the Syllabi section of `01-sources.md`.
 3. Primary > Secondary, but both matter — prioritize original works (texts, artworks, artifacts); use secondary sources for orientation, context, and debate mapping. Deep mode engages a wider secondary literature including key articles and reception.
 4. Consistent extraction — every Core source in Full packages receives the same structured treatment (see digest template).
 5. Thematic synthesis with provenance — organize by themes/concepts/debates, not by source. Every major claim must be back-linkable (to a digest in Full packages, or to a primary/secondary source in Survey).
@@ -43,7 +43,7 @@ Athena packages exist to help users engage primary material *and* know where the
 
 ### In `01-sources.md`
 - Explicit selection criteria.
-- **Syllabi & Discovery Sources Consulted** section: list every syllabus, essential-readings list, institutional highlight/itinerary, or other discovery source used. When a local Markdown copy was created under `source-materials/`, include a relative link to it alongside the original URL.
+- **Syllabi & Discovery Sources Consulted** section: list every syllabus, essential-readings list, institutional highlight/itinerary, or other discovery source used, with rich provenance (institution, course, year/term, URL or stable identifier, retrieval date, short extraction note). Prefer durable links (e.g. archive.org). When an optional local Markdown copy was created under `source-materials/`, include a relative link to it alongside the original.
 - Ranked Core / Important / Supplementary lists with short rationales and provenance notes.
 - Clear identification of primary institutional or canonical sources.
 - A short “Citation practice in this package” note.
@@ -121,13 +121,13 @@ Before any searching:
 Deliverable: `00-scope.md`.
 
 ### Phase 1: Source Discovery & Selection
-- Mine syllabi and high-quality discovery sources; log every one consulted.
-- **When feasible and rights-permissive**, create clean Markdown reformats of consulted syllabi (and relevant short sources) under `source-materials/syllabi/` (or `source-materials/sources/`). Each archived file must open with a header containing original URL, institution/course (or title), retrieval date, and reformatting notes. Prefer open/public materials; never archive paywalled or restricted content.
+- Mine syllabi and high-quality discovery sources; log every one consulted with rich provenance (institution, course, year/term, URL or stable identifier, retrieval date, short extraction note). Prefer durable links (e.g. archive.org) when originals are fragile.
+- **Optional archival:** For especially valuable or unstable syllabi (and, when relevant and rights-permissive, short accessible sources), create clean Markdown reformats under `source-materials/syllabi/` (or `source-materials/sources/`). Each archived file must open with a header containing original URL, institution/course (or title), retrieval date, and reformatting notes. Prefer open/public materials; never archive paywalled or restricted content. Full-length copyrighted monographs are never copied—link only.
 - Rank Core / Important / Supplementary with provenance notes and rationales.
 - Compile the full working bibliography.
 - Selection criteria, citation-practice note, availability notes required.
 - Deep mode: denser annotations. See mode file.
-Deliverable: `01-sources.md` (and optional `01b-search-protocol.md`); `source-materials/` when any copies were created.
+Deliverable: `01-sources.md` (and optional `01b-search-protocol.md`); `source-materials/` only when copies were actually created.
 
 **Iteration checkpoint:** Confirm Core list is realistic for the shape. For Full packages, ensure digests are feasible. For Survey, confirm digests remain out of scope.
 
@@ -166,10 +166,10 @@ Required structure (adapt per mode and directory-layout.md):
 ### Phase 5: Quality Assurance
 - Completeness check (Full packages): every Core has a digest that meets quality expectations; `02-digests.md` correct.
 - Survey: digests correctly omitted; themes still cite sources.
-- Provenance and Syllabi section present and accurate; local `source-materials/` copies (when created) are linked and headers are complete.
+- Provenance and Syllabi section present and accurate (rich metadata + durable links required); any optional local `source-materials/` copies are linked and properly headed.
 - Citations dense in themes.
 - Further-reading substantive.
-- Relative links only; images credited; source-material files properly headed.
+- Relative links only; images credited.
 - Package shape declared and consistent.
 - Deep packages recognizably denser; Survey packages clean and complete as foundations.
 - Empty directories (especially an unused `images/` or `source-materials/`) have been removed before packaging.
@@ -178,7 +178,7 @@ Required structure (adapt per mode and directory-layout.md):
 - Default: portable Markdown optimized for Obsidian (relative links, clean headings).
 - Optional EPUB when requested.
 - Images under `images/` with relative links and captions (credit + official link). Create the `images/` directory only when at least one image is actually included; do not leave an empty `images/` folder in the final package.
-- Source materials (syllabi and short sources) under `source-materials/` when created. Each file carries a header with the original link. Create the directory only when at least one file is present.
+- Optional source materials (high-value syllabi and short sources) under `source-materials/` when created. Each file carries a header with the original link. Create the directory only when at least one file is present.
 - **Final packaging cleanup (required):** Before zipping, remove any empty directories that were created during construction (most commonly an unused `images/` or `source-materials/` folder). The delivered package should contain only directories that hold files.
 - At the end, offer a downloadable zip of the finished package when the environment supports it.
 - Survey packages are not “incomplete Standard packages.”
