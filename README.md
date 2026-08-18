@@ -2,7 +2,7 @@
 
 **A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides; scientific-paper deep dives; and legal case deep dives / case method.**
 
-**Current process version:** 1.25 (2026-08-16)
+**Current process version:** 1.27 (2026-08-18)
 
 ### Skill file (the actual instructions agents load)
 
@@ -66,8 +66,10 @@ athena/
     └── directory-layout.md
 ```
 
-## Recent changes (1.23–1.25)
+## Recent changes (1.26–1.27)
 
+- **1.27:** Source-materials archival. When feasible and rights-permissive, keep clean Markdown reformats of consulted syllabi (and relevant short accessible sources) under a new `source-materials/` folder. Each file carries a header with the original URL; local copies are linked from the Syllabi section of `01-sources.md`. Makes the discovery/provenance trail self-contained and resistant to link rot.
+- **1.26:** Final packaging cleanup — create `images/` only when images are included; remove empty directories before zipping.
 - **1.25:** Themes require **Across the Sources: What Is Easy to Miss** — a concrete checklist of relational observations (parallels, devices that change function, inter-source tensions) that only become visible when sources are read together.
 - **1.24:** Digests require **After Reading: What Is Easy to Miss** at the head of the Full Brief — the literary/philosophical parallel to the museum dual-layer (what a careful first pass still often overlooks).
 - **1.23:** Density improvements against TA-shorthand digests: Reading posture / Watch-fors in Pre-Reading, required Function-in-the-arc notes in unit-by-unit sections, stronger quote expectations, formalized `author-context.md` for single-author packages, raised quality bar.
@@ -76,6 +78,8 @@ These keep the Pre-Reading / Summary / Full Brief structure while making digests
 
 ## Changelog (selected)
 
+- **1.27 (2026-08-18):** Source-materials archival for syllabi and short sources.
+- **1.26 (2026-08-17):** Packaging cleanup for empty directories.
 - **1.25 (2026-08-16):** Themes — “Across the Sources: What Is Easy to Miss.”
 - **1.24 (2026-08-16):** Digests — “After Reading: What Is Easy to Miss.”
 - **1.23 (2026-08-16):** Digest & theme density; author-context consistency.

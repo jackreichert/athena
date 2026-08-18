@@ -2,10 +2,11 @@
 
 Process version history for the Athena skill. The agent does not need this file at runtime; it is for maintainers and package users.
 
-**Current process version:** 1.26 (2026-08-17)
+**Current process version:** 1.27 (2026-08-18)
 
 ## Selected entries
 
+- **1.27 (2026-08-18):** Source-materials archival. When feasible and rights-permissive, keep clean Markdown reformats of consulted syllabi (and relevant short accessible sources) under a new `source-materials/` folder (with `syllabi/` and optional `sources/` subfolders). Each archived file carries a header with original URL, institution/course, retrieval date, and reformatting notes; local copies are linked from the Syllabi & Discovery Sources Consulted section of `01-sources.md`. Makes the discovery/provenance trail self-contained and resistant to link rot. Updated Guiding Principles, Phase 1, Core Value notes, Output Conventions, Phase 5 QA, and directory-layout.md. Empty-directory cleanup rule extended to `source-materials/`.
 - **1.26 (2026-08-17):** Final packaging cleanup. Create the `images/` directory only when at least one image is actually included; as a last step before zipping, remove any empty directories (most commonly an unused `images/` folder). Updated Output Conventions, Phase 5 QA, and directory-layout.md. Keeps delivered packages free of empty clutter.
 - **1.25 (2026-08-16):** Themes now require an **Across the Sources: What Is Easy to Miss** checklist (typically 4–7 concrete bullets on structural/formal parallels, devices that change function across texts, inter-source tensions, or hinges visible only in comparison). This is the thematic parallel to the digest “After Reading: What Is Easy to Miss” section and the museum dual-layer idea. Updated directory-layout.md, mode-standard.md, mode-deep.md, and the themes guidance in SKILL.md. Forces theme narratives to surface relational observations rather than elevated parallel summaries.
 - **1.24 (2026-08-16):** Added required “After Reading: What Is Easy to Miss” checklist at the head of the Full Brief (immediately after Summary). This is the literary/philosophical parallel to the museum dual-layer (Unit/Zone + Period-Specialist Analysis): a short, concrete, text-grounded list of structural hinges, formal choices, and tensions that careful first-time readers frequently overlook. Keeps the anti-reductive stance while giving the student an explicit post-encounter checkpoint. Updated digest-template.md Writing Rules and density language accordingly.
