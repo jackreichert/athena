@@ -30,4 +30,4 @@ Produce complete digests for all Core sources using `references/digest-template.
 Themes back-link to digests and must synthesize across sources rather than remain parallel summaries. Required sections: synthetic narrative, **Across the Sources: What Is Easy to Miss** (relational checklist of what only becomes visible in comparison), Gaps & Open Questions, Theme Bibliography. Matrix strongly recommended when ≥4 Core sources or substantial disagreement.
 
 ### Phase 4 / 5
-Full package with digests. QA includes completeness of Phase 2 and quality of digests against the template.
+Full package with digests. The mandatory Phase 5 integrity audit (filesystem verification that every file listed in `02-digests.md` and `03-themes.md` actually exists and meets structure) applies strictly; missing digests or themes force return to Phase 2 or 3 until the audit passes.

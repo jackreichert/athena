@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.28 (2026-08-18) — provenance-first: rich links + metadata required for syllabi; full Markdown archival under `source-materials/` is optional and recommended only for high-value or unstable sources. Packaging cleanup retained.
+**Process version:** 1.29 (2026-08-19) — post-creation package integrity audit: after assembly, verify every file referenced by indexes (themes, digests) actually exists on disk; if any are missing or structurally incomplete, return to the relevant phase, complete them, and re-audit before declaring the package finished. Provenance-first and packaging cleanup retained.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -32,7 +32,7 @@ These adaptive applications are orthogonal to package shape.
 6. Active and navigable output — recommended reading order, self-test or seminar questions, glossary, modular Markdown.
 7. Transparency and balance — document selection criteria, note limitations, seek multiple perspectives. Explicit anti-bias practices on contested topics.
 8. Progressive disclosure — support high-level overviews (Survey) and deep dives (Standard/Deep) within the same spine.
-9. Completeness over ambition (Full packages) — every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Survey packages deliberately omit digests and are not subject to this gate.
+9. Completeness over ambition (Full packages) — every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Survey packages deliberately omit digests and are not subject to this gate. **After assembly, a package integrity audit is mandatory:** every file referenced by an index (`03-themes.md`, `02-digests.md`, README theme/digest lists, etc.) must exist on disk and meet structural requirements; missing or incomplete files trigger an immediate return to the relevant phase until the audit passes. A package that only has overview/index files without the referenced content is incomplete and must not be delivered.
 10. Anti-reductive — digests help the reader see more, not less. Do not dumb down, moralize, or hand the reader “the meaning.” Prefer the source’s own force and precision; surface tensions and open questions.
 11. Visual materials when they help — for artworks, architecture, maps, diagrams, or other visual primary sources, include high-quality reference images (with credit and official links) when they materially aid understanding. Prefer official museum/collection images or public-domain sources. Store under `images/` with relative Markdown links.
 12. Citations, provenance, and further research are core values, not optional extras.
@@ -163,16 +163,41 @@ Required structure (adapt per mode and directory-layout.md):
 - Full packages also include digests and `02-digests.md`.
 - Place guides may include `artists-bios.md` and `images/`.
 
-### Phase 5: Quality Assurance
-- Completeness check (Full packages): every Core has a digest that meets quality expectations; `02-digests.md` correct.
-- Survey: digests correctly omitted; themes still cite sources.
-- Provenance and Syllabi section present and accurate (rich metadata + durable links required); any optional local `source-materials/` copies are linked and properly headed.
-- Citations dense in themes.
-- Further-reading substantive.
-- Relative links only; images credited.
-- Package shape declared and consistent.
-- Deep packages recognizably denser; Survey packages clean and complete as foundations.
-- Empty directories (especially an unused `images/` or `source-materials/`) have been removed before packaging.
+### Phase 5: Quality Assurance & Package Integrity Audit (mandatory)
+This phase is not a passive checklist. After Phase 4 assembly, **perform an active filesystem audit** of the package directory using available tools (ls, find, read_file, or equivalent). The package is incomplete and must not be declared finished until every check below passes. If any check fails, **immediately return to the responsible earlier phase**, create or repair the missing/incomplete content, re-assemble as needed, and re-run the full audit.
+
+**Integrity audit steps (execute in order):**
+
+1. **Shape consistency:** Confirm `00-scope.md` declares the correct package shape and that digests are present or absent accordingly (Survey: no `digests/` and no `02-digests.md`; Full packages: both present).
+
+2. **Required top-level files exist and are non-empty:** `README.md`, `00-scope.md`, `01-sources.md`, `03-themes.md`, `further-reading.md`, `glossary.md`, `limitations.md`. (Plus `02-digests.md` for Full packages; `matrix.md` when required by the mode/layout; `author-context.md` or `artists-bios.md` when the topic warrants them.)
+
+3. **Themes integrity (critical):**
+   - Parse `03-themes.md` (and the theme index section of `README.md`) for the complete list of theme files it references.
+   - Verify every listed theme file exists under `themes/` and is non-empty.
+   - Spot-check that each theme file contains the required sections: synthetic narrative, **Across the Sources: What Is Easy to Miss**, Gaps & Open Questions, Theme Bibliography (plus Deep-mode extras when applicable).
+   - If any referenced theme file is missing or lacks required sections → return to Phase 3, write the missing themes, update indexes, and re-audit.
+
+4. **Digests integrity (Full packages only):**
+   - Parse `02-digests.md` (and any digest lists in `README.md`) for the complete list of digest files.
+   - Verify every listed digest exists under `digests/` and is non-empty.
+   - Confirm every Core source from `01-sources.md` has a corresponding digest (cross-check the completeness gate).
+   - Spot-check that digests follow the template (Pre-Reading Context + Summary + Full Brief for primary texts; required “After Reading: What Is Easy to Miss”; density expectations).
+   - If any referenced or Core-required digest is missing or incomplete → return to Phase 2, complete the digests, update `02-digests.md`, and re-audit.
+
+5. **Cross-links and provenance:**
+   - Relative links only; no broken internal links to digests or themes.
+   - Syllabi & Discovery Sources section in `01-sources.md` is present with rich provenance; any `source-materials/` copies are linked and properly headed.
+   - Citations in themes are dense and back-linkable.
+
+6. **Content quality gates:**
+   - Further-reading is substantive (named sources and concrete pathways).
+   - Deep packages show denser apparatus; Survey packages are clean foundations with digests correctly omitted.
+   - No fabricated sources, quotes, or locators.
+
+7. **Final packaging cleanup:** Remove any empty directories (`images/`, `source-materials/`, etc.) that were created but unused. The delivered package must contain only directories that hold files.
+
+**Only after the integrity audit fully passes** may the package be considered complete. Offer the downloadable zip of the finished package. Do not stop early with only overview/index files present.
 
 ## Output Conventions
 - Default: portable Markdown optimized for Obsidian (relative links, clean headings).
@@ -180,6 +205,7 @@ Required structure (adapt per mode and directory-layout.md):
 - Images under `images/` with relative links and captions (credit + official link). Create the `images/` directory only when at least one image is actually included; do not leave an empty `images/` folder in the final package.
 - Optional source materials (high-value syllabi and short sources) under `source-materials/` when created. Each file carries a header with the original link. Create the directory only when at least one file is present.
 - **Final packaging cleanup (required):** Before zipping, remove any empty directories that were created during construction (most commonly an unused `images/` or `source-materials/` folder). The delivered package should contain only directories that hold files.
+- **Package integrity is a hard gate:** The integrity audit in Phase 5 must pass (all index-referenced theme and digest files exist on disk and meet structural requirements) before any zip is offered or the package is declared complete. Overview/index files without their referenced content do not constitute a finished package.
 - At the end, offer a downloadable zip of the finished package when the environment supports it.
 - Survey packages are not “incomplete Standard packages.”
 - Deep packages remain navigable despite density.
@@ -188,7 +214,7 @@ Required structure (adapt per mode and directory-layout.md):
 - Do not invent sources or fabricate quotes, page numbers, inventory numbers, or room locations.
 - Favor open-access and official institutional resources when quality is comparable.
 - Keep digests dense but readable; abstract-only digests are not acceptable in Deep mode.
-- Completeness over ambition for Full packages.
+- Completeness over ambition for Full packages. The post-assembly integrity audit is non-negotiable: missing theme or digest files referenced by indexes make the package incomplete.
 - Citations, provenance, and further research are part of the definition of a finished Athena package.
 - Anti-bias is structural on contested topics.
 - This skill is designed to be portable across agents that support the Agent Skills format. Adapt file-system paths and tool calls to the current runtime.

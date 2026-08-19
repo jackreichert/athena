@@ -11,7 +11,7 @@ Athena is treated as a **code module**:
   - Guiding Principles (shared)
   - Core Value rules (citations, provenance, further research, anti-bias)
   - High-level Package Shapes decision rules + one-paragraph summaries
-  - Shared Workflow (Phases 0–5) with pointers
+  - Shared Workflow (Phases 0–5) with pointers — Phase 5 is the mandatory post-assembly package integrity audit
   - Output Conventions + Constraints
   - Resource pointers
 

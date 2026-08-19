@@ -29,4 +29,4 @@ Identical research spine. Rank sources carefully; the ranked list *is* the main 
 Themes cite sources directly. Still require Gaps & Open Questions and Theme Bibliography. Matrix recommended when useful.
 
 ### Phase 4 / 5
-Assemble without digests. QA focuses on provenance transparency, citation density in themes, and whether the package functions as a solid foundation the user can expand later.
+Assemble without digests. The mandatory Phase 5 integrity audit still applies: every theme file listed in `03-themes.md` must exist on disk; digests must be correctly absent. QA focuses on provenance transparency, citation density in themes, and whether the package functions as a solid foundation the user can expand later.
