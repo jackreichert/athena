@@ -2,7 +2,7 @@
 
 **A skill for building rigorous, source-backed study guides that function as the equivalent of a university course — with notes usable by both students and professors. Also builds academic-level place, city, region, and museum guides; scientific-paper deep dives; and legal case deep dives / case method.**
 
-**Current process version:** 1.29 (2026-08-19)
+**Current process version:** 1.30 (2026-08-19)
 
 ### Skill file (the actual instructions agents load)
 
@@ -66,9 +66,10 @@ athena/
     └── directory-layout.md
 ```
 
-## Recent changes (1.26–1.29)
+## Recent changes (1.26–1.30)
 
-- **1.29:** Mandatory post-creation package integrity audit. After assembly, actively verify (via filesystem tools) that every theme and digest file referenced by indexes actually exists on disk and meets structural requirements. Missing files force return to the relevant phase until the audit passes. Prevents incomplete deliveries where overview files exist but referenced content does not.
+- **1.30:** Integrity audit strengthened — top-level indexes (`02-digests.md`, `03-themes.md`) must be complete; every Core *and* Important source must have a complete digest; every theme topic must have a complete theme file.
+- **1.29:** Mandatory post-creation package integrity audit. After assembly, actively verify (via filesystem tools) that every theme and digest file referenced by indexes actually exists on disk and meets structural requirements. Missing files force return to the relevant phase until the audit passes.
 - **1.28:** Provenance-first. Rich metadata + durable links are required for every consulted syllabus. Full Markdown archival under `source-materials/` is optional and recommended only for high-value or unstable sources.
 - **1.27:** Introduced optional `source-materials/` folder for Markdown reformats of syllabi/sources.
 - **1.26:** Final packaging cleanup — create `images/` only when images are included; remove empty directories before zipping.
@@ -78,6 +79,7 @@ athena/
 
 ## Changelog (selected)
 
+- **1.30 (2026-08-19):** Integrity audit strengthened — complete top-level indexes; digests required for Core *and* Important; complete theme file per theme topic.
 - **1.29 (2026-08-19):** Post-creation package integrity audit — filesystem verification of all index-referenced theme and digest files; missing content forces return to Phase 2/3 and re-audit.
 - **1.28 (2026-08-18):** Provenance-first refinement of syllabus handling.
 - **1.27 (2026-08-18):** Source-materials archival support.

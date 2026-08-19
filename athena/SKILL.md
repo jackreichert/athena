@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.29 (2026-08-19) — post-creation package integrity audit: after assembly, verify every file referenced by indexes (themes, digests) actually exists on disk; if any are missing or structurally incomplete, return to the relevant phase, complete them, and re-audit before declaring the package finished. Provenance-first and packaging cleanup retained.
+**Process version:** 1.30 (2026-08-19) — integrity audit strengthened: top-level `02-digests.md` and `03-themes.md` must themselves be complete; every Core *and* Important source must have a complete digest file; every theme topic must have a complete theme file. Missing or incomplete files force return to the relevant phase and re-audit. Provenance-first and packaging cleanup retained.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -32,7 +32,7 @@ These adaptive applications are orthogonal to package shape.
 6. Active and navigable output — recommended reading order, self-test or seminar questions, glossary, modular Markdown.
 7. Transparency and balance — document selection criteria, note limitations, seek multiple perspectives. Explicit anti-bias practices on contested topics.
 8. Progressive disclosure — support high-level overviews (Survey) and deep dives (Standard/Deep) within the same spine.
-9. Completeness over ambition (Full packages) — every Core source must receive a complete digest before themes are written. If this cannot be done, reduce Core and document the change. Survey packages deliberately omit digests and are not subject to this gate. **After assembly, a package integrity audit is mandatory:** every file referenced by an index (`03-themes.md`, `02-digests.md`, README theme/digest lists, etc.) must exist on disk and meet structural requirements; missing or incomplete files trigger an immediate return to the relevant phase until the audit passes. A package that only has overview/index files without the referenced content is incomplete and must not be delivered.
+9. Completeness over ambition (Full packages) — every Core *and* Important source must receive a complete digest before themes are written. If this cannot be done, reduce the lists and document the change in limitations. Survey packages deliberately omit digests and are not subject to this gate. **After assembly, a package integrity audit is mandatory:** (a) the top-level index files themselves (`02-digests.md`, `03-themes.md`) must be complete and accurate; (b) every Core and Important source must have a corresponding complete digest file under `digests/`; (c) every theme topic listed in `03-themes.md` must have a corresponding complete theme file under `themes/`. Missing or incomplete files trigger an immediate return to the relevant phase until the audit passes. A package that only has overview/index files without the referenced content is incomplete and must not be delivered.
 10. Anti-reductive — digests help the reader see more, not less. Do not dumb down, moralize, or hand the reader “the meaning.” Prefer the source’s own force and precision; surface tensions and open questions.
 11. Visual materials when they help — for artworks, architecture, maps, diagrams, or other visual primary sources, include high-quality reference images (with credit and official links) when they materially aid understanding. Prefer official museum/collection images or public-domain sources. Store under `images/` with relative Markdown links.
 12. Citations, provenance, and further research are core values, not optional extras.
@@ -132,7 +132,7 @@ Deliverable: `01-sources.md` (and optional `01b-search-protocol.md`); `source-ma
 **Iteration checkpoint:** Confirm Core list is realistic for the shape. For Full packages, ensure digests are feasible. For Survey, confirm digests remain out of scope.
 
 ### Phase 2: Structured Source Digests (Full packages only)
-**Skip entirely for Survey** (see mode-survey.md). For Standard and Deep, produce a consistent digest for every Core source (and selected Important) using `references/digest-template.md`.
+**Skip entirely for Survey** (see mode-survey.md). For Standard and Deep, produce a consistent digest for **every Core source and every Important source** using `references/digest-template.md`.
 
 Primary-text structure (literary, philosophical, dialogic works): three-part treatment required —
 1. **Pre-Reading Context** — lean, non-spoiling orientation.
@@ -141,9 +141,9 @@ Primary-text structure (literary, philosophical, dialogic works): three-part tre
 
 Anti-reductive rule applies. For artworks/visual objects: dual-layer (Unit/Zone + Period-Specialist Analysis) + images as specified in place-guides.md and the template. Deep mode adds methodological/reception sections.
 
-**Completeness gate (Full packages):** Do not begin Phase 3 until every Core source has a complete digest. If the planned Core is not feasible, reduce it, update sources, and note in limitations.
+**Completeness gate (Full packages):** Do not begin Phase 3 until every Core *and* Important source has a complete digest. If the planned lists are not feasible, reduce them, update `01-sources.md`, and note the change in limitations.
 
-Deliverable: `digests/` + `02-digests.md` (index + recommended reading order).
+Deliverable: `digests/` (one complete file per Core and Important source) + `02-digests.md` (complete index + recommended reading order that accurately lists every digest).
 
 ### Phase 3: Thematic Synthesis & Cross-Referencing
 Extract themes, build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep almost always detailed), write theme narratives with Gaps & Open Questions and Theme Bibliography.
@@ -170,20 +170,25 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
 
 1. **Shape consistency:** Confirm `00-scope.md` declares the correct package shape and that digests are present or absent accordingly (Survey: no `digests/` and no `02-digests.md`; Full packages: both present).
 
-2. **Required top-level files exist and are non-empty:** `README.md`, `00-scope.md`, `01-sources.md`, `03-themes.md`, `further-reading.md`, `glossary.md`, `limitations.md`. (Plus `02-digests.md` for Full packages; `matrix.md` when required by the mode/layout; `author-context.md` or `artists-bios.md` when the topic warrants them.)
+2. **Required top-level files exist, are non-empty, and are complete:**
+   - `README.md`, `00-scope.md`, `01-sources.md`, `03-themes.md`, `further-reading.md`, `glossary.md`, `limitations.md`.
+   - Full packages also require a complete `02-digests.md`.
+   - `matrix.md` when required by the mode/layout; `author-context.md` or `artists-bios.md` when the topic warrants them.
+   - **Top-level index completeness:** `02-digests.md` (when present) and `03-themes.md` must themselves be fully written — accurate lists, working relative links, recommended reading order / theme index, and no placeholder or stub content. An incomplete index file fails the audit even if some child files exist.
 
 3. **Themes integrity (critical):**
-   - Parse `03-themes.md` (and the theme index section of `README.md`) for the complete list of theme files it references.
-   - Verify every listed theme file exists under `themes/` and is non-empty.
+   - Parse `03-themes.md` (and the theme index section of `README.md`) for the complete list of theme topics / files.
+   - Verify **every** listed theme has a corresponding complete file under `themes/` (non-empty, not a stub).
    - Spot-check that each theme file contains the required sections: synthetic narrative, **Across the Sources: What Is Easy to Miss**, Gaps & Open Questions, Theme Bibliography (plus Deep-mode extras when applicable).
-   - If any referenced theme file is missing or lacks required sections → return to Phase 3, write the missing themes, update indexes, and re-audit.
+   - If any theme topic lacks a complete file or required sections → return to Phase 3, write the missing/incomplete themes, update indexes, and re-audit.
 
 4. **Digests integrity (Full packages only):**
-   - Parse `02-digests.md` (and any digest lists in `README.md`) for the complete list of digest files.
-   - Verify every listed digest exists under `digests/` and is non-empty.
-   - Confirm every Core source from `01-sources.md` has a corresponding digest (cross-check the completeness gate).
+   - Parse `01-sources.md` for the full Core list **and** the full Important list.
+   - Parse `02-digests.md` (and any digest lists in `README.md`) for the digest files it claims to cover.
+   - Verify **every Core source and every Important source** has a corresponding complete digest file under `digests/` (non-empty, not a stub).
+   - Verify every digest listed in `02-digests.md` actually exists and is complete.
    - Spot-check that digests follow the template (Pre-Reading Context + Summary + Full Brief for primary texts; required “After Reading: What Is Easy to Miss”; density expectations).
-   - If any referenced or Core-required digest is missing or incomplete → return to Phase 2, complete the digests, update `02-digests.md`, and re-audit.
+   - If any Core or Important source lacks a complete digest, or if `02-digests.md` is incomplete/mismatched → return to Phase 2, complete the digests and the index, and re-audit.
 
 5. **Cross-links and provenance:**
    - Relative links only; no broken internal links to digests or themes.
@@ -205,7 +210,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
 - Images under `images/` with relative links and captions (credit + official link). Create the `images/` directory only when at least one image is actually included; do not leave an empty `images/` folder in the final package.
 - Optional source materials (high-value syllabi and short sources) under `source-materials/` when created. Each file carries a header with the original link. Create the directory only when at least one file is present.
 - **Final packaging cleanup (required):** Before zipping, remove any empty directories that were created during construction (most commonly an unused `images/` or `source-materials/` folder). The delivered package should contain only directories that hold files.
-- **Package integrity is a hard gate:** The integrity audit in Phase 5 must pass (all index-referenced theme and digest files exist on disk and meet structural requirements) before any zip is offered or the package is declared complete. Overview/index files without their referenced content do not constitute a finished package.
+- **Package integrity is a hard gate:** The integrity audit in Phase 5 must pass before any zip is offered or the package is declared complete. This includes: (1) complete top-level index files (`02-digests.md`, `03-themes.md`); (2) a complete digest file for every Core *and* Important source; (3) a complete theme file for every theme topic listed in `03-themes.md`. Overview/index files without their referenced content do not constitute a finished package.
 - At the end, offer a downloadable zip of the finished package when the environment supports it.
 - Survey packages are not “incomplete Standard packages.”
 - Deep packages remain navigable despite density.
@@ -214,7 +219,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
 - Do not invent sources or fabricate quotes, page numbers, inventory numbers, or room locations.
 - Favor open-access and official institutional resources when quality is comparable.
 - Keep digests dense but readable; abstract-only digests are not acceptable in Deep mode.
-- Completeness over ambition for Full packages. The post-assembly integrity audit is non-negotiable: missing theme or digest files referenced by indexes make the package incomplete.
+- Completeness over ambition for Full packages. The post-assembly integrity audit is non-negotiable: incomplete top-level indexes, any Core or Important source without a complete digest, or any theme topic without a complete theme file makes the package incomplete.
 - Citations, provenance, and further research are part of the definition of a finished Athena package.
 - Anti-bias is structural on contested topics.
 - This skill is designed to be portable across agents that support the Agent Skills format. Adapt file-system paths and tool calls to the current runtime.

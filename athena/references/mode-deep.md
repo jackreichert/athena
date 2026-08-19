@@ -23,10 +23,10 @@ Declare package shape = Deep. Digests in scope. Learning outcomes oriented towar
 Expanded mining. Deeper rationales and annotations in `01-sources.md` (2–4 sentences positioning/evaluative for Core and key Important). Optional categorization (Primary / Foundational secondary / Recent scholarship / Methodological-theoretical).
 
 ### Phase 2
-Apply all Deep adaptations in the digest template. Denser unit-level coverage where the source warrants it, including required functional notes and textual density. Completeness gate still applies strictly.
+Apply all Deep adaptations in the digest template for **every Core and every Important source**. Denser unit-level coverage where the source warrants it, including required functional notes and textual density. Completeness gate still applies strictly (do not begin Phase 3 until all Core + Important digests are complete).
 
 ### Phase 3
 Produce the richer thematic apparatus described above, including the required “Across the Sources: What Is Easy to Miss” checklist. Matrix almost always detailed. Seminar Guiding Questions strongly recommended at the top of each theme file.
 
 ### Phase 4 / 5
-Package should feel recognizably denser in bibliography, critical apparatus, and research orientation while remaining navigable. The mandatory Phase 5 integrity audit (filesystem verification that every file listed in `02-digests.md` and `03-themes.md` actually exists and meets structure, plus Deep apparatus) applies strictly; missing digests or themes force return to Phase 2 or 3 until the audit passes. QA also checks for the presence of the Deep-mode apparatus (reception sections, Seminar Guiding Questions, richer annotations, multi-track further reading).
+Package should feel recognizably denser in bibliography, critical apparatus, and research orientation while remaining navigable. The mandatory Phase 5 integrity audit applies strictly: top-level `02-digests.md` and `03-themes.md` must be complete; every Core and Important source must have a complete digest file; every theme topic must have a complete theme file; Deep apparatus must be present. Missing or incomplete items force return to Phase 2 or 3 until the audit passes. QA also checks for the presence of the Deep-mode apparatus (reception sections, Seminar Guiding Questions, richer annotations, multi-track further reading).
