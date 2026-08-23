@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.30 (2026-08-19) — integrity audit strengthened: top-level `02-digests.md` and `03-themes.md` must themselves be complete; every Core *and* Important source must have a complete digest file; every theme topic must have a complete theme file. Missing or incomplete files force return to the relevant phase and re-audit. Provenance-first and packaging cleanup retained.
+**Process version:** 1.31 (2026-08-23) — Place/location/travel guides now explicitly require a historical overview; for museum guides the historical overview is required only when the museum itself is historically important (otherwise optional). Updated place-guides.md and the Adaptive Applications short rules in SKILL.md.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -94,7 +94,8 @@ When the request is for a place, city, region, historic landscape, museum, colle
 
 - Start with syllabi or highest-quality scholarly sources; full provenance required.
 - Treat sites, monuments, neighborhoods, landscapes, and artworks as primary sources.
-- Produce historical orientation + must-see sites with scholarly rationale + practical itineraries grounded in the literature.
+- **Historical overview is required** for city / location / travel guides (layered chronology or key periods). For museum guides it is required when the museum itself is historically important; otherwise optional.
+- Produce must-see sites with scholarly rationale + practical itineraries grounded in the literature.
 - Include images when they enhance understanding.
 - Museum specializations (dual-layer artwork digests, Period-Specialist Analysis, artists-bios.md) are retained and required when applicable.
 
