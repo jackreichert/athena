@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.31 (2026-08-23) — Place/location/travel guides now explicitly require a historical overview; for museum guides the historical overview is required only when the museum itself is historically important (otherwise optional). Updated place-guides.md and the Adaptive Applications short rules in SKILL.md.
+**Process version:** 1.32 (2026-08-25) — After research and thematic synthesis (post-Phase 3, before packaging), decide the primary university department (or program) that would most naturally house a course of this kind and record it in both `00-scope.md` and the package `README.md`. Updated Phase 3/4, directory-layout, and public README.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -119,7 +119,8 @@ Before any searching:
 - Note review type (e.g., hybrid) and any constraints.
 - Decide output format (default Markdown/Obsidian; EPUB if requested).
 - **Load the mode file** for the chosen shape. Also load any applicable adaptive-application file (place-guides, science-paper-guides, or legal-case-guides).
-Deliverable: `00-scope.md`.
+- Note that the primary university department affiliation will be decided later (after research and themes) and recorded in the final `00-scope.md` and package `README.md`.
+Deliverable: `00-scope.md` (initial; departmental home added in Phase 4).
 
 ### Phase 1: Source Discovery & Selection
 - Mine syllabi and high-quality discovery sources; log every one consulted with rich provenance (institution, course, year/term, URL or stable identifier, retrieval date, short extraction note). Prefer durable links (e.g. archive.org) when originals are fragile.
@@ -157,10 +158,13 @@ For museum/site guides, include a practical Navigating / Walkthrough / Practical
 
 Deliverable: `03-themes.md` + `themes/` + `matrix.md` (or embedded).
 
+**Departmental home decision (required, post-research, pre-packaging):** After Phase 3 is complete (sources ranked, themes synthesized), decide the primary university department or program that would most naturally house a course of this kind. Base the decision on the Core sources, the syllabi actually mined, the thematic focus, and the learning outcomes. Prefer the single strongest departmental home indicated by the material (e.g., Philosophy, Classics, History, Religious Studies, Political Science, Comparative Literature, Art History, English, Law, Biology, etc.). If the package is genuinely interdisciplinary, name the primary department and note secondary affiliations. This step occurs after research so the sources and themes inform the placement; do not invent a department early. Record the decision in both the final `00-scope.md` and the package `README.md`.
+
 ### Phase 4: Study Guide Assembly
 Required structure (adapt per mode and directory-layout.md):
-- `README.md` — topic, package shape, review type, outcomes, how to use, learning path, theme index, quick-start. Point to `02-digests.md` when present.
-- `00-scope.md`, `01-sources.md`, theme files, `further-reading.md`, `glossary.md`, `limitations.md`.
+- `README.md` — topic, package shape, **primary university department / program**, review type, outcomes, how to use, learning path, theme index, quick-start. Point to `02-digests.md` when present.
+- `00-scope.md` — must include the departmental home (primary + any secondary affiliations) decided after Phase 3, along with topic statement, audience, package shape, learning outcomes, review type, digests in/out of scope, and output format.
+- `01-sources.md`, theme files, `further-reading.md`, `glossary.md`, `limitations.md`.
 - Full packages also include digests and `02-digests.md`.
 - Place guides may include `artists-bios.md` and `images/`.
 
