@@ -32,13 +32,22 @@ athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 │   └── sources/              # Optional subfolder for short primary/secondary texts or key excerpts when archiving is practical and permitted
 │       ├── short-title.md
 │       └── ...
-└── images/                   # Reference images for artworks, sites, maps, diagrams (only when images are actually included)
-    ├── inventory-or-short-title.jpg
-    └── ...                   # Caption + credit + official link live in the consuming Markdown file
+├── images/                   # Reference images for artworks, sites, maps, diagrams (only when images are actually included)
+│   ├── inventory-or-short-title.jpg
+│   └── ...                   # Caption + credit + official link live in the consuming Markdown file
+└── practical/                # Only when the practical-guides overlay is in scope
+    ├── README.md             # How to use the companion; relationship to the parent package
+    ├── 00-outcomes.md        # Performances the tasks train; map to parent-course outcomes
+    ├── 01-sequence.md        # Task index with guidance state + outcome link per item
+    ├── instructor-notes.md   # Deep companions: how to run critique / what to watch
+    ├── job-aids/             # Optional true checklists, separate from lesson-tasks
+    └── tasks/
+        ├── 01-short-slug.md  # Required sections: performance, guidance state, genre, backlinks, model, criterion, feedback, failure-mode
+        └── ...
 ```
 
 Notes:
-- **Do not leave an empty `images/` or empty `source-materials/` directory** in the final package. Create these folders only when content is actually present; as a last step before packaging, remove any empty directories created during construction.
+- **Do not leave an empty `images/`, `source-materials/`, or `practical/` directory** in the final package. Create these folders only when content is actually present; as a last step before packaging, remove any empty directories created during construction. When the practical-guides overlay is loaded, `practical/` is required and must contain the files listed above — an empty folder fails the Phase 5 audit.
 - Place the package root under an `artifacts/`, project, or working directory as available in the current environment.
 - **Default output is Markdown optimized for Obsidian** (relative links, portable folder structure). EPUB is an optional additional deliverable when requested.
 - **Survey packages** omit `digests/` and `02-digests.md`. They still produce a full ranked + provenance-tracked bibliography and thematic synthesis; digests are deliberately deferred for later deep dives.

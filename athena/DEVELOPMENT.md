@@ -22,7 +22,7 @@ Athena is treated as a **code module**:
   - Quality expectations unique to that shape
   - Do **not** duplicate the shared spine.
 
-- **Adaptive applications** (currently Place / Location / Travel & Museum Guides) live in `references/place-guides.md`. They are orthogonal to modes (a place guide can be Survey, Standard, or Deep). The main file has a short pointer; the full requirements are loaded when the topic is place-based.
+- **Adaptive applications** live in `references/place-guides.md`, `science-paper-guides.md`, `legal-case-guides.md`, and `practical-guides.md`. They are orthogonal to modes (any of them can be Survey, Standard, or Deep). The main file has a short pointer; the full requirements are loaded when the topic matches. Practical guides are on-request (or when the topic is already a lab/studio/practicum), not a default add-on.
 
 - **Templates and layouts** stay in `references/` (`digest-template.md`, `directory-layout.md`).
 
@@ -35,7 +35,7 @@ This matches the progressive-disclosure model of Agent Skills: metadata always v
 1. On trigger, load SKILL.md.
 2. In Phase 0, decide the package shape (Survey / Standard / Deep) from user language and topic.
 3. Immediately load the corresponding `references/mode-*.md` and follow its adaptations for the rest of the run.
-4. If the topic is a place, city, region, museum, or travel guide, also load `references/place-guides.md`.
+4. If an adaptive application applies (place, scientific paper, legal case, or practical companion), also load that reference. Practical companions load only on request or when the topic is already a lab/studio/practicum.
 5. Load digest-template.md and directory-layout.md when needed in Phase 2 / assembly.
 
 If a mode file is not loaded, behavior drifts. The main SKILL.md therefore contains explicit “Load the mode file” instructions.
@@ -99,6 +99,9 @@ athena/                     # the installable skill
     ├── mode-standard.md
     ├── mode-deep.md
     ├── place-guides.md
+    ├── science-paper-guides.md
+    ├── legal-case-guides.md
+    ├── practical-guides.md
     ├── digest-template.md
     └── directory-layout.md
 README.md                   # human-facing overview, install, how to try

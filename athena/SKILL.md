@@ -1,13 +1,13 @@
 ---
 name: athena
-description: Build rigorous source-backed study guides that function as university course equivalents with notes usable by both students and professors. Supports Survey (sources + themes foundation, digests deferred), Standard, and Deep modes. Digests for primary sources include pre-reading context, post-reading full brief, and standalone summary. Tracks source discovery provenance (syllabi and signals) and compiles full bibliography including notable further-reading sources. Explicit anti-bias and completeness rules. Does not dumb down or dictate interpretation. Also supports academic-level place, city, region, and museum guides; scientific paper deep dives; and legal case deep dives / case method (briefing, IRAC, Socratic analysis). Default output Markdown (Obsidian-optimized); optional EPUB. Trigger on athena, athena research, athena survey, athena deep, athena go deep, athena deeper, go deep, deeper, graduate study guide, thematic study guide, self-study package, museum guides, place guides, city guides, travel guides, scientific paper, journal club, primary literature, legal case, case brief, case method, IRAC, or similar academic requests with syllabi mining and theme synthesis.
+description: Build rigorous source-backed study guides that function as university course equivalents with notes usable by both students and professors. Supports Survey, Standard, and Deep modes. Digests include pre-reading context, standalone summary, and post-reading brief. Tracks syllabus provenance and compiles a full bibliography. Anti-bias and completeness rules. Does not dumb down or dictate interpretation. Also supports place, city, museum, and travel guides; scientific paper deep dives; legal case method; and practical hands-on course supplements (workbooks, lab and studio companions, practicums). Default Markdown; optional EPUB. Trigger on athena, athena survey, athena deep, go deep, graduate study guide, self-study package, museum or place or city or travel guides, journal club, legal case, case brief, case method, IRAC, practical guide, workbook, lab manual, studio handbook, practicum, implementation companion, or similar academic requests with syllabi mining and theme synthesis.
 ---
 
 # Athena (Study Guide Builder)
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.32 (2026-08-25) — After research and thematic synthesis (post-Phase 3, before packaging), decide the primary university department (or program) that would most naturally house a course of this kind and record it in both `00-scope.md` and the package `README.md`. Updated Phase 3/4, directory-layout, and public README.
+**Process version:** 1.33 (2026-09-06) — Fourth adaptive application, `references/practical-guides.md`, for hands-on course supplements (task sequences with declared guidance states). Orthogonal to Survey / Standard / Deep. Loaded on request or when the topic is already a lab / studio / practicum; not auto-added to every run. Grounded in a Discovery-first Deep package on practical-guide pedagogy.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -20,6 +20,7 @@ Athena supports three package shapes that share the same research spine (syllabi
 **When the topic is a place, city, region, museum, collection, or travel guide:** Also load `references/place-guides.md`.  
 **When the topic is a primary research paper, journal-club analysis, or scientific-paper reading/critique guidance:** Also load `references/science-paper-guides.md`.  
 **When the topic is a judicial opinion, case briefing, the case method, Socratic analysis, or legal case study:** Also load `references/legal-case-guides.md`.  
+**When the user asks for a practical / hands-on / workbook / lab / studio / practicum / implementation / job-aid companion, or the topic is itself that kind of course:** Also load `references/practical-guides.md`. Do not auto-add this overlay to ordinary study-guide runs.  
 These adaptive applications are orthogonal to package shape.
 
 ## Guiding Principles
@@ -107,6 +108,9 @@ When the topic is a primary research paper (or tightly related set), a journal-c
 ### Legal Case Deep Dives / Case Method
 When the topic is a judicial opinion or set of opinions, case briefing, the case method, Socratic analysis, or legal case study, load `references/legal-case-guides.md`. Grounded in the pedagogy of the Langdellian case method and its evolutions (case briefing / IRAC practice, Socratic classroom dynamics, contextual and problem-solving reforms). Key overlays: precise issue formulation, rule extraction, fact materiality, application/analogical reasoning, holding vs. dicta, scope notes, and generative hypotheticals. Full digest adaptations and theme emphases are in the reference file.
 
+### Practical Guides / Hands-on Course Supplements
+When the user asks for a practical companion to a course (workbook, lab or studio manual, practicum, implementation guide, job aid) or the topic is itself that kind of course, load `references/practical-guides.md`. Grounded in a Discovery-first Deep run on practical-guide pedagogy (cognitive apprenticeship, 4C/ID, worked examples and fading, Schön’s practicum, backward design / constructive alignment, laboratory genre critique, checklists as performance support). The companion is a supplement that makes the reader *do* the work the course claims to teach — a task sequence with declared guidance states (modeled / faded / independent / exploratory-with-scaffolds), not a quiz on the digests and not an auto-added exercise dump. Full file requirements and quality gates are in the reference file.
+
 ## Workflow
 
 Execute the phases in order, with explicit iteration checkpoints. Write all deliverables as Markdown files in a dedicated, self-contained directory (commonly `artifacts/athena-<topic-slug>/` — adapt the root path to the current environment). Keep the package portable with relative links only.
@@ -118,7 +122,7 @@ Before any searching:
 - Define learning outcomes.
 - Note review type (e.g., hybrid) and any constraints.
 - Decide output format (default Markdown/Obsidian; EPUB if requested).
-- **Load the mode file** for the chosen shape. Also load any applicable adaptive-application file (place-guides, science-paper-guides, or legal-case-guides).
+- **Load the mode file** for the chosen shape. Also load any applicable adaptive-application file (place-guides, science-paper-guides, legal-case-guides, or practical-guides).
 - Note that the primary university department affiliation will be decided later (after research and themes) and recorded in the final `00-scope.md` and package `README.md`.
 Deliverable: `00-scope.md` (initial; departmental home added in Phase 4).
 
@@ -167,6 +171,7 @@ Required structure (adapt per mode and directory-layout.md):
 - `01-sources.md`, theme files, `further-reading.md`, `glossary.md`, `limitations.md`.
 - Full packages also include digests and `02-digests.md`.
 - Place guides may include `artists-bios.md` and `images/`.
+- Practical companions, when in scope, include `practical/` (see `references/practical-guides.md` and directory-layout.md).
 
 ### Phase 5: Quality Assurance & Package Integrity Audit (mandatory)
 This phase is not a passive checklist. After Phase 4 assembly, **perform an active filesystem audit** of the package directory using available tools (ls, find, read_file, or equivalent). The package is incomplete and must not be declared finished until every check below passes. If any check fails, **immediately return to the responsible earlier phase**, create or repair the missing/incomplete content, re-assemble as needed, and re-run the full audit.
@@ -205,7 +210,9 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
    - Deep packages show denser apparatus; Survey packages are clean foundations with digests correctly omitted.
    - No fabricated sources, quotes, or locators.
 
-7. **Final packaging cleanup:** Remove any empty directories (`images/`, `source-materials/`, etc.) that were created but unused. The delivered package must contain only directories that hold files.
+7. **Final packaging cleanup:** Remove any empty directories (`images/`, `source-materials/`, `practical/`, etc.) that were created but unused. The delivered package must contain only directories that hold files.
+
+8. **Adaptive-application extras:** If an overlay required additional files (for practical companions, `practical/` plus every task listed in `practical/01-sequence.md`), include those in this audit and follow that overlay’s extra gates. An empty or stub `practical/` fails the same way a missing digest fails.
 
 **Only after the integrity audit fully passes** may the package be considered complete. Offer the downloadable zip of the finished package. Do not stop early with only overview/index files present.
 
@@ -239,6 +246,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
   - Place / museum / location: `references/place-guides.md`
   - Scientific paper deep dives: `references/science-paper-guides.md`
   - Legal case deep dives / case method: `references/legal-case-guides.md`
+  - Practical guides / hands-on supplements: `references/practical-guides.md`
 - Digest template: `references/digest-template.md` (includes Deep adaptations)
 - Example directory layout: `references/directory-layout.md`
 - Skill maintenance notes: `DEVELOPMENT.md`
