@@ -7,7 +7,7 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.33 (2026-09-06) — Fourth adaptive application, `references/practical-guides.md`, for hands-on course supplements (task sequences with declared guidance states). Orthogonal to Survey / Standard / Deep. Loaded on request or when the topic is already a lab / studio / practicum; not auto-added to every run. Grounded in a Discovery-first Deep package on practical-guide pedagogy.
+**Process version:** 1.34 (2026-09-22) — Digest Pre-Reading now includes **How to read this source (first encounter)** for long, composite, or formally odd Core sources: a named first-pass route and stopping rule, distinct from Watch-fors and from the package reading order. Template change only; no new mode or adaptive application.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -141,9 +141,9 @@ Deliverable: `01-sources.md` (and optional `01b-search-protocol.md`); `source-ma
 **Skip entirely for Survey** (see mode-survey.md). For Standard and Deep, produce a consistent digest for **every Core source and every Important source** using `references/digest-template.md`.
 
 Primary-text structure (literary, philosophical, dialogic works): three-part treatment required —
-1. **Pre-Reading Context** — lean, non-spoiling orientation.
+1. **Pre-Reading Context** — lean, non-spoiling orientation, including Watch-fors and, when the source is long, composite, or formally odd, a **How to read this source (first encounter)** route (named units + stopping rule). See `references/digest-template.md`.
 2. **Summary** — compact standalone overview.
-3. **Full Brief (Post-Reading)** — denser engagement after the reader has encountered the primary; helps notice structure, moves, cross-links, open questions.
+3. **Full Brief (Post-Reading)** — denser engagement after the reader has encountered the primary; helps notice structure, moves, cross-links, open questions. Deep mode may add a short second-pass route after the Full Brief when the first pass postponed material.
 
 Anti-reductive rule applies. For artworks/visual objects: dual-layer (Unit/Zone + Period-Specialist Analysis) + images as specified in place-guides.md and the template. Deep mode adds methodological/reception sections.
 
@@ -197,7 +197,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
    - Parse `02-digests.md` (and any digest lists in `README.md`) for the digest files it claims to cover.
    - Verify **every Core source and every Important source** has a corresponding complete digest file under `digests/` (non-empty, not a stub).
    - Verify every digest listed in `02-digests.md` actually exists and is complete.
-   - Spot-check that digests follow the template (Pre-Reading Context + Summary + Full Brief for primary texts; required “After Reading: What Is Easy to Miss”; density expectations).
+   - Spot-check that digests follow the template (Pre-Reading Context + Summary + Full Brief for primary texts; required “After Reading: What Is Easy to Miss”; **How to read this source** present when the source is long, composite, or formally odd; density expectations).
    - If any Core or Important source lacks a complete digest, or if `02-digests.md` is incomplete/mismatched → return to Phase 2, complete the digests and the index, and re-audit.
 
 5. **Cross-links and provenance:**

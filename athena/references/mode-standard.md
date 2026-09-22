@@ -10,7 +10,7 @@ Includes `02-digests.md` (index + recommended reading order).
 ## Key characteristics
 - Digests are required for every Core source **and every Important source**.
 - Completeness gate applies: do not begin Phase 3 until every Core and Important source has a complete digest.
-- Digests follow the three-part structure for primary texts (Pre-Reading Context + Summary + Full Brief) and the dual-layer structure for complex artworks. Unit-by-unit sections must include the required “Function in the arc” note and meet density expectations (textual specificity + high-signal quotes with locators); skeletal shorthand fails the quality bar.
+- Digests follow the three-part structure for primary texts (Pre-Reading Context + Summary + Full Brief) and the dual-layer structure for complex artworks. Pre-Reading includes Watch-fors and, for long/composite/formally odd sources, **How to read this source (first encounter)**. Unit-by-unit sections must include the required “Function in the arc” note and meet density expectations (textual specificity + high-signal quotes with locators); skeletal shorthand fails the quality bar.
 - Theme narratives back-link to digests and should synthesize across sources rather than remain parallel summaries. Each theme includes the required “Across the Sources: What Is Easy to Miss” checklist.
 - Active learning questions are calibrated for undergrad mastery and discussion.
 - Bibliography and annotations are useful but not seminar-dense.

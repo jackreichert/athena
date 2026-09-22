@@ -24,7 +24,7 @@ Athena is treated as a **code module**:
 
 - **Adaptive applications** live in `references/place-guides.md`, `science-paper-guides.md`, `legal-case-guides.md`, and `practical-guides.md`. They are orthogonal to modes (any of them can be Survey, Standard, or Deep). The main file has a short pointer; the full requirements are loaded when the topic matches. Practical guides are on-request (or when the topic is already a lab/studio/practicum), not a default add-on.
 
-- **Templates and layouts** stay in `references/` (`digest-template.md`, `directory-layout.md`).
+- **Templates and layouts** stay in `references/` (`digest-template.md`, `directory-layout.md`). Digest-structure changes (a new required Pre-Reading subsection, for example) belong in the template plus a one-line Phase 2 pointer — not a new adaptive application.
 
 - **Changelog** is *not* part of the runtime skill. It lives at package top level (`CHANGELOG.md`) so maintainers and users can see history without bloating the agent’s context.
 

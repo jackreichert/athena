@@ -28,6 +28,7 @@ Use the standard three-part structure (Pre-Reading Context / Summary / Full Brie
 - Key prior results or controversies a reader should have lightly in mind
 - Practical notes (open access status, length, density of figures, any supplemental material that is essential)
 - What kind of claim the paper is likely making (mechanistic, observational, methodological, clinical, theoretical, etc.)
+- **How to read this source:** default first-pass route is figures/tables and methods before the authors’ interpretive prose; note supplements that must be postponed or taken on the first pass. Do not treat the abstract as the paper.
 
 **Summary (Standalone)**
 - Research question / hypothesis in one or two sentences

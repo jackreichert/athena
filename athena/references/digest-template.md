@@ -23,6 +23,11 @@ Use this section *before* engaging the primary source. Aim for orientation, not 
 - Practical notes (recommended edition/translation, approximate length, structural quirks worth knowing in advance)
 - Stakes: why this source has mattered in the tradition (without dictating a reading)
 - **Reading posture / Watch-fors** (1–4 short bullets, genre-aware and non-spoiling): concrete habits or structural features the reader should track (e.g., speaker shifts and elenchus turns in a dialogue; narrative framing and reliability of voice in short fiction; formal or rhetorical devices that interact with the argument). These help the reader engage the source’s own form without front-loading conclusions.
+- **How to read this source (first encounter)** — a *procedure*, not an interpretation. Required for long, composite, formally odd, or easily mis-entered Core sources (letter collections, notebooks, fragment corpora, multi-book treatises, case clusters, paper+supplement packages). Lean or omit for a short continuous treatise or a single opinion where the only route is start-to-end. Distinguish from Watch-fors (attention cues) and from `02-digests.md` (order *across* sources). Include:
+  - What *not* to do on a first pass (straight-through of an entire corpus, excerpt-only, treatise-as-letter, figures-last, holding-first, etc.)
+  - A first-pass route: named parts, letters, books, scenes, figures, or sections, in order, with a stopping rule
+  - One or two reading habits tied to *this* form (e.g. opening scene → claim; speaker shift before extracting a doctrine)
+  - What to postpone (later books, technical letters, apparatus, dissents as a second pass)
 
 Keep this section relatively lean. Do not summarize the argument or plot in detail here; do not tell the reader what to conclude.
 
@@ -90,6 +95,8 @@ Insert these sections after Overall Assessment & Open Questions (or integrate wh
 
 These sections turn the Full Brief into a seminar-memo / teaching-note equivalent: after reading the primary *and* the Full Brief, a student or professor should be able to open or sustain a serious discussion of the source’s contribution, methods, position in the conversation, and open questions.
 
+**Optional Deep addition — second-pass route:** After the Full Brief (not in Pre-Reading), a short “How to return to this source” note is allowed when the first-encounter route deliberately postponed material (technical letters, later books, apparatus). Keep it a path, not a new interpretation.
+
 ### Writing Rules (anti-reductive stance)
 - **Do not dumb down or dictate interpretation.** The goal is to help the reader see more of what is there and how it participates in larger conversations — not to replace the encounter with the primary text or to hand them “the meaning.”
 - Summarize in the source author’s (or dramatist’s) own force where possible; avoid bland paraphrase that loses precision or energy.
@@ -99,6 +106,7 @@ These sections turn the Full Brief into a seminar-memo / teaching-note equivalen
 - Deep mode digests may be longer; maintain clear structure and scannability.
 - For sequences of related works (Plato’s dialogues, Shakespeare’s history cycle, etc.), make cross-links and conversation-positioning especially explicit so the reader does not miss intertextual or developmental connections.
 - **Density expectation:** Digests that remain high-level shorthand or skeletal topic lists (useful mainly as TA reminders) fail the quality bar. The Full Brief, especially the “After Reading: What Is Easy to Miss” checklist and the unit-by-unit sections with functional notes, should give a student enough textual and structural specificity to support independent engagement and discussion.
+- **How to read this source** is a first-encounter procedure. Do not use it to smuggle a thesis. Named units and a stopping rule beat “read thoughtfully.” Watch-fors remain attention cues; `02-digests.md` remains the cross-source order.
 
 ### Adaptation for Artworks & Visual Objects (v1.3+; dual-layer strengthened v1.13)
 

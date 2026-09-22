@@ -29,6 +29,7 @@ Use the standard three-part structure (Pre-Reading Context / Summary / Full Brie
 - Key prior authority or controversy a reader should have lightly in mind
 - Practical notes (length, density, whether the opinion is heavily edited in the casebook, presence of important dissents or concurrences)
 - What kind of work the case is doing (establishing a rule, refining an exception, resolving a circuit split, illustrating a policy tension, etc.)
+- **How to read this source:** first-pass route through facts and procedural posture before the holding; when a dissent or concurrence is pedagogically load-bearing, say whether it belongs on pass one or two. For case clusters, name the order of opinions.
 
 **Summary (Standalone)**
 - Parties and core dispute in one or two sentences

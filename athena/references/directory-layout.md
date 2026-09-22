@@ -18,7 +18,7 @@ athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ├── artists-bios.md           # Recommended for multi-creator / museum topics: short parallel bios
 ├── digests/                  # Only present in Full packages (Standard or Deep)
 │   ├── author-year-short-title.md
-│   └── ...                   # Primary texts: Pre-Reading Context + Summary + Full Brief (Post-Reading). Deep: + Methodological / Reception / Subsequent Engagements
+│   └── ...                   # Primary texts: Pre-Reading Context (incl. How to read this source when warranted) + Summary + Full Brief (Post-Reading). Deep: + Methodological / Reception / Subsequent Engagements
 │                             # Artworks: dual-layer (Unit/Zone + Period-Specialist Analysis) + images
 ├── themes/
 │   ├── 01-theme-name.md      # Includes Gaps & Open Questions + Theme Bibliography
