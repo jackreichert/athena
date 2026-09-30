@@ -73,6 +73,8 @@ This is non-negotiable. Skipping it produces generic or superficial modules that
 ### Changing the shared spine
 Any change that affects all modes (new phase, new required file, change to citation practice, anti-bias rules, etc.) goes in SKILL.md. Then check every mode file and the place-guides file for consistency and update deltas if needed.
 
+Discovery-method expansions that apply to every topic (for example the 1.35 apparatus / bibliography pass) belong on the shared spine plus mode *deltas* for intensity. They are **not** adaptive applications. Do not create `references/bibliography-guides.md` or a fourth package shape for citation chaining.
+
 ### Versioning
 - Bump the **Process version** line in SKILL.md on every meaningful change to behavior.
 - Record the change in CHANGELOG.md with enough detail that a future maintainer understands *why*.

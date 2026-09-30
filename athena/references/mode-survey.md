@@ -20,7 +20,7 @@ Ideal language triggers: “survey of…”, “overview of…”, “sources an
 Declare package shape = Survey. Explicitly state “Digests: out of scope (deferred).” Learning outcomes focus on orientation, source map, and thematic overview rather than close reading mastery.
 
 ### Phase 1
-Identical research spine. Rank sources carefully; the ranked list *is* the main deliverable of this phase for Survey.
+Identical research spine, including the bounded apparatus pass when draft-Core works have usable apparatus. Rank sources carefully; the ranked list *is* the main deliverable of this phase for Survey. Harvested citations are especially useful here because there is no digest-load constraint — they can thicken Supplementary and further-reading without triggering completeness obligations. Phase 1b still only on request.
 
 ### Phase 2
 **Skip.** Do not produce digests. Do not create `02-digests.md`.

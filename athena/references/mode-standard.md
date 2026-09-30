@@ -21,7 +21,7 @@ Includes `02-digests.md` (index + recommended reading order).
 Declare package shape = Standard. Digests are in scope. Learning outcomes include close engagement with Core sources.
 
 ### Phase 1
-Focused Core + Important lists (realistic for complete digests). Provenance tracking and full working bibliography required.
+Focused Core + Important lists (realistic for complete digests). Provenance tracking and full working bibliography required. Run the shared **bounded** apparatus pass (5–15 high-signal citations per eligible Core work). Do not let the harvest expand Core or Important past digest feasibility. Phase 1b (`01c-citation-network.md`) only on user request; do not reopen ranking unless asked.
 
 ### Phase 2
 Produce complete digests for **all Core and all Important sources** using `references/digest-template.md`. Quality expectations apply (no abstract-only digests; unit-by-unit sections must include functional notes and textual density suitable for student use). Create a complete `02-digests.md` as the index + recommended reading order that lists every digest.

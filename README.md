@@ -4,7 +4,7 @@ A skill that builds rigorous, source-backed study guides that function as univer
 
 It also produces academic-level place, city, region, and museum guides; scientific-paper deep dives; legal case deep dives / case method; and **practical hands-on course supplements** (workbooks, lab and studio companions, practicums, job aids).
 
-**Process version:** 1.34 (2026-09-22)
+**Process version:** 1.35 (2026-09-28)
 
 ---
 
@@ -17,10 +17,11 @@ Typical deliverables include:
 * Clear learning outcomes and scope
 * **Primary university department / program** (decided after research from sources, syllabi, and themes)
 * Ranked, provenance-tracked sources (syllabi and discovery signals are logged)
+* A **bounded apparatus / bibliography pass** after the draft Core list exists — citations harvested from Core books that have scholarly apparatus, logged as *cited in [Core work]*, never auto-promoted to Core
 * Structured digests of primary sources (pre-reading orientation + standalone summary + full post-reading brief)
 * **How to read this source** on long, composite, or formally odd works — a first-encounter route (named units and a stopping rule), not a thesis
 * Thematic synthesis with citations and “what is easy to miss” sections
-* Further-reading pathways
+* Further-reading pathways (and, on request, a citation-network addendum)
 * Glossary and limitations
 * When requested, a **practical companion** under practical/ — a task sequence with declared guidance states, not a quiz on the digests
 
@@ -42,7 +43,8 @@ The final output is a **self-contained directory of Markdown files** (Obsidian-f
 athena-<topic-slug>/
 ├── README.md                 # Includes primary university department
 ├── 00-scope.md               # Includes primary university department (+ secondary if interdisciplinary)
-├── 01-sources.md             # Ranked bibliography + full provenance
+├── 01-sources.md             # Ranked bibliography + full provenance + apparatus log
+├── 01c-citation-network.md   # Optional: next-ring sources from Core apparatuses
 ├── 02-digests.md             # Index + reading order (Full packages only)
 ├── 03-themes.md
 ├── further-reading.md
@@ -67,13 +69,14 @@ Survey packages omit `digests/` and `02-digests.md`. Full packages (Standard / D
 
 Athena treats study-guide construction as a disciplined research process rather than free-form summarization.
 
-It achieves this by enforcing a fixed sequence of phases (scope → source discovery with syllabus provenance → consistent digests → thematic synthesis → departmental home decision → integrity audit) and by refusing to advance until completeness and citation standards are met.
+It achieves this by enforcing a fixed sequence of phases (scope → source discovery with syllabus provenance and a bounded Core-apparatus pass → consistent digests → thematic synthesis → departmental home decision → integrity audit) and by refusing to advance until completeness and citation standards are met.
 
 **Core stance**
 
 * Primary sources come first. Digests orient and help the reader notice structure, moves, and open questions; they do not replace the primary encounter or hand the reader “the meaning.”
 * Completeness over ambition. In full packages every Core *and* Important source receives a complete digest before themes are written. Missing content fails a hard integrity audit.
 * Provenance is required. Every syllabus or discovery source consulted is logged with institution, course, year, durable link, and what was extracted from it.
+* **Two expert signals, not one.** Syllabi are a teaching-canon signal. The bibliographies, recommended-reading chapters, and editors’ notes inside Core books that have apparatus are a research-canon signal. Athena mines the second only after a draft Core list exists, caps the harvest, and never treats a citation as automatic promotion into Core.
 * Themes are synthetic, not sequential. They organize by concept or debate and back every major claim to a digest or source. Each theme includes a concrete “Across the Sources: What Is Easy to Miss” checklist.
 * Anti-reductive by design. The skill explicitly refuses to dumb down, moralize, or collapse contested material into a single approved interpretation.
 * **Departmental home is decided after research.** Once sources and themes are established, Athena identifies the primary university department or program that would most naturally house a course of this kind and records it in 00-scope.md and README.md.
@@ -83,15 +86,17 @@ It achieves this by enforcing a fixed sequence of phases (scope → source disco
 **High-level workflow**
 
 1. **Scope** — Define topic, audience, package shape (Survey / Standard / Deep), and learning outcomes. Load the matching mode file and any adaptive overlay.
-2. **Sources** — Mine syllabi and high-quality discovery signals; rank Core / Important / Supplementary with full provenance.
+2. **Sources** — Mine syllabi and high-quality discovery signals; draft-rank Core / Important / Supplementary; then run a bounded apparatus pass on Core works that have one; compile the working bibliography with full provenance.
 3. **Digests** (Full packages) — Produce consistent three-part digests for every Core and Important source, including a first-encounter reading route when the source is long, composite, or formally odd.
 4. **Themes** — Synthesize across sources with citations, gaps, and open questions.
 5. **Departmental home** — After research is complete, decide the primary university department (and any secondary affiliations) that would house the course; record in scope and README.
 6. **Assembly & audit** — Build the navigable package, then actively verify that every index entry points to real, complete content. Only then is a zip offered.
 
+Against a *finished* package, “expand from bibliographies,” “citation network,” or “next ring from Core” reopens discovery only and writes `01c-citation-network.md`. It does not reopen the digest completeness gate unless the user explicitly asks to reopen ranking.
+
 The same spine supports ordinary study guides, place/museum guides, scientific-paper deep dives, legal case-method packages, and practical companions. Adaptive reference files supply the domain-specific overlays.
 
-New adaptive applications follow a **Discovery-first** rule (`athena/DEVELOPMENT.md`): run Athena Deep on the pedagogy of the domain before writing the overlay. The practical-guides overlay was designed that way. Digest-structure changes stay in `references/digest-template.md`.
+New adaptive applications follow a **Discovery-first** rule (`athena/DEVELOPMENT.md`): run Athena Deep on the pedagogy of the domain before writing the overlay. The practical-guides overlay was designed that way. Digest-structure changes stay in `references/digest-template.md`. Shared discovery methods (syllabi, apparatus mining) stay on the spine.
 
 ---
 
@@ -108,6 +113,7 @@ Athena case brief / case method on [judicial opinion]
 Athena legal case deep dive on [case or doctrine]
 Athena practical companion to [course or existing package]
 Athena workbook / lab manual / studio / practicum on [topic]
+Athena expand from bibliographies / citation network / next ring from Core
 ```
 
 ---
