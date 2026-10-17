@@ -1,60 +1,95 @@
 # Place / Location / Travel & Museum Guides (Athena Adaptive Application)
 
-## Adaptive Applications (Place / Location / Travel & Museum Guides)
-
 Athena supports **place-based guides** at academic depth — cities, regions, historic landscapes, and museums — modeled on the best scholarly and high-cultural practice (Blue Guides’ “understand more fully what one sees,” university “History of [City] / Biography of a City” syllabi, Harvard-style layered city histories, cultural-landscape approaches). These are not tourist-brochure or “top 10 Instagram” lists. They aim for the knowledge a serious traveler or student would want: historical layers, why sites matter in the scholarly conversation, what not to miss and *why*, and a transparent evidence base.
 
-### Shared requirements for all place / location guides
+The process has two mandatory stages for museum and major site guides:
+
+1. **Step 1 — Markdown package (always first).** Full research, ranked sources with provenance, dual-layer digests for every Core and Important space/work, themes, glossary, further reading, limitations. Delivered as a zip.
+2. **Step 2 — Visitor EPUB.** After the Markdown package is complete and audited, produce a polished sequential EPUB that restructures *the same content* for on-site use. The EPUB does not abbreviate the dual-layer analysis. Delivered alongside the Markdown zip.
+
+## Shared requirements for all place / location guides
+
 - **Start with syllabi and highest-quality sources.** Preferentially mine university syllabi and reading lists for “History of [Place],” “Art & Architecture of [Place],” urban history, or equivalent courses. When syllabi are thin or unavailable, fall back to the strongest scholarly monographs, architectural histories, official institutional catalogues, and classic cultural guides (e.g., Blue Guide tradition). Log every syllabus or discovery source consulted (as in Phase 1 provenance rules). Compile a full working bibliography with provenance notes.
 - Treat major **sites, monuments, neighborhoods, landscapes, and (when relevant) artworks** as primary sources. Digests or site entries emphasize historical context, significance, formal or spatial character, and current condition/location.
 - Produce a practical but scholarly **walkthrough / itinerary / “what not to miss”** theme or section grounded in the historical and critical literature, not popularity rankings.
-- **Historical overview / orientation:**
-  - **Required** for city, region, location, and travel guides: include a clear historical overview (layered chronology or key periods) so the reader understands the place as a sequence of transformations, not a static set of attractions.
-  - **For museum / collection guides:** required when the museum itself is historically important (as a building, institution with significant history, founding context, or site of historical events); otherwise optional. In the optional case the focus may remain on collections, artworks, and institutional highlights without a full place-history section.
+- **Historical overview / orientation is required.**
+  - For city, region, location, and travel guides: include a clear historical overview (layered chronology or key periods) so the reader understands the place as a sequence of transformations, not a static set of attractions.
+  - For museum / collection guides: always include location and institutional context — the building’s history, the institution’s founding and later development, the dynasty or patronage system that shaped the collection, and any major political or cultural settlements that frame the works. This is not optional.
 - **Images when they enhance understanding:** Include maps, site plans, exterior/interior photographs, or key artworks when visual reference materially helps the reader. Prefer official or public-domain sources; store under `images/` with relative links and captions that credit the source. Especially valuable for complex sites, floor plans, and works discussed in digests.
 - Support iterative expansion: a first guide can be high-level; the user can later request deeper treatment of a neighborhood, museum, or theme.
 - Hybrid review type is usually optimal.
 - Always note that physical conditions, openings, and hangings can change.
 - Deep mode adds denser historiography, debates about the place, and specialist literature.
 
-### Museum / collection / exhibition specializations (retained and required when applicable)
+## Unmissable works and spaces (ranking, not capping)
+
+For museum and major site guides, the goal is to give the visitor everything they would regret missing on a single visit, without overwhelming them.
+
+- **Do not artificially cap the number of digests.** Prioritize the works and spaces a careful visitor would most regret missing, grounded in institutional highlights, official “must-see” lists, and scholarly consensus.
+- **Rank them.** Present a clear priority order (Core / Important / Supplementary, or an explicit ranked checklist) so the visitor can decide how deep to go. A short “if you only have one hour” route and a fuller “you may never return” route should both be available.
+- Expand beyond an initial Core list when additional major works (key Rembrandts, Caravaggios, Rubens, Titians, major rooms, essential objects) are clearly part of the collection’s essential holdings. Document the expanded selection in `01-sources.md` and `limitations.md`.
+- For each ranked item, supply the full dual-layer treatment (zone-by-zone + period-specialist analysis) so the visitor can look with precision.
+
+## Museum / collection / exhibition specializations
+
 - Treat individual **artworks, objects, or spaces** as primary sources. Digests emphasize formal description, iconography/symbolism, historical context, provenance, and current location (room/floor when known).
-- **Dual-layer treatment for artworks (required for major and complex works):** (1) Unit-by-unit / zone-by-zone summaries that map the object (including exterior panels, wings, or distinct spatial zones for triptychs and similar formats); (2) a dedicated Period-Specialist Analysis that situates style, technique, iconography, patronage, workshop practice, and meaning in period context and explicitly surfaces symbolism a general viewer is likely to miss, period-specific historical context, significant visual details or objects, and the meaning of colors as understood in that period. Both layers are required for complex works — do not substitute one for the other. In Deep mode, ground the specialist analysis more explicitly in named specialists or standard period literature.
-- **Images (required when they enhance understanding):** For major artworks and key visual objects, include at least one high-quality reference image in the digest (and additional detail images when useful for panels, zones, or iconographic points). Prefer official museum collection images or public-domain high-resolution sources. Place the primary image near the top of the digest (after the bibliographic entry). Always caption with credit, inventory number when known, and a link to the official collection page. Store images under an `images/` subdirectory with relative Markdown links so the package remains portable. Note that physical hangings and lighting can change; the image is a study reference, not a substitute for seeing the work.
+- **Dual-layer treatment for artworks and complex spaces (required):** (1) Unit-by-unit / zone-by-zone summaries that map the object or room (including exterior panels, wings, or distinct spatial zones); (2) a dedicated Period-Specialist Analysis that situates style, technique, iconography, patronage, workshop practice, and meaning in period context and explicitly surfaces symbolism a general viewer is likely to miss, period-specific historical context, significant visual details or objects, and the meaning of colors as understood in that period. Both layers are required — do not substitute one for the other. In Deep mode, ground the specialist analysis more explicitly in named specialists or standard period literature.
+- **Images (required when they enhance understanding):** For major artworks and key visual objects, include at least one high-quality reference image in the digest (and additional detail images when useful). Prefer official museum collection images or public-domain high-resolution sources. Place the primary image near the top of the digest (after the bibliographic entry). Always caption with credit, inventory number when known, and a link to the official collection page. Store images under `images/` with relative Markdown links. Note that physical hangings and lighting can change; the image is a study reference.
 - Prioritize **official museum resources** (collection pages, official highlights/itineraries, floor plans) alongside scholarly consensus lists. Link to official collection pages wherever possible.
-- **Do not artificially cap the number of digests.** For museum and collection guides, prioritize the works a careful visitor would most regret missing, grounded in institutional highlights, official “must-see” lists, and scholarly consensus. Expand beyond an initial Core list when additional major works (e.g., key Rembrandts, Caravaggios, Rubens, Titians) are clearly part of the collection’s essential holdings. Document the expanded selection in `01-sources.md` and `limitations.md`.
 - When multiple creators are central, add **`artists-bios.md`** (or `creators-bios.md`) with short parallel biographies.
-- When the museum itself is historically important, the historical overview of the institution/building is required (see shared rule above).
+- Always include location and institutional history (see shared rule above).
 
-### Optional Step 2: Visitor-Oriented EPUB (Museum / Collection Guides)
+## Step 1 — Markdown package (always first)
 
-After the Standard (or Deep) Markdown package is complete and audited, the user may request a second deliverable: a polished, sequential, visitor-friendly EPUB that restructures the same content for use before and during a visit. This is an optional enhancement, not a replacement for the Markdown package. Both versions are delivered.
+Produce the full Standard (or Deep) package before any EPUB work:
 
-**Process distilled from the Kunsthistorisches Museum guide (2026):**
+- `00-scope.md`, `01-sources.md` (with ranked Core / Important / Supplementary and provenance),
+- complete dual-layer digests under `digests/` for every Core and Important space or work,
+- `02-digests.md` index,
+- themes under `themes/` (including a navigating / walkthrough theme and a location-and-institution theme),
+- glossary, further-reading, limitations,
+- artists-bios when relevant,
+- images when they help.
 
-1. **Preserve the Athena package** — The Markdown zip remains the scholarly base (scope, ranked sources with provenance, full dual-layer digests, themes, artists-bios, glossary, further-reading, limitations).
+Deliver the audited Markdown package as a zip. Do not begin the EPUB until this package is complete.
 
-2. **Restructure into a linear walk-through** — Convert digests and themes into sequential chapters that follow a practical route through the building or site:
-   - How to Use + suggested routes (short highlights / half-day / full day) up front.
-   - Arrival and building (when historically important).
-   - Collecting or institutional history.
-   - Room-by-room or highlight-by-highlight chapters with the full dual-layer treatment for every Core and Important artwork.
-   - Condensed briefs for any additional referenced works.
-   - Themes chapter (full synthesis with “Across the Sources: What Is Easy to Miss”).
-   - Reference chapters at the end: Artists and Creators, Glossary, Bibliography and Further Reading, Limitations and Practical Notes.
-   - Explicit Table of Contents page with internal links.
+## Step 2 — Visitor-Oriented EPUB
 
-3. **Embed images** — Locate high-quality public-domain or official images of key works and interiors. Embed them with captions in the relevant chapters. Note that images are study references.
+After the Markdown package is complete and audited, produce a polished sequential EPUB that restructures the *same* content for use before and during a visit. This is a required second deliverable for museum and major site guides unless the user explicitly declines it.
 
-4. **Design for the visitor** — Elegant, restrained typography (serif, generous leading, warm off-white ground, deep navy headings, subtle gold rules). Include a refined cover (navy and gold architectural linework works well for major museum buildings). Keep watch-fors and “what is easy to miss” lists with each work for on-site looking.
+**The EPUB must contain all the analytical content of the original digests and themes.** It reorganizes and presents; it does not abbreviate, summarize, or dumb down the dual-layer briefs. When converting, transcribe the full Pre-Reading Context, Summary, Full Brief (including “What Is Easy to Miss,” zone-by-zone, and Period-Specialist Analysis), and theme narratives. Do not substitute shorter paraphrases.
 
-5. **Deliver both** — Offer the Markdown zip (Step 1) and the finished EPUB (Step 2). The EPUB restructures and presents the same analytical content; it does not replace or dumb down the dual-layer briefs.
+### Structure of the EPUB
 
-This Step 2 process is especially suited to major museum collections where the user wants both a research package and a polished, portable guide for an actual visit. It is invoked when the user asks for an ebook, walk-through guide, visitor edition, or similar after (or alongside) the Athena package.
+- Elegant title page and refined cover.
+- Explicit Table of Contents page with internal links.
+- How to Use This Guide (suggested routes: short / half-day / full; practical notes on hours, tickets, audioguide, photography).
+- Location and institutional history chapter(s) — building, dynasty or patronage, founding of the museum, major political or cultural context.
+- Ranked Must-See Checklist (Core / Important, with a short “if time is short” subset so the visitor can decide).
+- Linear walk-through chapters that follow a practical route through the site. Each major work or space receives its full dual-layer treatment (not a condensation).
+- Themes chapter (full synthesis with “Across the Sources: What Is Easy to Miss”).
+- Reference chapters at the end: Artists and Creators (when relevant), Glossary, Bibliography and Further Reading, Limitations and Practical Notes.
+- Embedded high-quality images with captions in the relevant chapters. Note that images are study references.
+- Important visitor information and walkthrough help integrated throughout (watch-fors, what is easy to miss, route suggestions, practical constraints).
 
-### Location / city / region / travel guide emphases
+### Design
+
+- High-class museum-catalogue aesthetic: serif typography, generous leading, warm off-white ground, deep navy headings, subtle gold rules.
+- Refined cover (navy and gold architectural linework works well for major buildings; adapt to the site).
+- Watch-fors and “what is easy to miss” lists kept with each work for on-site looking.
+- Explicit Table of Contents.
+
+### Delivery
+
+Offer both the Markdown zip (Step 1) and the finished EPUB (Step 2). The EPUB restructures and presents the same analytical content for a visitor; it does not replace the Markdown package and does not reduce its depth.
+
+This two-step process was distilled from the Kunsthistorisches Museum guide and refined with the Sisi Museum / Imperial Apartments guide (2026). It is the default for any serious museum or major historic-site request.
+
+## Location / city / region / travel guide emphases
+
 - Frame the package as the equivalent of a short university course or serious independent study of the place (history, built environment, cultural layers).
 - **Historical overview is required.** Core deliverables include: historical orientation (periodized or thematic), ranked must-see sites with scholarly rationale (not just fame), practical itineraries that respect historical and spatial logic, and further-reading pathways into deeper literature.
 - Site digests or entries should give the reader enough context to stand in front of a building, square, or landscape and understand *why it matters* and what conversations it participates in — without reducing it to a caption.
 - Prefer primary evidence and high-quality secondary synthesis for contested local histories; surface competing claims about the place when they exist.
 - The guide remains portable and useful both before travel (orientation + planning) and on site (reference + deeper notice).
+- The same two-step process (Markdown package first, then visitor EPUB) applies when the user wants a polished on-site guide.

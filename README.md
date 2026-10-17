@@ -17,7 +17,11 @@ After a draft Core list exists, Phase 1 runs a bounded apparatus/bibliography pa
 Load the relevant reference file when the topic matches:
 
 - **Place / city / museum / travel guides** — `references/place-guides.md`  
-  Academic-depth guides (Blue Guide / university city-history spirit). Dual-layer treatment required for major artworks. Do not artificially cap the number of digests; prioritize works a careful visitor would most regret missing. Optional Step 2: after the Markdown package is complete, produce a polished sequential visitor EPUB that restructures the same content for on-site use (linear walk-through, full dual-layer briefs, themes, TOC, embedded images, refined cover and typography). Deliver both the Markdown zip and the EPUB.
+  Academic-depth guides (Blue Guide / university city-history spirit).  
+  **Two-step default for museum and major site guides:**  
+  1. Markdown package first — full research, ranked sources with provenance, dual-layer digests for every Core and Important space or work, themes (including location/institution history and a navigating theme), glossary, further reading, limitations. Delivered as a zip.  
+  2. Visitor EPUB — after the Markdown package is audited, a polished sequential EPUB that restructures *the same content* for on-site use. The EPUB does not abbreviate the dual-layer analysis. It includes an elegant cover, Table of Contents, ranked must-see checklist (so the visitor can decide depth), location and institutional history, linear walk-through chapters with full dual-layer briefs, themes, visitor information, and practical notes. Both deliverables are offered.  
+  Do not artificially cap digests. Rank unmissable works and spaces so a visitor who may never return can choose how deep to go. Always include location context and history.
 
 - **Scientific paper deep dives** — `references/science-paper-guides.md`  
   Journal-club and critical-reading guidance grounded in CREATE and related pedagogies.
@@ -31,8 +35,7 @@ Load the relevant reference file when the topic matches:
 ## Output
 
 Default: portable Markdown (relative links, Obsidian-friendly).  
-Optional: EPUB when requested.  
-Museum/collection guides may include a second visitor-oriented EPUB after the Markdown package is audited.
+For museum and major site guides: Markdown zip first, then a high-class visitor EPUB that contains all the original dual-layer content, reorganized for someone standing in the place.
 
 ## Structure
 
@@ -43,6 +46,6 @@ Museum/collection guides may include a second visitor-oriented EPUB after the Ma
 
 ## Version
 
-Process version 1.35 (2026-09-28) with subsequent updates for museum visitor EPUB and expanded digest selection (2026-10-16). See `CHANGELOG.md`.
+Process version 1.35 (2026-09-28) with subsequent updates for museum visitor EPUB, ranked unmissable works, mandatory location/institution context, and full-content EPUB transcription (2026-10-17). See `CHANGELOG.md`.
 
 Repository: https://github.com/jackreichert/athena
