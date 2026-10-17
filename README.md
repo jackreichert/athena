@@ -21,7 +21,7 @@ Load the relevant reference file when the topic matches:
   **Two-step default for museum and major site guides:**  
   1. Markdown package first — full research, ranked sources with provenance, dual-layer digests for every Core and Important space or work, themes (including location/institution history and a navigating theme), glossary, further reading, limitations. Delivered as a zip.  
   2. Visitor EPUB — after the Markdown package is audited, a polished sequential EPUB that restructures *the same content* for on-site use. The EPUB does not abbreviate the dual-layer analysis. It includes an elegant cover, Table of Contents, ranked must-see checklist (so the visitor can decide depth), location and institutional history, linear walk-through chapters with full dual-layer briefs, themes, visitor information, and practical notes. Both deliverables are offered.  
-  Do not artificially cap digests. Rank unmissable works and spaces so a visitor who may never return can choose how deep to go. Always include location context and history.
+  Do not artificially cap digests. Rank unmissable works and spaces opinionatedly (Must-see / If you have time / Skip) so a visitor who may never return can choose depth without overload. Cover the full range of major holdings, not only unique signature pieces. Always include location context and history. EPUB is organized as a walking guide and must include a refined cover.
 
 - **Scientific paper deep dives** — `references/science-paper-guides.md`  
   Journal-club and critical-reading guidance grounded in CREATE and related pedagogies.

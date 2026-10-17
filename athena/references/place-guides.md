@@ -23,12 +23,17 @@ The process has two mandatory stages for museum and major site guides:
 
 ## Unmissable works and spaces (ranking, not capping)
 
-For museum and major site guides, the goal is to give the visitor everything they would regret missing on a single visit, without overwhelming them.
+For museum and major site guides, the goal is to give the visitor everything they would regret missing on a single visit, without overwhelming them. The selection should feel opinionated and practical (Rick Steves style: “if you have time, do this; if not, do that; skip this overhyped thing”), not encyclopedic or Lonely Planet comprehensive.
 
 - **Do not artificially cap the number of digests.** Prioritize the works and spaces a careful visitor would most regret missing, grounded in institutional highlights, official “must-see” lists, and scholarly consensus.
-- **Rank them.** Present a clear priority order (Core / Important / Supplementary, or an explicit ranked checklist) so the visitor can decide how deep to go. A short “if you only have one hour” route and a fuller “you may never return” route should both be available.
-- Expand beyond an initial Core list when additional major works (key Rembrandts, Caravaggios, Rubens, Titians, major rooms, essential objects) are clearly part of the collection’s essential holdings. Document the expanded selection in `01-sources.md` and `limitations.md`.
-- For each ranked item, supply the full dual-layer treatment (zone-by-zone + period-specialist analysis) so the visitor can look with precision.
+- **Cover the principal strengths, not the entire collection.** A museum’s famous unique object (Dead Sea Scrolls, a single masterpiece, a historic room) is Core, but so are the major collections that sit beside it. Do not treat “unmissable” as synonymous with “one-of-a-kind,” and do not attempt to digest every work. Survey the institution’s principal departments and select the strongest, most regret-missing works or spaces from each — opinionated and limited, not comprehensive. Document the selection in `01-sources.md`.
+- **Rank them opinionatedly.** Present a clear priority order so the visitor can decide depth:
+  - **Must-see** (do not leave without these).
+  - **If you have time** (strong, worth it when the schedule allows).
+  - **Skip or deprioritize** (overhyped, repetitive, or lower priority relative to the above).
+  - Offer both a short route (“one focused hour”) and a fuller route (“you may never return”).
+- Expand beyond an initial Core list when additional major works or departmental strengths (key Rembrandts, Caravaggios, Rubens, Titians, major galleries, essential objects, archaeological or design holdings) are clearly part of the collection’s essential offerings. Document the expanded selection in `01-sources.md` and `limitations.md`.
+- For each ranked item that receives a digest, supply the full dual-layer treatment (zone-by-zone + period-specialist analysis) so the visitor can look with precision.
 
 ## Museum / collection / exhibition specializations
 
@@ -61,23 +66,24 @@ After the Markdown package is complete and audited, produce a polished sequentia
 
 ### Structure of the EPUB
 
-- Elegant title page and refined cover.
+- Elegant title page and a refined, high-class cover (navy and gold architectural linework or equivalent site-appropriate design; generate or source a proper cover image — do not omit or use a plain placeholder).
 - Explicit Table of Contents page with internal links.
-- How to Use This Guide (suggested routes: short / half-day / full; practical notes on hours, tickets, audioguide, photography).
+- How to Use This Guide (suggested routes: short focused visit / half-day / full; practical notes on hours, tickets, audioguide, photography).
 - Location and institutional history chapter(s) — building, dynasty or patronage, founding of the museum, major political or cultural context.
-- Ranked Must-See Checklist (Core / Important, with a short “if time is short” subset so the visitor can decide).
-- Linear walk-through chapters that follow a practical route through the site. Each major work or space receives its full dual-layer treatment (not a condensation).
+- Ranked Must-See Checklist with opinionated tiers (Must-see / If you have time / Skip or deprioritize) so the visitor can choose depth without being overloaded.
+- Linear walk-through chapters that follow a practical route through the site (organized as a walking guide). Each major work or space receives its full dual-layer treatment transcribed from the Markdown digests (not a condensation).
 - Themes chapter (full synthesis with “Across the Sources: What Is Easy to Miss”).
 - Reference chapters at the end: Artists and Creators (when relevant), Glossary, Bibliography and Further Reading, Limitations and Practical Notes.
 - Embedded high-quality images with captions in the relevant chapters. Note that images are study references.
-- Important visitor information and walkthrough help integrated throughout (watch-fors, what is easy to miss, route suggestions, practical constraints).
+- Important visitor information and walkthrough help integrated throughout (watch-fors, what is easy to miss, route suggestions, practical constraints, opinionated skips).
 
 ### Design
 
 - High-class museum-catalogue aesthetic: serif typography, generous leading, warm off-white ground, deep navy headings, subtle gold rules.
-- Refined cover (navy and gold architectural linework works well for major buildings; adapt to the site).
+- Refined cover is required (navy and gold architectural linework works well for major buildings; adapt to the site). Do not deliver an EPUB without a proper cover.
 - Watch-fors and “what is easy to miss” lists kept with each work for on-site looking.
 - Explicit Table of Contents.
+- Organized as a walking guide (linear route, practical pacing) while retaining every dual-layer brief from the Athena package.
 
 ### Delivery
 

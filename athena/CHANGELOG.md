@@ -1,7 +1,10 @@
 # Changelog
 
-## 2026-10-17
-- Place / museum guides rewritten as a two-step default:
+## 2026-10-17 (refinement)
+- Place / museum guides: clarified that “unmissable” covers the full range of major holdings, not only unique signature pieces. Example: Israel Museum’s Dead Sea Scrolls are Core, and so is its extensive art collection. Survey principal departments and include the strongest works from each.
+- Opinionated ranking required (Rick Steves style): Must-see / If you have time / Skip or deprioritize. Avoid Lonely Planet overload. Offer short and full routes so the visitor decides depth.
+- EPUB must be organized as a walking guide (linear route, practical pacing) while transcribing all dual-layer Athena content. Refined cover is required (do not omit or use a placeholder).
+- Updated `references/place-guides.md`.
   1. Markdown package first — full research, ranked sources with provenance, dual-layer digests for every Core and Important space or work, themes (including location/institution history), glossary, further reading, limitations. Delivered as a zip.
   2. Visitor EPUB — after the Markdown package is audited, a polished sequential EPUB that restructures *the same content* for on-site use. The EPUB does not abbreviate the dual-layer analysis; it transcribes the full Pre-Reading Context, Summary, Full Brief (zone-by-zone and Period-Specialist Analysis), and theme narratives.
 - Ranked unmissable works and spaces: do not artificially cap digests. Present a clear priority order (short route and full “you may never return” route) so the visitor can decide depth.

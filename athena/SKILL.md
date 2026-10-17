@@ -98,7 +98,7 @@ When the request is for a place, city, region, historic landscape, museum, colle
 - Start with syllabi or highest-quality scholarly sources; full provenance required.
 - Treat sites, monuments, neighborhoods, landscapes, and artworks as primary sources.
 - **Historical overview and location/institution context are required.** For city and travel guides this is a layered chronology. For museum guides it includes the building’s history, the institution’s founding and development, the dynasty or patronage system, and major political or cultural settlements that frame the works.
-- **Rank unmissable works and spaces.** Do not artificially cap digests. Prioritize what a careful visitor would most regret missing on a single visit, present a clear priority order (short route and full route), and let the visitor decide depth.
+- **Rank unmissable works and spaces opinionatedly.** Do not artificially cap digests. Cover the full range of major holdings (not only unique signature pieces). Prioritize what a careful visitor would most regret missing, present clear tiers (Must-see / If you have time / Skip or deprioritize), and let the visitor decide depth without overload.
 - Produce must-see sites with scholarly rationale + practical itineraries grounded in the literature.
 - Include images when they enhance understanding.
 - Museum specializations (dual-layer artwork digests, Period-Specialist Analysis, artists-bios.md) are retained and required when applicable.
