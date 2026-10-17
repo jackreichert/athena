@@ -1,156 +1,48 @@
 # Athena
 
-A skill that builds rigorous, source-backed study guides that function as university-course equivalents — with notes usable by both students and professors.
+Rigorous, source-backed study guides that function as university-course equivalents. Notes usable by both students and professors.
 
-It also produces academic-level place, city, region, and museum guides; scientific-paper deep dives; legal case deep dives / case method; and **practical hands-on course supplements** (workbooks, lab and studio companions, practicums, job aids).
+Athena produces Survey, Standard, and Deep packages with transparent provenance, ranked sources, thematic synthesis, and (in full packages) structured digests that help the reader notice what is easy to miss. It does not dumb down or dictate interpretation.
 
-**Process version:** 1.35 (2026-09-28)
+## Package Shapes
 
----
+- **Survey** — Foundation package: scope, ranked sources with full provenance, thematic synthesis. Digests deferred.
+- **Standard** — Full undergraduate-course equivalent with complete digests.
+- **Deep** — Full graduate/seminar equivalent with denser apparatus and critical engagement.
 
-## What it produces
+After a draft Core list exists, Phase 1 runs a bounded apparatus/bibliography pass on Core works that have scholarly apparatus. Extracted citations enter the working bibliography with provenance; they do not auto-promote to Core.
 
-Athena does not generate chatty summaries or reductive paraphrases. It produces structured, portable packages of Markdown files designed so the reader can engage primary sources without missing important things.
+## Adaptive Applications
 
-Typical deliverables include:
+Load the relevant reference file when the topic matches:
 
-* Clear learning outcomes and scope
-* **Primary university department / program** (decided after research from sources, syllabi, and themes)
-* Ranked, provenance-tracked sources (syllabi and discovery signals are logged)
-* A **bounded apparatus / bibliography pass** after the draft Core list exists — citations harvested from Core books that have scholarly apparatus, logged as *cited in [Core work]*, never auto-promoted to Core
-* Structured digests of primary sources (pre-reading orientation + standalone summary + full post-reading brief)
-* **How to read this source** on long, composite, or formally odd works — a first-encounter route (named units and a stopping rule), not a thesis
-* Thematic synthesis with citations and “what is easy to miss” sections
-* Further-reading pathways (and, on request, a citation-network addendum)
-* Glossary and limitations
-* When requested, a **practical companion** under practical/ — a task sequence with declared guidance states, not a quiz on the digests
+- **Place / city / museum / travel guides** — `references/place-guides.md`  
+  Academic-depth guides (Blue Guide / university city-history spirit). Dual-layer treatment required for major artworks. Do not artificially cap the number of digests; prioritize works a careful visitor would most regret missing. Optional Step 2: after the Markdown package is complete, produce a polished sequential visitor EPUB that restructures the same content for on-site use (linear walk-through, full dual-layer briefs, themes, TOC, embedded images, refined cover and typography). Deliver both the Markdown zip and the EPUB.
 
-Three package shapes share the same research spine:
+- **Scientific paper deep dives** — `references/science-paper-guides.md`  
+  Journal-club and critical-reading guidance grounded in CREATE and related pedagogies.
 
-| Shape | Focus | Digests |
-| --- | --- | --- |
-| **Survey** | Map the field (sources + themes) | Deferred |
-| **Standard** | Undergraduate-course equivalent | Required |
-| **Deep** | Graduate / seminar equivalent | Required + denser apparatus |
+- **Legal case method** — `references/legal-case-guides.md`  
+  Case briefing, IRAC, Socratic analysis, holding vs. dicta.
 
-Adaptive applications (place / museum, scientific papers, legal cases, practical companions) are orthogonal to those shapes. A Deep museum guide and a Survey legal-case package are both valid. A practical companion is **on request** (or when the topic is already a lab, studio, or practicum). It is not auto-added to every run.
+- **Practical / hands-on supplements** — `references/practical-guides.md`  
+  Workbooks, lab and studio companions, practicums. Task sequences with declared guidance states. Not auto-added to ordinary study guides.
 
-The final output is a **self-contained directory of Markdown files** (Obsidian-friendly, relative links) that is zipped for delivery.
+## Output
 
-### Output package layout
+Default: portable Markdown (relative links, Obsidian-friendly).  
+Optional: EPUB when requested.  
+Museum/collection guides may include a second visitor-oriented EPUB after the Markdown package is audited.
 
-```
-athena-<topic-slug>/
-├── README.md                 # Includes primary university department
-├── 00-scope.md               # Includes primary university department (+ secondary if interdisciplinary)
-├── 01-sources.md             # Ranked bibliography + full provenance + apparatus log
-├── 01c-citation-network.md   # Optional: next-ring sources from Core apparatuses
-├── 02-digests.md             # Index + reading order (Full packages only)
-├── 03-themes.md
-├── further-reading.md
-├── glossary.md
-├── limitations.md
-├── digests/                  # One complete digest per Core & Important source
-├── themes/                   # One file per theme
-├── source-materials/         # Optional archival Markdown of key syllabi
-├── images/                   # Only when images are included
-└── practical/                # Only when a hands-on companion is in scope
-    ├── README.md
-    ├── 00-outcomes.md
-    ├── 01-sequence.md
-    └── tasks/
-```
+## Structure
 
-Survey packages omit `digests/` and `02-digests.md`. Full packages (Standard / Deep) require complete digests for every Core and Important source and complete theme files for every listed theme. When `practical/` is in scope, every listed task file must exist and carry the required sections. A mandatory integrity audit runs before the package is considered finished.
+- `SKILL.md` — shared spine, principles, workflow, integrity audit.
+- `references/` — mode files, adaptive applications, digest template, directory layout.
+- `CHANGELOG.md` — version history.
+- `DEVELOPMENT.md` — notes on extending the skill.
 
----
+## Version
 
-## Process & philosophy
+Process version 1.35 (2026-09-28) with subsequent updates for museum visitor EPUB and expanded digest selection (2026-10-16). See `CHANGELOG.md`.
 
-Athena treats study-guide construction as a disciplined research process rather than free-form summarization.
-
-It achieves this by enforcing a fixed sequence of phases (scope → source discovery with syllabus provenance and a bounded Core-apparatus pass → consistent digests → thematic synthesis → departmental home decision → integrity audit) and by refusing to advance until completeness and citation standards are met.
-
-**Core stance**
-
-* Primary sources come first. Digests orient and help the reader notice structure, moves, and open questions; they do not replace the primary encounter or hand the reader “the meaning.”
-* Completeness over ambition. In full packages every Core *and* Important source receives a complete digest before themes are written. Missing content fails a hard integrity audit.
-* Provenance is required. Every syllabus or discovery source consulted is logged with institution, course, year, durable link, and what was extracted from it.
-* **Two expert signals, not one.** Syllabi are a teaching-canon signal. The bibliographies, recommended-reading chapters, and editors’ notes inside Core books that have apparatus are a research-canon signal. Athena mines the second only after a draft Core list exists, caps the harvest, and never treats a citation as automatic promotion into Core.
-* Themes are synthetic, not sequential. They organize by concept or debate and back every major claim to a digest or source. Each theme includes a concrete “Across the Sources: What Is Easy to Miss” checklist.
-* Anti-reductive by design. The skill explicitly refuses to dumb down, moralize, or collapse contested material into a single approved interpretation.
-* **Departmental home is decided after research.** Once sources and themes are established, Athena identifies the primary university department or program that would most naturally house a course of this kind and records it in 00-scope.md and README.md.
-* **Practice is a supplement, not a second course.** When a practical companion is requested, it makes the reader *do* a performance the course already named, with guidance that moves (modeled → faded → independent) rather than a pile of activities.
-* **A first encounter needs a route.** Watch-fors tell the reader what to notice. `02-digests.md` orders works. “How to read this source” tells the reader how to enter *this* work (which letters, which books, which figures first — and when to stop).
-
-**High-level workflow**
-
-1. **Scope** — Define topic, audience, package shape (Survey / Standard / Deep), and learning outcomes. Load the matching mode file and any adaptive overlay.
-2. **Sources** — Mine syllabi and high-quality discovery signals; draft-rank Core / Important / Supplementary; then run a bounded apparatus pass on Core works that have one; compile the working bibliography with full provenance.
-3. **Digests** (Full packages) — Produce consistent three-part digests for every Core and Important source, including a first-encounter reading route when the source is long, composite, or formally odd.
-4. **Themes** — Synthesize across sources with citations, gaps, and open questions.
-5. **Departmental home** — After research is complete, decide the primary university department (and any secondary affiliations) that would house the course; record in scope and README.
-6. **Assembly & audit** — Build the navigable package, then actively verify that every index entry points to real, complete content. Only then is a zip offered.
-
-Against a *finished* package, “expand from bibliographies,” “citation network,” or “next ring from Core” reopens discovery only and writes `01c-citation-network.md`. It does not reopen the digest completeness gate unless the user explicitly asks to reopen ranking.
-
-The same spine supports ordinary study guides, place/museum guides, scientific-paper deep dives, legal case-method packages, and practical companions. Adaptive reference files supply the domain-specific overlays.
-
-New adaptive applications follow a **Discovery-first** rule (`athena/DEVELOPMENT.md`): run Athena Deep on the pedagogy of the domain before writing the overlay. The practical-guides overlay was designed that way. Digest-structure changes stay in `references/digest-template.md`. Shared discovery methods (syllabi, apparatus mining) stay on the spine.
-
----
-
-## How to use it
-
-```
-Athena on [topic]
-Athena survey of [topic]
-Athena go deep on [topic]
-Athena museum / place / city guide for [location]
-Athena deep dive on [scientific paper]
-Athena journal club on [paper]
-Athena case brief / case method on [judicial opinion]
-Athena legal case deep dive on [case or doctrine]
-Athena practical companion to [course or existing package]
-Athena workbook / lab manual / studio / practicum on [topic]
-Athena expand from bibliographies / citation network / next ring from Core
-```
-
----
-
-## For agents (installation)
-
-The skill file agents should load is:
-
-**athena/SKILL.md**
-
-Raw URL:
-`https://raw.githubusercontent.com/jackreichert/athena/main/athena/SKILL.md`
-
-Repo path: `athena/SKILL.md`
-
-The skill is modular. After deciding package shape in Phase 0, load the matching mode file and any applicable adaptive overlay:
-
-```
-athena/
-├── SKILL.md                          # Shared research spine
-├── CHANGELOG.md
-├── DEVELOPMENT.md
-└── references/
-    ├── mode-survey.md
-    ├── mode-standard.md
-    ├── mode-deep.md
-    ├── place-guides.md               # Place / city / museum
-    ├── science-paper-guides.md       # Scientific paper deep dives
-    ├── legal-case-guides.md          # Legal case / case method
-    ├── practical-guides.md           # Hands-on course supplements
-    ├── digest-template.md
-    └── directory-layout.md
-```
-
----
-
-## Further reading
-
-* Full process history: [CHANGELOG.md](/jackreichert/athena/blob/main/athena/CHANGELOG.md)
-* Expanding the skill: [DEVELOPMENT.md](/jackreichert/athena/blob/main/athena/DEVELOPMENT.md)
+Repository: https://github.com/jackreichert/athena
