@@ -30,3 +30,6 @@ Produce the richer thematic apparatus described above, including the required â€
 
 ### Phase 4 / 5
 Package should feel recognizably denser in bibliography, critical apparatus, and research orientation while remaining navigable. After themes, decide and record the primary university department (see shared SKILL.md). The mandatory Phase 5 integrity audit applies strictly: top-level `02-digests.md` and `03-themes.md` must be complete; every Core and Important source must have a complete digest file; every theme topic must have a complete theme file; Deep apparatus must be present. Missing or incomplete items force return to Phase 2 or 3 until the audit passes. QA also checks for the presence of the Deep-mode apparatus (reception sections, Seminar Guiding Questions, richer annotations, multi-track further reading).
+
+## Unit-by-unit depth (1.36)
+In Deep mode the unit-by-unit summary is expected at chapter/section granularity for every Core and Important source, meeting the skip-or-check standard in SKILL.md. Expect substantially longer digests than Standard. Full-text acquisition effort is mandatory (OA, PMC, author copies, repositories, archive.org, open editions); inaccessible units are declared per unit and in limitations. Themes must cite specific digest units.

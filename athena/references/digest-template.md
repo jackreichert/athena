@@ -1,6 +1,6 @@
 # Source Digest Template
 
-Use this structure for every Core (and selected Important) source. The design goal is to help the reader **not miss important things** — not to replace their reading or tell them what to think.
+Use this structure for every Core and every Important source. In the Athena pipeline (sources → deep summaries → themes), the digest's unit-by-unit summary is the primary product and the input from which themes are extracted. The design goal is to help the reader **not miss important things** — not to replace their reading or tell them what to think.
 
 For primary texts (especially literary, philosophical, or dialogic works such as Plato’s dialogues or Shakespeare’s plays), the digest is organized so a reader can:
 
@@ -52,13 +52,16 @@ A short, high-signal checklist (typically 4–7 bullets) of structural hinges, f
 - Overall structure and how the parts relate
 - Intended or historical audience / performance context
 
-### Unit-by-Unit / Movement-by-Movement
+### Unit-by-Unit / Movement-by-Movement (the heart of the digest)
+> **Skip-or-check standard.** This section must let a reader who skips the source still get its substance, and let a reader who read it verify they missed no important point or quote. Cover **every** major unit (chapter / section / act / figure group). Per unit: the argument in the source's own force, key claims with the evidence offered, and notable **verbatim quotes with locators taken from fetched text**. If a unit's text could not be accessed, write `Access: …` in that unit stating what was and was not available, and cover it as deeply as legitimate material allows. Never invent quotes; never silently thin.
+
 ### [Unit name or number] — [short title]
-- Main topics, arguments, dramatic movements, or dialectical turns
+- **Argument** (dense prose, not a topic list): what the unit claims and how it gets there
+- **Key claims & evidence**: the specific findings, numbers, examples, or reasoning offered
 - **Function in the arc** (required, 1–2 sentences): what this unit is *doing* in the larger structure — how it advances, complicates, or opens the central project, tension, or conversation. Keep text-grounded and non-interpretive of “the meaning.”
 - Key evidence, examples, images, or methods
 - Notable formal or rhetorical choices (especially those that interact with content)
-- High-signal quotes (with page, line, or stephanus locator + brief surrounding context + one short note on why the formulation or moment is pivotal)
+- **Notable quotes** (required where text was fetched; 1–4 per substantive unit): verbatim, with page, line, or stephanus locator + brief surrounding context + one short note on why the formulation or moment is pivotal)
 
 (Repeat for each major unit. For long works it is acceptable to work at act/scene, dialogue section, or major-part level; document the granularity choice. In Deep mode, prefer finer grain when the source is central and the material rewards it. Skeletal topic lists without functional notes or textual density fail the quality bar.)
 

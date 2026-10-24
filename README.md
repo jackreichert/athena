@@ -46,6 +46,6 @@ For museum and major site guides: Markdown zip first, then a high-class visitor 
 
 ## Version
 
-Process version 1.35 (2026-09-28) with subsequent updates for museum visitor EPUB, ranked unmissable works, mandatory location/institution context, and full-content EPUB transcription (2026-10-17). See `CHANGELOG.md`.
+Process version 1.36 (2026-10-24; pipeline + unit-by-unit skip-or-check standard). Earlier: 1.35 (2026-09-28) with subsequent updates for museum visitor EPUB, ranked unmissable works, mandatory location/institution context, and full-content EPUB transcription (2026-10-17). See `CHANGELOG.md`.
 
 Repository: https://github.com/jackreichert/athena

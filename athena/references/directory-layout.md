@@ -3,7 +3,7 @@
 ```
 athena-<kebab-topic>/   (or study-guide-<kebab-topic>/)
 ├── README.md                 # Master overview, package shape (Survey/Standard/Deep), primary university department/program, review type, learning path, quick-start
-├── 00-scope.md               # Topic statement, audience, package shape, primary university department (and any secondary affiliations), learning outcomes, review type, digests in/out of scope, output format
+├── 00-scope.md               # Topic statement, generic audience (never a named person), package shape, primary university department (and any secondary affiliations), learning outcomes, review type, digests in/out of scope, output format
 ├── 01-sources.md             # Ranked bibliography with provenance notes, selection criteria, Syllabi & Discovery Sources Consulted, Apparatus & Bibliographies Consulted, citation practice, availability, full working bibliography
 │                             # (Deep: richer annotations + optional Primary/Secondary/Methodological categorization)
 ├── 01b-search-protocol.md    # Optional/conditional: questions, search strategy, inclusion/exclusion

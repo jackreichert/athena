@@ -30,3 +30,6 @@ Themes cite sources directly. Still require Gaps & Open Questions and Theme Bibl
 
 ### Phase 4 / 5
 Assemble without digests. After themes, decide and record the primary university department (see shared SKILL.md). The mandatory Phase 5 integrity audit still applies: every theme file listed in `03-themes.md` must exist on disk; digests must be correctly absent. QA focuses on provenance transparency, citation density in themes, and whether the package functions as a solid foundation the user can expand later.
+
+## Pipeline note (1.36)
+Survey completes stage 1 (quality source list) and a source-cited theme map; stage 2 (deep unit-by-unit summaries) is deferred by design. When digests are later added they must meet the skip-or-check standard in SKILL.md, and themes should then be re-extracted from them.

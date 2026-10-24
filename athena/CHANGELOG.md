@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.36 (2026-10-24)
+- Pipeline made explicit on the shared spine: **quality source list → deep summaries → themes extracted from the summaries** (new “The Pipeline” section in `SKILL.md`).
+- Unit-by-unit summary declared the heart of every digest, with a **skip-or-check standard**: a time-short reader can skip the primary and still get its substance; a reader who read it can check for missed points and quotes. Each unit requires dense argument, key claims and evidence, and located verbatim quotes from fetched text. Full-text acquisition effort required; inaccessible units must be declared explicitly rather than thinned.
+- Phase 5 audit gains a unit-by-unit depth check and a “no named audience” check.
+- Packages are shareable: audiences are described generically, never as a named individual.
+- Updated `SKILL.md`, `references/digest-template.md`, `references/mode-deep.md`, `references/mode-standard.md`, `references/mode-survey.md`, `references/directory-layout.md`.
+- Prompted by user feedback on a research-literacy Deep package.
+
 ## 2026-10-17 (refinement)
 - Place / museum guides: clarified that “unmissable” covers the full range of major holdings, not only unique signature pieces. Example: Israel Museum’s Dead Sea Scrolls are Core, and so is its extensive art collection. Survey principal departments and include the strongest works from each.
 - Opinionated ranking required (Rick Steves style): Must-see / If you have time / Skip or deprioritize. Avoid Lonely Planet overload. Offer short and full routes so the visitor decides depth.

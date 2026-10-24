@@ -31,3 +31,6 @@ Themes back-link to digests and must synthesize across sources rather than remai
 
 ### Phase 4 / 5
 Full package with digests. After themes, decide and record the primary university department (see shared SKILL.md). The mandatory Phase 5 integrity audit applies strictly: top-level `02-digests.md` and `03-themes.md` must be complete; every Core and Important source must have a complete digest file; every theme topic must have a complete theme file. Missing or incomplete items force return to Phase 2 or 3 until the audit passes.
+
+## Unit-by-unit depth (1.36)
+The unit-by-unit summary is the heart of each digest and must meet the skip-or-check standard in SKILL.md (argument, claims/evidence, located fetched quotes per unit; explicit access notes where text was unavailable). Themes are extracted from the digests.

@@ -7,7 +7,9 @@ description: Build rigorous source-backed study guides that function as universi
 
 Create rigorous, source-backed, thematically organized study guides that function as the equivalent of a university course, with notes usable by both students and professors. Prioritize primary sources, structured digests that help the reader *not miss important things* (pre-reading context, post-reading full brief, and standalone summary), thematic synthesis with provenance, clear and dense citations (especially in themes), and navigable learning paths. Digests orient and check; they do not replace the primary encounter or tell the reader what to think.
 
-**Process version:** 1.35 (2026-09-28) — After a draft Core list exists, Phase 1 runs a **bounded apparatus / bibliography pass** on Core works that have scholarly apparatus. Extracted citations enter the working bibliography with provenance; they do not auto-promote to Core. Deep mode expects a richer version. User language such as “expand from bibliographies,” “citation network,” or “next ring from Core” runs a Phase 1b addendum against a finished package (`01c-citation-network.md`) without reopening the digest completeness gate unless the user explicitly reopens ranking. Shared-spine change; no new mode or adaptive application.
+**Process version:** 1.36 (2026-10-24) — **Pipeline made explicit: quality source list → deep unit-by-unit summaries → themes extracted from those summaries.** The unit-by-unit summary is the heart of every digest (skip-or-check standard; dense argument, claims, evidence, and fetched verbatim quotes with locators per unit; inaccessible text is declared, never thinned silently). Packages are shareable: audiences are described generically, never as a named person.
+
+**Previous (1.35, 2026-09-28):** After a draft Core list exists, Phase 1 runs a **bounded apparatus / bibliography pass** on Core works that have scholarly apparatus. Extracted citations enter the working bibliography with provenance; they do not auto-promote to Core. Deep mode expects a richer version. User language such as “expand from bibliographies,” “citation network,” or “next ring from Core” runs a Phase 1b addendum against a finished package (`01c-citation-network.md`) without reopening the digest completeness gate unless the user explicitly reopens ranking. Shared-spine change; no new mode or adaptive application.
 
 Athena supports three package shapes that share the same research spine (syllabi mining, provenance, ranked sources, themes with citations, further reading) but differ in whether digests are produced now and in density of apparatus:
 
@@ -23,9 +25,21 @@ Athena supports three package shapes that share the same research spine (syllabi
 **When the user asks for a practical / hands-on / workbook / lab / studio / practicum / implementation / job-aid companion, or the topic is itself that kind of course:** Also load `references/practical-guides.md`. Do not auto-add this overlay to ordinary study-guide runs.  
 These adaptive applications are orthogonal to package shape.
 
+## The Pipeline (read this first)
+
+Every Full package is built in three dependent stages. Do not reorder or merge them:
+
+1. **Build a quality source list** — syllabi-mined, apparatus-checked, ranked Core / Important / Supplementary with provenance (Phase 1).
+2. **Build deep summaries** — a complete digest for every Core and Important source whose **unit-by-unit summary** (per chapter / section / unit) is the heart of the digest (Phase 2).
+3. **Extract themes from those summaries** — themes are synthesized *from the digests*, citing specific digest units, not from general background knowledge (Phase 3).
+
+**The unit-by-unit standard (skip-or-check).** A unit-by-unit summary must serve two readers: (a) a reader short on time who skips the primary source and must still get its substance, and (b) a reader who did read it and wants to check they did not miss important points or quotes from that unit. Every unit therefore needs dense coverage of its argument, its key claims and the evidence offered for them, and its notable verbatim quotes with locators. A unit entry that only lists topics fails. **Anti-fabrication still governs:** quote only text that was actually fetched and read during the run. Make a real effort to obtain full texts (open-access versions, PMC, author copies, institutional repositories, archive.org, open editions). If a source or unit cannot be accessed, **say so explicitly in that unit** (and in `limitations.md`) and cover it as deeply as legitimately accessible material allows, rather than silently thinning the summary.
+
+**Shareable packages.** Packages are meant to be shared. Never name a specific person as the audience or address the requester by name in package files. Describe the audience generically (e.g. "an experienced professional or graduate-level reader").
+
 ## Guiding Principles
 
-1. Objectives first — define clear learning outcomes, audience, and package shape before collecting sources.
+1. Objectives first — define clear learning outcomes, a generically described audience (never a named individual), and package shape before collecting sources.
 2. Syllabi as expert signals — university syllabi, essential-readings lists, and (for museums/cultural sites) official institutional highlights, timed itineraries, and collection catalogues are high-value *teaching* proxies for core material. For Deep mode, preferentially mine graduate seminar syllabi, comprehensive exam lists, and advanced reading lists. **Track and document every syllabus or institutional list consulted** with rich provenance (institution, course, year/term, URL or stable identifier, retrieval date, and a short note on what was extracted). Prefer archive.org or other durable mirrors when the original is fragile. Full Markdown archival under `source-materials/` is optional and recommended only for especially valuable or unstable syllabi (and, when relevant and rights-permissive, short accessible sources); when created, link the local copy from the Syllabi section of `01-sources.md`. **After a draft Core list exists, treat the scholarly apparatus of those Core works as a second expert signal** (bibliographies, endnotes, recommended-reading chapters, editors’ notes in critical editions). Syllabi are a teaching-canon signal; book apparatus is a research-canon signal. Log apparatus sources with the same provenance discipline. Do not copy entire bibliographies. Extracted citations compete for Important / Supplementary / further-reading slots; they do not auto-promote to Core.
 3. Primary > Secondary, but both matter — prioritize original works (texts, artworks, artifacts); use secondary sources for orientation, context, and debate mapping. Deep mode engages a wider secondary literature including key articles and reception.
 4. Consistent extraction — every Core source in Full packages receives the same structured treatment (see digest template).
@@ -123,7 +137,7 @@ Execute the phases in order, with explicit iteration checkpoints. Write all deli
 ### Phase 0: Scope Definition
 Before any searching:
 - Write a concise topic statement.
-- Specify target audience / level and **package shape** (Survey / Standard / Deep). Explicitly state whether digests are in scope.
+- Specify target audience / level **generically** (e.g. “experienced professional / graduate-level reader”; never a named person) and **package shape** (Survey / Standard / Deep). Explicitly state whether digests are in scope.
 - Define learning outcomes.
 - Note review type (e.g., hybrid) and any constraints.
 - Decide output format (default Markdown/Obsidian; EPUB if requested).
@@ -155,6 +169,8 @@ Survey and Standard run this pass only on request. Deep may run a richer version
 ### Phase 2: Structured Source Digests (Full packages only)
 **Skip entirely for Survey** (see mode-survey.md). For Standard and Deep, produce a consistent digest for **every Core source and every Important source** using `references/digest-template.md`.
 
+**The unit-by-unit summary is the heart of the digest** (see “The Pipeline”): per unit, dense argument, key claims and evidence, and notable fetched verbatim quotes with locators, so a reader can skip the source or check their reading. Obtain full text wherever legitimately possible; where a unit is inaccessible, state so in the unit and in `limitations.md`.
+
 Primary-text structure (literary, philosophical, dialogic works): three-part treatment required —
 1. **Pre-Reading Context** — lean, non-spoiling orientation, including Watch-fors and, when the source is long, composite, or formally odd, a **How to read this source (first encounter)** route (named units + stopping rule). See `references/digest-template.md`.
 2. **Summary** — compact standalone overview.
@@ -167,7 +183,7 @@ Anti-reductive rule applies. For artworks/visual objects: dual-layer (Unit/Zone 
 Deliverable: `digests/` (one complete file per Core and Important source) + `02-digests.md` (complete index + recommended reading order that accurately lists every digest).
 
 ### Phase 3: Thematic Synthesis & Cross-Referencing
-Extract themes, build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep almost always detailed), write theme narratives with Gaps & Open Questions and Theme Bibliography.
+Extract themes **from the completed digests** (cite digest units, not general knowledge), build at least one synthesis matrix (strongly recommended; required when ≥4 core sources or substantial disagreement; Deep almost always detailed), write theme narratives with Gaps & Open Questions and Theme Bibliography.
 
 Citation practice is rigorous: every major claim back-linked. In Survey, cite sources directly and note that digests can be added later.
 
@@ -212,6 +228,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
    - Parse `02-digests.md` (and any digest lists in `README.md`) for the digest files it claims to cover.
    - Verify **every Core source and every Important source** has a corresponding complete digest file under `digests/` (non-empty, not a stub).
    - Verify every digest listed in `02-digests.md` actually exists and is complete.
+   - **Unit-by-unit depth check:** every digest has a unit-by-unit section covering every major unit of the source; each unit carries argument, claims/evidence, and either located verbatim quotes from fetched text or an explicit access note explaining their absence. Topic-list units fail.
    - Spot-check that digests follow the template (Pre-Reading Context + Summary + Full Brief for primary texts; required “After Reading: What Is Easy to Miss”; **How to read this source** present when the source is long, composite, or formally odd; density expectations).
    - If any Core or Important source lacks a complete digest, or if `02-digests.md` is incomplete/mismatched → return to Phase 2, complete the digests and the index, and re-audit.
 
@@ -226,6 +243,7 @@ This phase is not a passive checklist. After Phase 4 assembly, **perform an acti
    - Further-reading is substantive (named sources and concrete pathways).
    - Deep packages show denser apparatus; Survey packages are clean foundations with digests correctly omitted.
    - No fabricated sources, quotes, or locators.
+   - No package file names a specific person as the audience.
 
 7. **Final packaging cleanup:** Remove any empty directories (`images/`, `source-materials/`, `practical/`, etc.) that were created but unused. The delivered package must contain only directories that hold files.
 
